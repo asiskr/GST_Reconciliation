@@ -38,8 +38,6 @@ public class ATOLoginPage extends BaseClass{
 		ExcelUtil.readExcel(ATO_FILE_PATH,ATO_FILE_NAME);
 		String user_id= ExcelUtil.getUserLoginDetail(ATO_LOGIN_SHEET_NAME);
 		emailAddress.sendKeys(user_id);
-		
-		//CLIENT_DATA.get("client_name").trim();
 		try {
 			ExcelUtil.closeExcel();
 		} catch (IOException e) {

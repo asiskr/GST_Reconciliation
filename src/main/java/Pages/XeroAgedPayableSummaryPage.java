@@ -65,13 +65,11 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		double payableAmount = 0.0;
 		if (exist.isDisplayed()) {
 			payableAmount=0.0;
-			//System.out.println(payableAmount);
 			HashMap<String, Double> hm3 = new HashMap<>();
 			hm3.put("Less: GST on Creditors", payableAmount);
 			LAST_TABLE_DATA.add(hm3);
 		} else { 
 			payableAmount=Double.parseDouble(GST2.getText().replaceAll(",", ""));
-			//System.out.println(payableAmount);
 			HashMap<String, Double> hm3 = new HashMap<>();
 			hm3.put("Less: GST on Creditors", payableAmount);
 			LAST_TABLE_DATA.add(hm3);
@@ -81,6 +79,5 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		hm4.put("Total", (LAST_TABLE_DATA.get(0).get("June BAS")+ payableAmount+XeroAgedRecievableSummaryPage.RecievableAmount));
 
 		LAST_TABLE_DATA.add(hm4);
-		//System.out.println("total "+LAST_TABLE_DATA.get(3).get("Total"));
 		}
 }

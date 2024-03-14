@@ -63,15 +63,11 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 	public void getAgedRecievableValues() {
 		
 		if (exist.isDisplayed()) {
-			//RecievableAmount=0.0;
-			System.out.println(RecievableAmount);
 			HashMap<String, Double> hm2 = new HashMap<>();
 			hm2.put("Add: GST on Debtors", RecievableAmount);
 			LAST_TABLE_DATA.add(hm2);
-			System.out.println("Add: GST on Debtors");
 		} else { 
 			RecievableAmount=Double.parseDouble(GST1.getText().replaceAll(",", ""));
-			System.out.println(RecievableAmount);
 			HashMap<String, Double> hm2 = new HashMap<>();
 			hm2.put("Add: GST on Debtors", RecievableAmount);
 			LAST_TABLE_DATA.add(hm2);

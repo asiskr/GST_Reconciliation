@@ -18,6 +18,7 @@ public class AppHooks extends BaseClass{
 	@Before("@readATOExcel")
 	public void readATOExcel() {
 		System.out.println("Reading ato excel ");
+		setProperties();
 		ExcelUtil.readExcel(ATO_FILE_PATH,ATO_FILE_NAME);
 		CLIENT_DATA = ExcelUtil.getClientDetail(ATO_CLIENT_SHEET_NAME);
 		System.out.println(CLIENT_DATA);
@@ -52,7 +53,7 @@ public class AppHooks extends BaseClass{
 	public void beforeScenariowait30Second() {
 		System.out.println("Running after each scenario");
 		try {
-			Thread.sleep(30000);
+			Thread.sleep(25000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,7 +75,7 @@ public class AppHooks extends BaseClass{
 	public void waitBeforeEachStep() {
 		System.out.println("Running before each step");
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

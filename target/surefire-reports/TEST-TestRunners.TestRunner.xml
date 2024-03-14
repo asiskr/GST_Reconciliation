@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestRunners.TestRunner" time="316.189" tests="15" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestRunners.TestRunner" time="26.337" tests="1" errors="1" skipped="0" failures="0">
   <properties>
-    <property name="java.specification.version" value="21"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="xero_file_location" value="C:\\Excel_Automation"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.class.path" value="C:\Users\AsisKaur\eclipse-workspace\Xero\target\test-classes;C:\Users\AsisKaur\eclipse-workspace\Xero\target\classes;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\AsisKaur\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-junit\7.15.0\cucumber-junit-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\AsisKaur\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\AsisKaur\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\AsisKaur\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\AsisKaur\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\AsisKaur\.m2\repository\io\github\bonigarcia\webdrivermanager\5.0.3\webdrivermanager-5.0.3.jar;C:\Users\AsisKaur\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;C:\Users\AsisKaur\.m2\repository\com\google\code\gson\gson\2.8.8\gson-2.8.8.jar;C:\Users\AsisKaur\.m2\repository\org\jsoup\jsoup\1.14.2\jsoup-1.14.2.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java\3.2.12\docker-java-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java-core\3.2.12\docker-java-core-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java-api\3.2.12\docker-java-api-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\AsisKaur\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\AsisKaur\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\AsisKaur\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\AsisKaur\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.64\bcpkix-jdk15on-1.64.jar;C:\Users\AsisKaur\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.64\bcprov-jdk15on-1.64.jar;C:\Users\AsisKaur\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.2.12\docker-java-transport-httpclient5-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java-transport\3.2.12\docker-java-transport-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.0.3\httpclient5-5.0.3.jar;C:\Users\AsisKaur\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.0.2\httpcore5-5.0.2.jar;C:\Users\AsisKaur\.m2\repository\net\java\dev\jna\jna\5.8.0\jna-5.8.0.jar;C:\Users\AsisKaur\.m2\repository\com\google\guava\guava\30.1.1-jre\guava-30.1.1-jre.jar;C:\Users\AsisKaur\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\AsisKaur\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\AsisKaur\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\AsisKaur\.m2\repository\org\checkerframework\checker-qual\3.8.0\checker-qual-3.8.0.jar;C:\Users\AsisKaur\.m2\repository\com\google\errorprone\error_prone_annotations\2.5.1\error_prone_annotations-2.5.1.jar;C:\Users\AsisKaur\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\AsisKaur\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\AsisKaur\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;C:\Users\AsisKaur\.m2\repository\org\apache\poi\poi\5.1.0\poi-5.1.0.jar;C:\Users\AsisKaur\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\AsisKaur\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\AsisKaur\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\AsisKaur\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\AsisKaur\.m2\repository\org\apache\logging\log4j\log4j-api\2.14.1\log4j-api-2.14.1.jar;C:\Users\AsisKaur\.m2\repository\org\apache\logging\log4j\log4j-core\2.14.1\log4j-core-2.14.1.jar;C:\Users\AsisKaur\.m2\repository\org\apache\poi\poi-ooxml\5.1.0\poi-ooxml-5.1.0.jar;C:\Users\AsisKaur\.m2\repository\org\apache\poi\poi-ooxml-lite\5.1.0\poi-ooxml-lite-5.1.0.jar;C:\Users\AsisKaur\.m2\repository\org\apache\xmlbeans\xmlbeans\5.0.2\xmlbeans-5.0.2.jar;C:\Users\AsisKaur\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\AsisKaur\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-java\4.17.0\selenium-java-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-api\4.17.0\selenium-api-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.17.0\selenium-chrome-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.17.0\selenium-chromium-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-json\4.17.0\selenium-json-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.17.0\selenium-manager-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v119\4.17.0\selenium-devtools-v119-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v120\4.17.0\selenium-devtools-v120-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v121\4.17.0\selenium-devtools-v121-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.17.0\selenium-devtools-v85-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.17.0\selenium-edge-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.17.0\selenium-firefox-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-http\4.17.0\selenium-http-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.17.0\selenium-ie-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.17.0\selenium-remote-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.23.1-alpha\opentelemetry-semconv-1.23.1-alpha.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-api\1.34.1\opentelemetry-api-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-context\1.34.1\opentelemetry-context-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.34.1\opentelemetry-exporter-logging-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.34.1\opentelemetry-sdk-common-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.34.1\opentelemetry-sdk-extension-autoconfigure-spi-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.34.1\opentelemetry-sdk-extension-autoconfigure-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.34.1-alpha\opentelemetry-api-events-1.34.1-alpha.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.34.1\opentelemetry-sdk-trace-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.34.1\opentelemetry-sdk-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.34.1\opentelemetry-sdk-metrics-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-extension-incubator\1.34.1-alpha\opentelemetry-extension-incubator-1.34.1-alpha.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.34.1\opentelemetry-sdk-logs-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\net\bytebuddy\byte-buddy\1.14.11\byte-buddy-1.14.11.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-os\4.17.0\selenium-os-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.17.0\selenium-safari-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-support\4.17.0\selenium-support-4.17.0.jar;"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="ato_file_location" value="C:\\Excel_Automation"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
     <property name="user.timezone" value="Asia/Calcutta"/>
     <property name="os.name" value="Windows 11"/>
-    <property name="java.vm.specification.version" value="21"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="ato_file_name" value="ATO_exel.xlsx"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\AsisKaur\AppData\Local\Temp\surefire14287806498199082493\surefirebooter-20240314095458400_3.jar C:\Users\AsisKaur\AppData\Local\Temp\surefire14287806498199082493 2024-03-14T09-54-58_218-jvmRun1 surefire-20240314095458400_1tmp surefire_0-20240314095458400_2tmp"/>
+    <property name="sun.boot.library.path" value="C:\Users\AsisKaur\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\AsisKaur\AppData\Local\Temp\surefire11316712628764840449\surefirebooter16017919883662430996.jar C:\Users\AsisKaur\AppData\Local\Temp\surefire11316712628764840449 2024-03-14T18-27-20_289-jvmRun1 surefire4050788564591897232tmp surefire_011969462006503654321tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\AsisKaur\eclipse-workspace\Xero\target\test-classes;C:\Users\AsisKaur\eclipse-workspace\Xero\target\classes;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\AsisKaur\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\AsisKaur\.m2\repository\io\cucumber\cucumber-junit\7.15.0\cucumber-junit-7.15.0.jar;C:\Users\AsisKaur\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\AsisKaur\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\AsisKaur\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\AsisKaur\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\AsisKaur\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\AsisKaur\.m2\repository\io\github\bonigarcia\webdrivermanager\5.0.3\webdrivermanager-5.0.3.jar;C:\Users\AsisKaur\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;C:\Users\AsisKaur\.m2\repository\com\google\code\gson\gson\2.8.8\gson-2.8.8.jar;C:\Users\AsisKaur\.m2\repository\org\jsoup\jsoup\1.14.2\jsoup-1.14.2.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java\3.2.12\docker-java-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java-core\3.2.12\docker-java-core-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java-api\3.2.12\docker-java-api-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\AsisKaur\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\AsisKaur\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\AsisKaur\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\AsisKaur\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.64\bcpkix-jdk15on-1.64.jar;C:\Users\AsisKaur\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.64\bcprov-jdk15on-1.64.jar;C:\Users\AsisKaur\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.2.12\docker-java-transport-httpclient5-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\com\github\docker-java\docker-java-transport\3.2.12\docker-java-transport-3.2.12.jar;C:\Users\AsisKaur\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.0.3\httpclient5-5.0.3.jar;C:\Users\AsisKaur\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.0.2\httpcore5-5.0.2.jar;C:\Users\AsisKaur\.m2\repository\net\java\dev\jna\jna\5.8.0\jna-5.8.0.jar;C:\Users\AsisKaur\.m2\repository\com\google\guava\guava\30.1.1-jre\guava-30.1.1-jre.jar;C:\Users\AsisKaur\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\AsisKaur\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\AsisKaur\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\AsisKaur\.m2\repository\org\checkerframework\checker-qual\3.8.0\checker-qual-3.8.0.jar;C:\Users\AsisKaur\.m2\repository\com\google\errorprone\error_prone_annotations\2.5.1\error_prone_annotations-2.5.1.jar;C:\Users\AsisKaur\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\AsisKaur\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\AsisKaur\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;C:\Users\AsisKaur\.m2\repository\org\apache\poi\poi\5.1.0\poi-5.1.0.jar;C:\Users\AsisKaur\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\AsisKaur\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\AsisKaur\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\AsisKaur\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\AsisKaur\.m2\repository\org\apache\logging\log4j\log4j-api\2.14.1\log4j-api-2.14.1.jar;C:\Users\AsisKaur\.m2\repository\org\apache\logging\log4j\log4j-core\2.14.1\log4j-core-2.14.1.jar;C:\Users\AsisKaur\.m2\repository\org\apache\poi\poi-ooxml\5.1.0\poi-ooxml-5.1.0.jar;C:\Users\AsisKaur\.m2\repository\org\apache\poi\poi-ooxml-lite\5.1.0\poi-ooxml-lite-5.1.0.jar;C:\Users\AsisKaur\.m2\repository\org\apache\xmlbeans\xmlbeans\5.0.2\xmlbeans-5.0.2.jar;C:\Users\AsisKaur\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\AsisKaur\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-java\4.17.0\selenium-java-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-api\4.17.0\selenium-api-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.17.0\selenium-chrome-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.17.0\selenium-chromium-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-json\4.17.0\selenium-json-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.17.0\selenium-manager-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v119\4.17.0\selenium-devtools-v119-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v120\4.17.0\selenium-devtools-v120-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v121\4.17.0\selenium-devtools-v121-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.17.0\selenium-devtools-v85-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.17.0\selenium-edge-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.17.0\selenium-firefox-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-http\4.17.0\selenium-http-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.17.0\selenium-ie-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.17.0\selenium-remote-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.23.1-alpha\opentelemetry-semconv-1.23.1-alpha.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-api\1.34.1\opentelemetry-api-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-context\1.34.1\opentelemetry-context-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.34.1\opentelemetry-exporter-logging-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.34.1\opentelemetry-sdk-common-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.34.1\opentelemetry-sdk-extension-autoconfigure-spi-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.34.1\opentelemetry-sdk-extension-autoconfigure-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.34.1-alpha\opentelemetry-api-events-1.34.1-alpha.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.34.1\opentelemetry-sdk-trace-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.34.1\opentelemetry-sdk-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.34.1\opentelemetry-sdk-metrics-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-extension-incubator\1.34.1-alpha\opentelemetry-extension-incubator-1.34.1-alpha.jar;C:\Users\AsisKaur\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.34.1\opentelemetry-sdk-logs-1.34.1.jar;C:\Users\AsisKaur\.m2\repository\net\bytebuddy\byte-buddy\1.14.11\byte-buddy-1.14.11.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-os\4.17.0\selenium-os-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.17.0\selenium-safari-driver-4.17.0.jar;C:\Users\AsisKaur\.m2\repository\org\seleniumhq\selenium\selenium-support\4.17.0\selenium-support-4.17.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -23,47 +26,54 @@
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2024-01-16"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="java.home" value="C:\Users\AsisKaur\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\jre"/>
     <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
     <property name="basedir" value="C:\Users\AsisKaur\eclipse-workspace\Xero"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\AsisKaur\AppData\Local\Temp\surefire14287806498199082493\surefirebooter-20240314095458400_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\AsisKaur\AppData\Local\Temp\surefire11316712628764840449\surefirebooter16017919883662430996.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
+    <property name="java.runtime.version" value="17.0.10+7"/>
     <property name="user.name" value="AsisKaur"/>
-    <property name="stdout.encoding" value="Cp1252"/>
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.10+7"/>
     <property name="localRepository" value="C:\Users\AsisKaur\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="C:\Users\AsisKaur\AppData\Local\Temp\"/>
-    <property name="java.version" value="21.0.2"/>
+    <property name="java.version" value="17.0.10"/>
     <property name="user.dir" value="C:\Users\AsisKaur\eclipse-workspace\Xero"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
+    <property name="xero_file_name" value="XeroSheet.xlsx"/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Python312\Scripts\;C:\Program Files\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Python312;C:\JavaVSCode\Java;C:\Program Files\Java;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\TDM-GCC-32\bin;C:\Users\AsisKaur\Downloads\apache-maven-3.9.6-bin\apache-maven-3.9.6\bin;C:\Users\AsisKaur\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-21\bin;C:\Users\AsisKaur\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Python312;C:\Program Files\Java;C:\MinGW\bin;;."/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="stderr.encoding" value="Cp1252"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="21.0.2+13-LTS-58"/>
+    <property name="java.library.path" value="C:\Users\AsisKaur\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Users/AsisKaur/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.2.v20240123-0840/jre/bin/server;C:/Users/AsisKaur/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.2.v20240123-0840/jre/bin;C:\Program Files\Python312\Scripts\;C:\Program Files\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Python312;C:\JavaVSCode\Java;C:\Program Files\Java;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\TDM-GCC-32\bin;C:\Users\AsisKaur\Downloads\apache-maven-3.9.6-bin\apache-maven-3.9.6\bin;C:\Users\AsisKaur\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-21\bin;C:\Users\AsisKaur\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Python312;C:\Program Files\Java;C:\MinGW\bin;;C:\Users\AsisKaur\eclipse\java-2023-12\eclipse;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.10+7"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="65.0"/>
+    <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="Verify user should tap on my gov button" classname="Verify User is able to do login #1" time="27.026">
+  <testcase name="Verify user should tap on my gov button" classname="Verify User is able to do login" time="24.858">
+    <error message="begin -1, end 0, length 0" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: begin -1, end 0, length 0
+</error>
     <system-out><![CDATA[
 @order1 @readATOExcel
 Scenario: Verify user should tap on my gov button &amp#27;[90m# src/test/resources/Features/1test_ATOLogin.feature:4&amp#27;[0m
 Reading ato excel 
-{jul_quater=Jul 2022 – Sep 2022 Business activity statement, from_date=01-Jul-2022, to_date=30-Jun-2023, jan_quarter=Jan 2023 – Mar 2023 Business activity statement, apr_quarter=Apr 2023 – Jun 2023 Business activity statement, oct_quarter=Oct 2022 – Dec 2022 Business activity statement, client_name=Carnarvon Regional Labour Hire Pty Ltd}
+ATO_FILE_PATH C:\\Excel_Automation
+ATO_FILE_NAMEATO_exel.xlsx
+XERO_FILE_PATHC:\\Excel_Automation
+XERO_FILE_NAMEXeroSheet.xlsx
+{jul_quater=Jul 2022 – Sep 2022 Business activity statement, from_date=01-Jul-2022, to_date=30-Jun-2023, jan_quarter=Jan 2023 – Mar 2023 Business activity statement, apr_quarter=Apr 2023 – Jun 2023 Business activity statement, oct_quarter=Oct 2022 – Dec 2022 Business activity statement, client_name=B & N ELECTRICAL SERVICES PTY LTD}
 Started scenario -Verify user should tap on my gov button
 Running before each step
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mUser launch website&amp#27;[0m                       &amp#27;[90m# StepDefinition.ATOLoginStep.user_launch_website()&amp#27;[0m
@@ -73,368 +83,21 @@ Running before each step
 user redirected to login screen
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser must redirected to login screen&amp#27;[0m       &amp#27;[90m# StepDefinition.ATOLoginStep.user_must_redirected_to_login_screen()&amp#27;[0m
 Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser do login as per provided in excel&amp#27;[0m     &amp#27;[90m# StepDefinition.ATOLoginStep.user_do_login_as_per_provided_in_excel()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on login button&amp#27;[0m                       &amp#27;[90m# StepDefinition.ATOLoginStep.click_on_login_button()&amp#27;[0m
+  &amp#27;[31mWhen &amp#27;[0m&amp#27;[31muser do login as per provided in excel&amp#27;[0m     &amp#27;[90m# StepDefinition.ATOLoginStep.user_do_login_as_per_provided_in_excel()&amp#27;[0m
+      &amp#27;[31mjava.lang.StringIndexOutOfBoundsException: begin -1, end 0, length 0
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4606)
+	at java.base/java.lang.String.substring(String.java:2709)
+	at java.base/java.lang.String.substring(String.java:2682)
+	at com.asis.util.ExcelUtil.readExcel(ExcelUtil.java:35)
+	at Pages.ATOLoginPage.sendingEmailAddress(ATOLoginPage.java:38)
+	at StepDefinition.ATOLoginStep.user_do_login_as_per_provided_in_excel(ATOLoginStep.java:41)
+	at âœ½.user do login as per provided in excel(file:///C:/Users/AsisKaur/eclipse-workspace/Xero/src/test/resources/Features/1test_ATOLogin.feature:9)
+&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mclick on login button&amp#27;[0m                       &amp#27;[90m# StepDefinition.ATOLoginStep.click_on_login_button()&amp#27;[0m
 Eneded scenario - Verify user should tap on my gov button
 ]]></system-out>
-    <system-err><![CDATA[Mar 14, 2024 9:55:04 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[Mar 14, 2024 6:27:33 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 122, returning the closest version; found: 121; Please update to a Selenium version that supports CDP version 122
 ]]></system-err>
-  </testcase>
-  <testcase name="I am on homepage and I search for specific name" classname="Search for specific client name" time="43.906">
-    <system-out><![CDATA[
-@order2 @add30SecondWait
-Scenario: I am on homepage and I search for specific name &amp#27;[90m# src/test/resources/Features/2test_ATOsearchClientName.feature:4&amp#27;[0m
-Running after each scenario
-Started scenario -I am on homepage and I search for specific name
-Running before each step
-clientSearchPage titleAdvanced search | Australian Taxation Office
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mI am on home page&amp#27;[0m                                 &amp#27;[90m# StepDefinition.ATOSearchClientNameStep.i_am_on_home_page()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI enter client name in search box&amp#27;[0m                  &amp#27;[90m# StepDefinition.ATOSearchClientNameStep.i_enter_client_name_in_search_box()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI press enter keyword&amp#27;[0m                               &amp#27;[90m# StepDefinition.ATOSearchClientNameStep.i_press_enter_keyword()&amp#27;[0m
-Running before each step
-client summay page titleHome | Australian Taxation Office
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mI should land on client home screen&amp#27;[0m                &amp#27;[90m# StepDefinition.ATOSearchClientNameStep.i_should_land_on_client_home_screen()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI go to Lodgments&amp#27;[0m                                  &amp#27;[90m# StepDefinition.ATOSearchClientNameStep.i_go_to_lodgments()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mSelect Activity statements&amp#27;[0m                          &amp#27;[90m# StepDefinition.ATOSearchClientNameStep.select_activity_statements()&amp#27;[0m
-Eneded scenario - I am on homepage and I search for specific name
-]]></system-out>
-  </testcase>
-  <testcase name="User serach for specific Quarter" classname="Searching for specific Quarter #1" time="13.854">
-    <system-out><![CDATA[
-@order3
-Scenario: User serach for specific Quarter          &amp#27;[90m# src/test/resources/Features/3test_ATOSelectingQuarterDate.feature:4&amp#27;[0m
-Started scenario -User serach for specific Quarter
-Running before each step
-ATOSelectingQuarterDatePage titleActivity statements | Australian Taxation Office
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mClient Activity statements&amp#27;[0m                  &amp#27;[90m# StepDefinition.ATOSelectingQuarterDateSteps.client_activity_statements()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on History Button&amp#27;[0m                 &amp#27;[90m# StepDefinition.ATOSelectingQuarterDateSteps.user_click_on_history_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser click the Filter button&amp#27;[0m                  &amp#27;[90m# StepDefinition.ATOSelectingQuarterDateSteps.user_click_the_filter_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser enter the From date as provided in excel&amp#27;[0m &amp#27;[90m# StepDefinition.ATOSelectingQuarterDateSteps.user_enter_the_from_date_as_provided_in_excel()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser enter the To date as provided in excel&amp#27;[0m   &amp#27;[90m# StepDefinition.ATOSelectingQuarterDateSteps.user_enter_the_to_date_as_provided_in_excel()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser click the Filter button again&amp#27;[0m            &amp#27;[90m# StepDefinition.ATOSelectingQuarterDateSteps.user_click_the_filter_button_again()&amp#27;[0m
-Eneded scenario - User serach for specific Quarter
-]]></system-out>
-  </testcase>
-  <testcase name="User want to extract the values for JULY Quarter" classname="Extracting data values from a Quarter" time="41.145">
-    <system-out><![CDATA[
-@order4
-Scenario: User want to extract the values for JULY Quarter &amp#27;[90m# src/test/resources/Features/4test_ATOExtractingBASValues.feature:4&amp#27;[0m
-Started scenario -User want to extract the values for JULY Quarter
-Running before each step
-ATOExtractingBASValuesPage titleActivity statements | Australian Taxation Office
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mAll the filtered Quarter are visible to user&amp#27;[0m       &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.all_the_filtered_quarter_are_visible_to_user()&amp#27;[0m
-Running before each step
-[com.asis.QuaterData@414f87a9]
-
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on July Quarter&amp#27;[0m                          &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.user_click_on_quarter()&amp#27;[0m
-Running before each step
-quarter statement
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mJuly Quarter will get open&amp#27;[0m                          &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.july_quarter_will_get_open()&amp#27;[0m
-Running before each step
-ATOExtractingBASValuesPage titleActivity statements | Australian Taxation Office
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mAll the filtered Quarters are visible to user&amp#27;[0m      &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.all_the_filtered_quarters_are_visible_to_user()&amp#27;[0m
-Running before each step
-
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on October Quarter&amp#27;[0m                       &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.user_click_on_october_quarter()&amp#27;[0m
-Running before each step
-quarter statement
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mOctober Quarter will get open&amp#27;[0m                       &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.october_quarter_will_get_open()&amp#27;[0m
-Running before each step
-ATOExtractingBASValuesPage titleActivity statements | Australian Taxation Office
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mAll the filtered Quarter are visible to the user&amp#27;[0m   &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.all_the_filtered_quarter_are_visible_to_the_user()&amp#27;[0m
-Running before each step
-
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on January Quarter&amp#27;[0m                       &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.user_click_on_january_quarter()&amp#27;[0m
-Running before each step
-quarter statement
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mJanuary Quarter will get open&amp#27;[0m                       &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.january_quarter_will_get_open()&amp#27;[0m
-Running before each step
-ATOExtractingBASValuesPage titleActivity statements | Australian Taxation Office
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mAll the filtered Quarters are visible to the user&amp#27;[0m  &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.all_the_filtered_quarters_are_visible_to_the_user()&amp#27;[0m
-Running before each step
-
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on April Quarter&amp#27;[0m                         &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.user_click_on_april_quarter()&amp#27;[0m
-Running before each step
-quarter statement
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mApril Quarter will get open&amp#27;[0m                         &amp#27;[90m# StepDefinition.ATOExtractingBASValuesSteps.april_quarter_will_get_open()&amp#27;[0m
-Eneded scenario - User want to extract the values for JULY Quarter
-]]></system-out>
-  </testcase>
-  <testcase name="User is on client Home page" classname="Extracting ICA Statement" time="45.36">
-    <system-out><![CDATA[
-@order5
-Scenario: User is on client Home page                                        &amp#27;[90m# src/test/resources/Features/5test_ATOFetchingICAStatement.feature:4&amp#27;[0m
-Started scenario -User is on client Home page
-Running before each step
-fetchICAStatement titleActivity statements | Australian Taxation Office
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on client home page and want to extract ICA statement&amp#27;[0m        &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_is_on_client_home_page_and_want_to_extract_ica_statement()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on Accounts and payments&amp#27;[0m                                   &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_click_on_accounts_and_payments()&amp#27;[0m
-Running before each step
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mUser get menu bar&amp#27;[0m                                                     &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_get_menu_bar()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on Activity Statement&amp#27;[0m                                      &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_click_on_activity_statement()&amp#27;[0m
-Running before each step
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mUser click on filter&amp#27;[0m                                                  &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_click_on_filter()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser clear from  date box and enter the From date as provided in excel&amp#27;[0m &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_clear_from_date_box_and_enter_the_from_date_as_provided_in_excel()&amp#27;[0m
-Running before each step
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mUser clear the To box and enter the To date as provided in excel&amp#27;[0m      &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_clear_the_to_box_and_enter_the_to_date_as_provided_in_excel()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click the Submit button&amp#27;[0m                                          &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_click_the_submit_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mUser click on PrintFriendlyVersion&amp#27;[0m                                    &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_click_on_print_friendly_version()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser direct to new tab&amp#27;[0m                                                 &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_direct_to_new_tab()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser Extract activity statement&amp#27;[0m                                        &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_extract_activity_statement()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser close the tab&amp#27;[0m                                                     &amp#27;[90m# StepDefinition.ATOFetchingICAStatementSteps.user_close_the_tab()&amp#27;[0m
-Eneded scenario - User is on client Home page
-]]></system-out>
-  </testcase>
-  <testcase name="close the ATO Portal" classname="close the ATO Portal" time="5.304">
-    <system-out><![CDATA[
-@order6
-Scenario: close the ATO Portal      &amp#27;[90m# src/test/resources/Features/6test_CloseATOProtal.feature:4&amp#27;[0m
-Started scenario -close the ATO Portal
-Running before each step
-closingATOPage titleAccount transaction list | Australian Taxation Office Online Services
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mUser done with the ATO data&amp#27;[0m &amp#27;[90m# StepDefinition.closingAtoSteps.user_done_with_the_ATO_data()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser close the browser&amp#27;[0m       &amp#27;[90m# StepDefinition.closingAtoSteps.user_close_the_browser()&amp#27;[0m
-Eneded scenario - close the ATO Portal
-]]></system-out>
-  </testcase>
-  <testcase name="Verify user is on Login Page" classname="Verify User is able to do login #2" time="18.247">
-    <system-out><![CDATA[
-@order1 @readXEROExcel
-Scenario: Verify user is on Login Page             &amp#27;[90m# src/test/resources/Features/7test_XeroLogin.feature:4&amp#27;[0m
-Reading xero excel 
-{To date=30-Jun-2023, From date=01-Jul-2022, Security_qs2=What is your dream car?, Security_qa2_answer=Fortuna1, Security_qa1_answer=Fortuna, Security_qa3_answer=Fortuna2, Security_qa1=What is your dream job?, Security_qs3=What was the name of your first pet?}
-Started scenario -Verify user is on Login Page
-Running before each step
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mUser user is on Login Page&amp#27;[0m                 &amp#27;[90m# StepDefinition.XeroLoginStep.user_user_is_on_login_page()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enter email&amp#27;[0m                            &amp#27;[90m# StepDefinition.XeroLoginStep.user_enter_email()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser enter password&amp#27;[0m                          &amp#27;[90m# StepDefinition.XeroLoginStep.user_enter_password()&amp#27;[0m
-Running before each step
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mclick on xero login button&amp#27;[0m                  &amp#27;[90m# StepDefinition.XeroLoginStep.click_on_xero_login_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on another authentication method&amp#27;[0m &amp#27;[90m# StepDefinition.XeroLoginStep.user_click_on_another_authentication_method()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on security Questions&amp#27;[0m                  &amp#27;[90m# StepDefinition.XeroLoginStep.click_on_security_questions()&amp#27;[0m
-Eneded scenario - Verify user is on Login Page
-]]></system-out>
-    <system-err><![CDATA[Mar 14, 2024 9:57:59 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find an exact match for CDP version 122, returning the closest version; found: 121; Please update to a Selenium version that supports CDP version 122
-]]></system-err>
-  </testcase>
-  <testcase name="Verify user able to pass security Answer" classname="Verify User is able to do login by passing security questions" time="7.309">
-    <system-out><![CDATA[
-@order2
-Scenario: Verify user able to pass security Answer &amp#27;[90m# src/test/resources/Features/8test_XeroSecurityQuestion.feature:4&amp#27;[0m
-Started scenario -Verify user able to pass security Answer
-Running before each step
-at securityquestion
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mUser wants to enter security ans&amp#27;[0m           &amp#27;[90m# StepDefinition.XeroSecurityQuestionSteps.user_wants_to_enter_security_ans()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enter security question ans&amp#27;[0m            &amp#27;[90m# StepDefinition.XeroSecurityQuestionSteps.user_enter_security_question_ans()&amp#27;[0m
-Running before each step
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser subit the Answer&amp#27;[0m                       &amp#27;[90m# StepDefinition.XeroSecurityQuestionSteps.user_subit_the_answer()&amp#27;[0m
-Eneded scenario - Verify user able to pass security Answer
-]]></system-out>
-  </testcase>
-  <testcase name="User serach for specific Quarter" classname="Searching for specific Quarter #2" time="29.136">
-    <system-out><![CDATA[
-@order3
-Scenario: User serach for specific Quarter       &amp#27;[90m# src/test/resources/Features/9test_XeroSelectingQuarterDate.feature:4&amp#27;[0m
-Started scenario -User serach for specific Quarter
-Running before each step
-XeroSelectingQuarterDatePage titleXero
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on client home page&amp#27;[0m              &amp#27;[90m# StepDefinition.XeroSelectingQuarterDateSteps.user_is_on_client_home_page()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on Accounting button&amp#27;[0m           &amp#27;[90m# StepDefinition.XeroSelectingQuarterDateSteps.user_click_on_accounting_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser click on activity statement&amp#27;[0m           &amp#27;[90m# StepDefinition.XeroSelectingQuarterDateSteps.user_click_on_activity_statement()&amp#27;[0m
-Running before each step
-XeroSelectingQuarterDatePage titleXero | Business Activity Statement | B&N Electrical Services PTY LTD
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser is on client Activity statement page&amp#27;[0m &amp#27;[90m# StepDefinition.XeroSelectingQuarterDateSteps.user_is_on_client_activity_statement_page()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser enter the From date on Xero software&amp#27;[0m  &amp#27;[90m# StepDefinition.XeroSelectingQuarterDateSteps.user_enter_the_from_date_on_xero_software()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser enter the To date on Xero software&amp#27;[0m    &amp#27;[90m# StepDefinition.XeroSelectingQuarterDateSteps.user_enter_the_to_date_on_xero_software()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser click the update button again&amp#27;[0m         &amp#27;[90m# StepDefinition.XeroSelectingQuarterDateSteps.user_click_the_update_button_again()&amp#27;[0m
-Eneded scenario - User serach for specific Quarter
-]]></system-out>
-  </testcase>
-  <testcase name="User want to extract client Activity statement page" classname="Extract the Activity statement values from xero software" time="5.099">
-    <system-out><![CDATA[
-@order4
-Scenario: User want to extract client Activity statement page               &amp#27;[90m# src/test/resources/Features/test1_XeroGetQuarterValues.feature:4&amp#27;[0m
-Started scenario -User want to extract client Activity statement page
-Running before each step
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on clien Activity statement page&amp#27;[0m                            &amp#27;[90m# StepDefinition.XeroGetQuarterValuesSteps.user_is_on_clien_activity_statement_page()&amp#27;[0m
-Running before each step
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser extract the A1 B1 G1 Values from client activity statement page&amp#27;[0m &amp#27;[90m# StepDefinition.XeroGetQuarterValuesSteps.user_extract_the_a1_b1_g1_values_from_client_activity_statement_page()&amp#27;[0m
-Eneded scenario - User want to extract client Activity statement page
-]]></system-out>
-  </testcase>
-  <testcase name="User want to extract Aged Recievable summary values" classname="Extract the Aged Recievable summary values from xero software" time="23.072">
-    <system-out><![CDATA[
-@order6
-Scenario: User want to extract Aged Recievable summary values                                                  &amp#27;[90m# src/test/resources/Features/test2_XeroExtractingAgedRecievableSummary.feature:4&amp#27;[0m
-Started scenario -User want to extract Aged Recievable summary values
-Running before each step
-XeroAgedRecievableSummaryPage titleXero | Business Activity Statement | B&N Electrical Services PTY LTD
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on client Aged Recievable summary page&amp#27;[0m                                                         &amp#27;[90m# StepDefinition.XeroAgedRecievableSummarySteps.user_is_on_client_aged_recievable_summary_page()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on accounting button&amp#27;[0m                                                                         &amp#27;[90m# StepDefinition.XeroAgedRecievableSummarySteps.user_click_on_accounting_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on aged Recievable summary button&amp#27;[0m                                                            &amp#27;[90m# StepDefinition.XeroAgedRecievableSummarySteps.user_click_on_aged_recievable_summary_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on column to select the outstanding gst button&amp#27;[0m                                               &amp#27;[90m# StepDefinition.XeroAgedRecievableSummarySteps.user_click_on_column_to_select_the_outstanding_gst_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on outstanding gst button&amp#27;[0m                                                                    &amp#27;[90m# StepDefinition.XeroAgedRecievableSummarySteps.user_click_on_outstanding_gst_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on end of month button&amp#27;[0m                                                                       &amp#27;[90m# StepDefinition.XeroAgedRecievableSummarySteps.user_click_on_end_of_month_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on last financial year button&amp#27;[0m                                                                &amp#27;[90m# StepDefinition.XeroAgedRecievableSummarySteps.user_click_on_last_financial_year_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on update button&amp#27;[0m                                                                             &amp#27;[90m# StepDefinition.XeroAgedRecievableSummarySteps.user_click_on_update_button()&amp#27;[0m
-Running before each step
-0.0
-Add: GST on Debtors
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mUser check if the Aged Recievable summary exist then the Recievable value is mentioned on web else Zero&amp#27;[0m &amp#27;[90m# StepDefinition.XeroAgedRecievableSummarySteps.user_check_if_the_aged_recievable_summary_exist_then_the_recievable_value_is_mentioned_on_web_else_zero()&amp#27;[0m
-Eneded scenario - User want to extract Aged Recievable summary values
-]]></system-out>
-  </testcase>
-  <testcase name="User want to extract Aged payable summary values" classname="Extract the Aged payable summary values from xero software" time="22.222">
-    <system-out><![CDATA[
-@order5
-Scenario: User want to extract Aged payable summary values                                               &amp#27;[90m# src/test/resources/Features/test3_XeroExtractingAgedPayableValues.feature:4&amp#27;[0m
-Started scenario -User want to extract Aged payable summary values
-Running before each step
-XeroAgedPayableSummaryPage titleXero | Aged Receivables Summary | B&N Electrical Services PTY LTD
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on client Aged payable summary page&amp#27;[0m                                                      &amp#27;[90m# StepDefinition.XeroAgedPayableSummarySteps.user_is_on_client_aged_payable_summary_page()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on accounting button&amp#27;[0m                                                                   &amp#27;[90m# StepDefinition.XeroAgedPayableSummarySteps.user_click_on_accounting_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on aged payable summary button&amp#27;[0m                                                         &amp#27;[90m# StepDefinition.XeroAgedPayableSummarySteps.user_click_on_aged_payable_summary_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on column to select the outstanding gst button&amp#27;[0m                                         &amp#27;[90m# StepDefinition.XeroAgedPayableSummarySteps.user_click_on_column_to_select_the_outstanding_gst_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on outstanding gst button&amp#27;[0m                                                              &amp#27;[90m# StepDefinition.XeroAgedPayableSummarySteps.user_click_on_outstanding_gst_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on end of month button&amp#27;[0m                                                                 &amp#27;[90m# StepDefinition.XeroAgedPayableSummarySteps.user_click_on_end_of_month_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on last financial year button&amp#27;[0m                                                          &amp#27;[90m# StepDefinition.XeroAgedPayableSummarySteps.user_click_on_last_financial_year_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on update button&amp#27;[0m                                                                       &amp#27;[90m# StepDefinition.XeroAgedPayableSummarySteps.user_click_on_update_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser check if the Aged payable summary exist then the payable value is mentioned on web else Zero&amp#27;[0m &amp#27;[90m# StepDefinition.XeroAgedPayableSummarySteps.user_check_if_the_aged_payable_summary_exist_then_the_payable_value_is_mentioned_on_web_else_zero()&amp#27;[0m
-Eneded scenario - User want to extract Aged payable summary values
-]]></system-out>
-  </testcase>
-  <testcase name="User want to extract Balance Sheet Values" classname="Extract the Balance Sheet Values from xero software" time="11.312">
-    <system-out><![CDATA[
-@order7
-Scenario: User want to extract Balance Sheet Values       &amp#27;[90m# src/test/resources/Features/test4_XeroBalanceSheet.feature:4&amp#27;[0m
-Started scenario -User want to extract Balance Sheet Values
-Running before each step
-XeroBalanceSheetPage titleXero | Aged Payables Summary | B&N Electrical Services PTY LTD
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mUser is on client Aged Recievable summary page&amp#27;[0m    &amp#27;[90m# StepDefinition.XeroBalanceSheetSteps.user_is_on_client_aged_recievable_summary_page()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mUser click on the accounting button&amp#27;[0m                &amp#27;[90m# StepDefinition.XeroBalanceSheetSteps.user_click_on_the_accounting_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser click on Balance Sheet button&amp#27;[0m                  &amp#27;[90m# StepDefinition.XeroBalanceSheetSteps.user_click_on_balance_sheet_button()&amp#27;[0m
-Running before each step
-Printing LAST_TABLE_DATA [{June BAS=32316.0}, {Add: GST on Debtors=0.0}, {Less: GST on Creditors=0.0}, {Total=32316.0}]
-66162.57
-5
-Printing upadatd LAST_TABLE_DATA [{June BAS=32316.0}, {Add: GST on Debtors=0.0}, {Less: GST on Creditors=0.0}, {Total=32316.0}, {GST as per Balance sheet=66162.57}]
-Printing upadatd LAST_TABLE_DATA [{June BAS=32316.0}, {Add: GST on Debtors=0.0}, {Less: GST on Creditors=0.0}, {Total=32316.0}, {GST as per Balance sheet=66162.57}, {Total - GST as per balance sheet=-33846.57000000001}]
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser extract the GST value from balance sheet page&amp#27;[0m &amp#27;[90m# StepDefinition.XeroBalanceSheetSteps.user_extract_the_gst_value_from_balance_sheet_page()&amp#27;[0m
-Eneded scenario - User want to extract Balance Sheet Values
-]]></system-out>
-  </testcase>
-  <testcase name="User want to extract the GST Reconciliation statement of client" classname="Extracting GST Reconicliatio values" time="17.921">
-    <system-out><![CDATA[
-@orde8
-Scenario: User want to extract the GST Reconciliation statement of client &amp#27;[90m# src/test/resources/Features/test5_XeroGSTReconciliation.feature:4&amp#27;[0m
-Started scenario -User want to extract the GST Reconciliation statement of client
-Running before each step
-XeroGSTReconciliationPage titleXero | Balance Sheet | B&N Electrical Services PTY LTD
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mUser is on Balance Sheet page of client&amp#27;[0m                           &amp#27;[90m# StepDefinition.XeroGSTReconciliationSteps.user_is_on_balance_sheet_page_of_client()&amp#27;[0m
-Running before each step
-  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser click on the Accounting Button&amp#27;[0m                                &amp#27;[90m# StepDefinition.XeroGSTReconciliationSteps.user_click_on_the_accounting_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser click the GST Reconciliation Button&amp#27;[0m                            &amp#27;[90m# StepDefinition.XeroGSTReconciliationSteps.user_click_the_gst_reconciliation_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mUser click on export Drop down Button&amp#27;[0m                              &amp#27;[90m# StepDefinition.XeroGSTReconciliationSteps.user_click_on_export_drop_down_button()&amp#27;[0m
-Running before each step
-  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mUser click on excel option&amp#27;[0m                                          &amp#27;[90m# StepDefinition.XeroGSTReconciliationSteps.user_click_on_excel_option()&amp#27;[0m
-Eneded scenario - User want to extract the GST Reconciliation statement of client
-]]></system-out>
-  </testcase>
-  <testcase name="User found the data" classname="Genrating the final excel" time="5.159">
-    <system-out><![CDATA[
-Scenario: User found the data     &amp#27;[90m# src/test/resources/Features/test6_GenratingExcel.feature:3&amp#27;[0m
-Started scenario -User found the data
-Running before each step
-3
-550206
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mUser end with the process&amp#27;[0m &amp#27;[90m# StepDefinition.GenrateExcel.user_end_with_the_process()&amp#27;[0m
-Running before each step
-Inside generating excel
-start_row 6
-Jun
-start_row 7
-Jul
-start_row 8
-Aug
-start_row 9
-Sept
-start_row 10
-Oct
-start_row 11
-Nov
-start_row 12
-Dec
-start_row 13
-Jan
-start_row 14
-Feb
-start_row 15
-Mar
-start_row 16
-Apr
-start_row 17
-May
-start_row 18
-Jun
-start_row for total 20
-start_row xero data20
-As per the book
-start_row xero data21
-Variance
-start_row xero data22
-BAS to be relodged for Period ended Jun 23
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mGenrating the final excel&amp#27;[0m  &amp#27;[90m# StepDefinition.GenrateExcel.genrating_the_final_excel()&amp#27;[0m
-Eneded scenario - User found the data
-]]></system-out>
   </testcase>
 </testsuite>

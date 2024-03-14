@@ -92,6 +92,12 @@
 -->
 	</dependencies>
 	<build>
+		<!--<testResources>
+			<testResource>
+				<directory>src/test/resources/Configuration</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>-->
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
 			<plugins>
@@ -103,6 +109,19 @@
 						<encoding>UTF-8</encoding>
 						<source>${java.version}</source>
 						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-surefire-plugin</artifactId>
+	                <version>2.22.1</version>
+	                <configuration>
+						<systemPropertyVariables>
+							<ato_file_location>${ato_file_location}</ato_file_location>
+							<ato_file_name>${ato_file_name}</ato_file_name>
+							<xero_file_location>${xero_file_location}</xero_file_location>
+							<xero_file_name>${xero_file_name}</xero_file_name>
+						</systemPropertyVariables>
 					</configuration>
 				</plugin>
 			</plugins>

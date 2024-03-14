@@ -19,7 +19,6 @@ public class XeroGetActivityStatementValuesPage extends BaseClass{
 	WebElement A1;
 	@FindBy(xpath = "//tr//descendant::span[contains(text(),'GST on purchases')]/ancestor::tr/td[3]//descendant::span[1]")
 	WebElement B1;
-//	public static ArrayList<String> fetchCaptureA1G1B1Data=new ArrayList<>();
 	// Constructor
 	public XeroGetActivityStatementValuesPage() {	
 		PageFactory.initElements(DriverManager.getDriver(), this); 
@@ -35,15 +34,6 @@ public class XeroGetActivityStatementValuesPage extends BaseClass{
 		fetchCaptureA1G1B1Data.add(B1.getText().replaceAll("[,]", ""));
 	}
 	public void generateExcel() {
-		/*try {
-			getClientDetail();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		String[] client_data = {BaseClass.CLIENT_DATA.get("client_name").trim(), BaseClass.CLIENT_DATA.get("to_date").trim()};
 		Excel obj = new Excel();
 		obj.createFinancialSummaryExcelWithData("Final_data.xls", BaseClass.ATO_ROW_DATA, BaseClass.XERO_DATA, BaseClass.ACTIVITY_STATEMENT_DATA,client_data);

@@ -138,8 +138,6 @@ public class ATOfetchingICAStatement extends BaseClass {
 		}			
 	}
 	public void closingTabs() {
-		//ArrayList<String> tabs = new ArrayList<>(DriverManager.getDriver().getWindowHandles());
-		//DriverManager.getDriver().close();
 		DriverManager.getDriver().switchTo().window(defaultTab);
 	}
 }

@@ -36,7 +36,6 @@ public class ATOClientNameSearchPage extends BaseClass{
 	public void enterClientName() {		
 		String client_name = CLIENT_DATA.get("client_name");
 		clientNameSearch.sendKeys(client_name);
-		//CLIENT_DATA.get("client_name").trim();
 		try {
 			ExcelUtil.closeExcel();
 		} catch (IOException e) {

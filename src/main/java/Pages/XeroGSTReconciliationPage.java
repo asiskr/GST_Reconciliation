@@ -40,5 +40,6 @@ public class XeroGSTReconciliationPage extends BaseClass {
 	}
 	public void clickOnExportToExcel() {
 		exportToExcel.click();
+		DriverManager.getDriver().quit();
 	}
 }

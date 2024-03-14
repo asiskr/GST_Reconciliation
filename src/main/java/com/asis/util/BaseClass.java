@@ -1,5 +1,7 @@
 package com.asis.util;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -9,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -25,10 +28,22 @@ import Driver_manager.DriverManager;
 public class BaseClass {
 	public WebDriver driver;
 	// File paths and names
-	public final String ATO_FILE_PATH ="C:\\Users\\AsisKaur\\OneDrive - The Outsource Pro\\Desktop";
-	public final String ATO_FILE_NAME ="ATO_exel.xlsx";
+	/*
+	 * public String ATO_FILE_PATH
+	 * ="C:\\Users\\AsisKaur\\OneDrive - The Outsource Pro\\Desktop"; public String
+	 * ATO_FILE_NAME ="ATO_exel.xlsx"; public String XERO_FILE_PATH ="C:\\Excel";
+	 * public String XERO_FILE_NAME ="XeroSheet.xlsx";
+	 */
+	
+	public String ATO_FILE_PATH="";
+	public String ATO_FILE_NAME="";
+	public String XERO_FILE_PATH="";
+	public String XERO_FILE_NAME="";
+	
 	public final String ATO_LOGIN_SHEET_NAME ="Login_detail";
 	public final String ATO_CLIENT_SHEET_NAME ="Client_data";
+	
+	public final String XERO_LOGIN_SHEET_NAME ="Xero";
 
 	public static HashMap<String, String> clientData;
 	public static HashMap<String, String> CLIENT_DATA;
@@ -42,9 +57,6 @@ public class BaseClass {
 
 	public static ArrayList<HashMap<String, Double>> LAST_TABLE_DATA = new ArrayList<>();
 
-	public final String XERO_FILE_PATH ="C:\\Excel";
-	public final String XERO_FILE_NAME ="XeroSheet.xlsx";
-	public final String XERO_LOGIN_SHEET_NAME ="Xero";
 	public static HashMap<String, String> CLIENT_XERO_DATA;
 
 	public static ArrayList<String> tempData = new ArrayList<String>();
@@ -86,7 +98,32 @@ public class BaseClass {
 	/**
 	 * Method to launch the ATO site
 	 */
-
+	
+	public static Properties prop;
+	public void setProperties() {
+		prop = new Properties();
+		
+		try {
+			FileReader file = new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\Configuration\\config.properties");
+			prop.load(file);
+			
+			ATO_FILE_PATH=System.getProperty("ato_file_location");
+			ATO_FILE_NAME=System.getProperty("ato_file_name");
+			XERO_FILE_PATH=System.getProperty("xero_file_location");
+			XERO_FILE_NAME=System.getProperty("xero_file_name");
+			System.out.println("ATO_FILE_PATH "+ATO_FILE_PATH);
+			System.out.println("ATO_FILE_NAME" +ATO_FILE_NAME);
+			System.out.println("XERO_FILE_PATH" +XERO_FILE_PATH);
+			System.out.println("XERO_FILE_NAME" +XERO_FILE_NAME);
+			
+			
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public static void lauchSite(String url) {
 		DriverManager.getDriver().get(url);
 		DriverManager.getDriver().manage().window().maximize();

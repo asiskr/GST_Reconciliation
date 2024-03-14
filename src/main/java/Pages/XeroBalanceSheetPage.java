@@ -39,17 +39,12 @@ public class XeroBalanceSheetPage extends BaseClass{
 		System.out.println("Printing LAST_TABLE_DATA "+LAST_TABLE_DATA);
 		
 		GST_asperBalanceSheet= Double.parseDouble((GST).getText().replaceAll(",", ""));
-		System.out.println(GST_asperBalanceSheet);
 		HashMap<String, Double> hm5 = new HashMap<>();
 		hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
 		LAST_TABLE_DATA.add(hm5);
 		
-		System.out.println(LAST_TABLE_DATA.size());
-		System.out.println("Printing upadatd LAST_TABLE_DATA " +LAST_TABLE_DATA);
-		
 		HashMap<String, Double> hm6 = new HashMap<>();
 		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(3).get("Total") - LAST_TABLE_DATA.get(4).get("GST as per Balance sheet")));
 		LAST_TABLE_DATA.add(hm6);
-		System.out.println("Printing upadatd LAST_TABLE_DATA " +LAST_TABLE_DATA);
 	}
 }

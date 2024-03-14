@@ -26,19 +26,7 @@ public class closingATOPage extends BaseClass{
 	public static String getPageTitle() {
 		return DriverManager.getDriver().getTitle();
 	}
-//
-//	public void switchingTabs() {
-//		ArrayList<String> tabs = new ArrayList<>(DriverManager.getDriver().getWindowHandles());
-//		DriverManager.getDriver().switchTo().window(tabs.get(1));
-//	}
 	public void closingTabs() {
-		/*
-		 * ArrayList<String> tabs = new
-		 * ArrayList<>(DriverManager.getDriver().getWindowHandles());
-		 * DriverManager.getDriver().close();
-		 * DriverManager.getDriver().switchTo().window(tabs.get(0));
-		 */
-		//DriverManager.getDriver().switchTo().window(defaultTab);
 	}
 	
 	public void closeBrowser() {
