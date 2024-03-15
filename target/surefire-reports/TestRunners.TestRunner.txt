@@ -1,7 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestRunners.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 26.337 s <<< FAILURE! - in TestRunners.TestRunner
-Verify user should tap on my gov button(Verify User is able to do login)  Time elapsed: 24.858 s  <<< ERROR!
-java.lang.StringIndexOutOfBoundsException: begin -1, end 0, length 0
-
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 213.289 s - in TestRunners.TestRunner

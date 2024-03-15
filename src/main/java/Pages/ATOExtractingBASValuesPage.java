@@ -177,7 +177,14 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 			qd_jun.set_ATO_Total_Refund(qd_jun.get_GST_Refund() + qd_jun.get_4() + qd_jun.get_5A() - qd_jun.get_7D(),true);
 			jun_quater_data_row.add(qd_jun);
 			ATO_ROW_DATA.add(jun_quater_data_row);
-
+			TEMP_JUNE_G1 = qd_jun.get_G1();
+			TEMP_JUNE_A1 = qd_jun.get_1A();
+			TEMP_JUNE_B1 = qd_jun.get_1B();
+			TEMP_JUNE_W1 = qd_jun.get_W1();
+			TEMP_JUNE_4 = qd_jun.get_4();
+			TEMP_JUNE_GST_Refund = qd_jun.get_GST_Refund();
+			
+			
 			HashMap<String, Double> hm1 = new HashMap<>();
 			hm1.put("June BAS", qd_jun.get_ATO_Total_Refund());
 			LAST_TABLE_DATA.add(hm1);

@@ -48,9 +48,37 @@ public class GenratingExcelPage extends BaseClass {
 		LAST_TABLE_DATA.get(7).get("Reporting variance"));
 		LAST_TABLE_DATA.add(hm9);
 
-
 		ArrayList<QuaterData> bas_relodged_data = new ArrayList<>();
 		QuaterData bas_relodged = new QuaterData("BAS to be relodged for Period ended Jun 23");
+		
+		/*
+		System.out.println("qd_jun data for 1G " +qd_jun.get_G1());
+		System.out.println("qd_jun data for 1A " +qd_jun.get_1A());
+		System.out.println("qd_jun data for 1B " +qd_jun.get_1B());
+		System.out.println("qd_jun data for W1" +qd_jun.get_W1());
+		System.out.println("qd_jun data for 4" +qd_jun.get_4());
+		
+		*/
+		
+		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_G1);
+		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_A1);
+		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_B1);
+		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_W1);
+		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_4);
+		
+		
+		bas_relodged.set_G1(TEMP_JUNE_G1 - variance.get_G1(),false);
+		bas_relodged.set_1A(TEMP_JUNE_A1 - variance.get_1A(),false);
+		bas_relodged.set_1B(TEMP_JUNE_B1 - variance.get_1B(),false);
+		bas_relodged.set_W1(TEMP_JUNE_W1 - variance.get_W1(),false);
+		bas_relodged.set_4(TEMP_JUNE_4 - variance.get_4(),false);
+		bas_relodged.set_GST_Refund(TEMP_JUNE_G1 - variance.get_G1(),false);
+		bas_relodged.set_ATO_Total_Refund(bas_relodged.get_GST_Refund() + bas_relodged.get_4() + bas_relodged.get_5A() - bas_relodged.get_7D(),false);
+		bas_relodged_data.add(bas_relodged);
+		XERO_DATA.add(bas_relodged_data);
+		
+		
+		/*
 		bas_relodged.set_G1(qd_jun.get_G1() - variance.get_G1(),false);
 		bas_relodged.set_1A(qd_jun.get_1A() - variance.get_1A(),false);
 		bas_relodged.set_1B(qd_jun.get_1B() - variance.get_1B(),false);
@@ -59,9 +87,10 @@ public class GenratingExcelPage extends BaseClass {
 		bas_relodged.set_GST_Refund(qd_jun.get_GST_Refund() - variance.get_GST_Refund(),false);
 		bas_relodged.set_ATO_Total_Refund(bas_relodged.get_GST_Refund() + bas_relodged.get_4() + bas_relodged.get_5A() - bas_relodged.get_7D(),false);
 		bas_relodged_data.add(bas_relodged);
-		XERO_DATA.add(bas_relodged_data);	
+		XERO_DATA.add(bas_relodged_data);
+		
+			*/
 	}
-
 	public void generateExcel() {
 		String[] client_data = {BaseClass.CLIENT_DATA.get("client_name").trim(), BaseClass.CLIENT_DATA.get("to_date").trim()};
 		Excel obj = new Excel();

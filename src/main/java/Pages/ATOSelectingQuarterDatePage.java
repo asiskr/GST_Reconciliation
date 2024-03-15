@@ -58,7 +58,8 @@ public class ATOSelectingQuarterDatePage extends BaseClass{
 	}
 
 	public void clickOnFilterButton() {
-		filter.click();
+		//filter.click();
+		js.executeScript("arguments[0].click();", filter);
 	}
 
 	public void enterFromoDate() throws ParseException {
@@ -94,6 +95,6 @@ public class ATOSelectingQuarterDatePage extends BaseClass{
 
 
 	public void clickOnFilterButtonAfterEnteringDate() {
-		filter2.click();
+		js.executeScript("arguments[0].click();", filter2);
 	}
 }

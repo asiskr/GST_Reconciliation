@@ -31,7 +31,7 @@ public final class ExcelUtil {
 	public static void readExcel(String filePath, String fileName) {
 		
 		file = new File(filePath+"\\"+fileName); 
-		
+		System.out.println("fileName "+fileName);
 		String fileExtension = fileName.substring(fileName.indexOf("."));
 		if(fileExtension.equals(".xlsx")) {
 			try {

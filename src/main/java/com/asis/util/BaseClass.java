@@ -35,10 +35,10 @@ public class BaseClass {
 	 * public String XERO_FILE_NAME ="XeroSheet.xlsx";
 	 */
 	
-	public String ATO_FILE_PATH="";
-	public String ATO_FILE_NAME="";
-	public String XERO_FILE_PATH="";
-	public String XERO_FILE_NAME="";
+	public static String ATO_FILE_PATH="";
+	public static String ATO_FILE_NAME="";
+	public static String XERO_FILE_PATH="";
+	public static String XERO_FILE_NAME="";
 	
 	public final String ATO_LOGIN_SHEET_NAME ="Login_detail";
 	public final String ATO_CLIENT_SHEET_NAME ="Client_data";
@@ -81,14 +81,21 @@ public class BaseClass {
 	public QuaterData qd_jun = new QuaterData("Jun");
 
 	public QuaterData qd_1 = new QuaterData("BAS not yet Paid/(Received)");
-	public QuaterData qd_2 = new QuaterData("June BAS (2023)");
+	public QuaterData qd_2 = new QuaterData("June BAS");
 	public QuaterData qd_3 = new QuaterData("Add: GST on Debtors");
 	public QuaterData qd_4 = new QuaterData("Less: GST on Creditors");
 	public QuaterData qd_5 = new QuaterData("GST as per Balance sheet");
 	public QuaterData qd_6 = new QuaterData("Reason for Variance:");
 	public QuaterData qd_7 = new QuaterData("Reporting variance");
 	public QuaterData qd_8 = new QuaterData("Unknown varaince");
-
+	
+	
+	public static double TEMP_JUNE_G1 = 0.0;
+	public static double TEMP_JUNE_A1 = 0.0;
+	public static double TEMP_JUNE_B1 = 0.0;
+	public static double TEMP_JUNE_W1 = 0.0;
+	public static double TEMP_JUNE_4 = 0.0;
+	public static double TEMP_JUNE_GST_Refund = 0.0;
 	/**
 	 * Method to setup WebDriver
 	 */
@@ -99,29 +106,17 @@ public class BaseClass {
 	 * Method to launch the ATO site
 	 */
 	
-	public static Properties prop;
+	//public static Properties prop;
 	public void setProperties() {
-		prop = new Properties();
+		ATO_FILE_PATH=System.getProperty("ato_file_location");
+		ATO_FILE_NAME=System.getProperty("ato_file_name");
+		XERO_FILE_PATH=System.getProperty("xero_file_location");
+		XERO_FILE_NAME=System.getProperty("xero_file_name");
 		
-		try {
-			FileReader file = new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\Configuration\\config.properties");
-			prop.load(file);
-			
-			ATO_FILE_PATH=System.getProperty("ato_file_location");
-			ATO_FILE_NAME=System.getProperty("ato_file_name");
-			XERO_FILE_PATH=System.getProperty("xero_file_location");
-			XERO_FILE_NAME=System.getProperty("xero_file_name");
-			System.out.println("ATO_FILE_PATH "+ATO_FILE_PATH);
-			System.out.println("ATO_FILE_NAME" +ATO_FILE_NAME);
-			System.out.println("XERO_FILE_PATH" +XERO_FILE_PATH);
-			System.out.println("XERO_FILE_NAME" +XERO_FILE_NAME);
-			
-			
-		
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.println("ATO_FILE_PATH "+ATO_FILE_PATH);
+		System.out.println("ATO_FILE_NAME" +ATO_FILE_NAME);
+		System.out.println("XERO_FILE_PATH" +XERO_FILE_PATH);
+		System.out.println("XERO_FILE_NAME" +XERO_FILE_NAME);
 	}
 	
 	public static void lauchSite(String url) {
