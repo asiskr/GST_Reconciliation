@@ -61,10 +61,10 @@ public class GenratingExcelPage extends BaseClass {
 		*/
 		
 		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_G1);
-		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_A1);
-		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_B1);
-		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_W1);
-		System.out.println("TEMP_JUNE_G1" +TEMP_JUNE_4);
+		System.out.println("TEMP_JUNE_A1" +TEMP_JUNE_A1);
+		System.out.println("TEMP_JUNE_B1" +TEMP_JUNE_B1);
+		System.out.println("TEMP_JUNE_W1" +TEMP_JUNE_W1);
+		System.out.println("TEMP_JUNE_4" +TEMP_JUNE_4);
 		
 		
 		bas_relodged.set_G1(TEMP_JUNE_G1 - variance.get_G1(),false);
@@ -72,7 +72,7 @@ public class GenratingExcelPage extends BaseClass {
 		bas_relodged.set_1B(TEMP_JUNE_B1 - variance.get_1B(),false);
 		bas_relodged.set_W1(TEMP_JUNE_W1 - variance.get_W1(),false);
 		bas_relodged.set_4(TEMP_JUNE_4 - variance.get_4(),false);
-		bas_relodged.set_GST_Refund(TEMP_JUNE_G1 - variance.get_G1(),false);
+		bas_relodged.set_GST_Refund(TEMP_JUNE_GST_Refund - variance.get_GST_Refund(),false);
 		bas_relodged.set_ATO_Total_Refund(bas_relodged.get_GST_Refund() + bas_relodged.get_4() + bas_relodged.get_5A() - bas_relodged.get_7D(),false);
 		bas_relodged_data.add(bas_relodged);
 		XERO_DATA.add(bas_relodged_data);

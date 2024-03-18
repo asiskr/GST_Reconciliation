@@ -1,7 +1,6 @@
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\Excel.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\Pages\GenratingExcelPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\util\ExcelUtil.java
-C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\DataExcel.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\XeroTesting.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\Pages\XeroGetActivityStatementValuesPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\Pages\ATOSelectingQuarterDatePage.java
@@ -16,14 +15,12 @@ C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\Pages\ATOLoginPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\Pages\XeroAgedPayableSummaryPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\Pages\XeroSelectingQuarterDatePage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\TestCreateExcel.java
-C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\LoginXero.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\Pages\ATOClientNameSearchPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\GST_template.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\Pages\ATOGoToQuarterName.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\util\xeroexcel.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\Pages\closingATOPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\ATOdata.java
-C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\Xero.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\TestRunner.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\ATOExcel.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\ICA_template.java
