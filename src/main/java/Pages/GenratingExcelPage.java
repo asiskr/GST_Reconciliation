@@ -15,8 +15,8 @@ public class GenratingExcelPage extends BaseClass {
 		xeroObj.set_G1(Double.parseDouble(fetchCaptureA1G1B1Data.get(0)),false);
 		xeroObj.set_1A(Double.parseDouble(fetchCaptureA1G1B1Data.get(1)),false);
 		xeroObj.set_1B(Double.parseDouble(fetchCaptureA1G1B1Data.get(2)),false);
-		xeroObj.set_W1(0,false);
-		xeroObj.set_4(0,false);
+		xeroObj.set_W1(Double.parseDouble(fetchCaptureA1G1B1Data.get(3)),false);
+		xeroObj.set_4(Double.parseDouble(fetchCaptureA1G1B1Data.get(4)),false);
 		xeroObj.set_GST_Refund(xeroObj.get_1A() - xeroObj.get_1B(),false);
 		xeroObj.set_ATO_Total_Refund(xeroObj.get_GST_Refund() + xeroObj.get_4() + xeroObj.get_5A() - xeroObj.get_7D(),false);
 		xero_data.add(xeroObj);

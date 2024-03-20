@@ -214,6 +214,7 @@ public class XeroTesting extends BaseClass{
 		fetchCaptureA1G1B1Data.add(G1.replaceAll("[,]", ""));
 		fetchCaptureA1G1B1Data.add(A1.replaceAll("[,]", ""));
 		fetchCaptureA1G1B1Data.add(B1.replaceAll("[,]", ""));
+		
 	}
 
 	public void addDummydata() {
