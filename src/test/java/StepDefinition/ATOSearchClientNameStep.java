@@ -2,10 +2,12 @@ package StepDefinition;
 
 import Pages.ATOClientNameSearchPage;
 import Pages.ATOGoToQuarterName;
+import Pages.SelectTOPIdPage;
 import io.cucumber.java.en.*;
 
 public class ATOSearchClientNameStep {
-	public ATOClientNameSearchPage clientSearchPage  = new ATOClientNameSearchPage();
+//	public ATOClientNameSearchPage clientSearchPage  = new ATOClientNameSearchPage();
+	public SelectTOPIdPage selectTOP= new SelectTOPIdPage();
 	public ATOGoToQuarterName quaterNamePage;
 	
 	@Given("I am on home page")
@@ -15,12 +17,14 @@ public class ATOSearchClientNameStep {
 
 	@When("I enter client name in search box")
 	public void i_enter_client_name_in_search_box() throws InterruptedException {
-		clientSearchPage.enterClientName();
+		selectTOP.clickOnTOPButton();
+//		clientSearchPage.enterClientName();
 	}
 
 	@When("I press enter keyword")
 	public void i_press_enter_keyword() throws InterruptedException {
-		clientSearchPage.doSearchClientName();
+		selectTOP.clickOnNextButton();
+//		clientSearchPage.doSearchClientName();
 	}
 
 	@Then("I should land on client home screen")
@@ -29,7 +33,7 @@ public class ATOSearchClientNameStep {
 	}
 	
 	@When("I go to Lodgments")
-	public void i_go_to_lodgments () {
+	public void i_go_to_lodgments () throws InterruptedException {
 		quaterNamePage = new ATOGoToQuarterName();
 		quaterNamePage.clickLodgments();
 	}

@@ -25,7 +25,8 @@ public class ATOGoToQuarterName extends BaseClass {
         PageFactory.initElements(DriverManager.getDriver(), this);
     }
 
-    public void clickLodgments() {
+    public void clickLodgments() throws InterruptedException {
+    	Thread.sleep(3000);
     	wait.until(ExpectedConditions.elementToBeClickable(lodgements));
         lodgements.click();
     }

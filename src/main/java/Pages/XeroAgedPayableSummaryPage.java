@@ -30,7 +30,7 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 	@FindBy(xpath = "//button[contains(text(),'Update')]")
 	WebElement Update;
 	@FindBy(xpath = "//div[contains(text(),'Nothing to show here')]")
-	WebElement exist;
+	boolean exist;
 	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[9]/span/div")
 	WebElement GST2;
 	public static double payableAmount = 0.0;
@@ -41,7 +41,7 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 	}
 	//list  of all the actions on page
 	public static void getPageTitle() {
-//		return DriverManager.getDriver().getTitle();
+		//		return DriverManager.getDriver().getTitle();
 	}
 
 	public void clickAccountingButton() {
@@ -58,11 +58,13 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(colmSelected));
 		colmSelected.click();
 	}
-	public void clickOutstanding_GST() {
+	public void clickOutstanding_GST() throws InterruptedException {
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(Outstanding_GST));
 		Outstanding_GST.click();
 	}
-	public void clickEndOfMonth() {
+	public void clickEndOfMonth() throws InterruptedException {
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(endOfMonth));
 		endOfMonth.click();
 	}
@@ -75,22 +77,46 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		Update.click();
 	}
 	public void getAgedPayableValues() {
-		double payableAmount = 0.0;
+		if (exist) {
+			double payable_amount = 0.0;
+			System.out.println(payable_amount);
+			HashMap<String, Double> hm3 = new HashMap<>();
+			hm3.put("Less: GST on Creditors", payable_amount);
+			LAST_TABLE_DATA.add(hm3);
+		}
+		/*
 		if (exist.isDisplayed()) {
 			payableAmount=0.0;
 			HashMap<String, Double> hm3 = new HashMap<>();
 			hm3.put("Less: GST on Creditors", payableAmount);
 			LAST_TABLE_DATA.add(hm3);
-		} else { 
-			payableAmount=Double.parseDouble(GST2.getText().replaceAll(",", ""));
+		} 
+		 */
+		else { 
+			wait.until(ExpectedConditions.visibilityOf(GST2));
+			String gstText = GST2.getText().replaceAll(",", "");
+			payableAmount = Double.parseDouble(gstText);
 			HashMap<String, Double> hm3 = new HashMap<>();
 			hm3.put("Less: GST on Creditors", payableAmount);
 			LAST_TABLE_DATA.add(hm3);
 
 		}
-		HashMap<String, Double> hm4 = new HashMap<>();
-		hm4.put("Total", (LAST_TABLE_DATA.get(0).get("June BAS")+ payableAmount+XeroAgedRecievableSummaryPage.RecievableAmount));
+		/*
+
+	    HashMap<String, Double> hm4 = new HashMap<>();
+		hm4.put("Total", (LAST_TABLE_DATA.get(0).get("June BAS")+ payable_amount+recievable_amount));
 
 		LAST_TABLE_DATA.add(hm4);
-		}
+		System.out.println("total "+LAST_TABLE_DATA.get(3).get("Total"));
+		 */
+
+		HashMap<String, Double> hm4 = new HashMap<>();
+		double juneBAS = LAST_TABLE_DATA.get(0).get("June BAS") != null ? LAST_TABLE_DATA.get(0).get("June BAS") : 0.0;
+		double total = juneBAS + payableAmount + XeroAgedRecievableSummaryPage.RecievableAmount;
+		hm4.put("Total", total);
+		LAST_TABLE_DATA.add(hm4);
+		System.out.println("Total: " + LAST_TABLE_DATA.get(1));
+
+
+	}
 }

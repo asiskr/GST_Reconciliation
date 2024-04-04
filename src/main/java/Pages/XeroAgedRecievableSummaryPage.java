@@ -21,7 +21,7 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 	WebElement recievable;
 	@FindBy(xpath = "//button[@id='report-settings-columns-button']")
 	WebElement colSelected;
-	@FindBy(xpath = "//label[@data-automationid='column-selection-taxamountdue--body--checkbox']")
+	@FindBy(xpath = "//span[contains(text(),'Outstanding GST')]")
 	WebElement outstanding_gst_rec;
 	@FindBy(xpath = "//body/div[4]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/div[1]")
 	WebElement end_of_month;
@@ -30,7 +30,7 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 	@FindBy(xpath = "//*[@id=\"report-settings\"]/div/div/div[7]/button")
 	WebElement update;
 	@FindBy(xpath = "//div[contains(text(),'Nothing to show here')]")
-	WebElement exist;
+	boolean exist;
 	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[9]/span/div")
 	WebElement GST1;
 	public static double RecievableAmount = 0.0;
@@ -58,11 +58,13 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(colSelected));
 		colSelected.click();
 	}
-	public void clickOnOutstanding_GST() {
+	public void clickOnOutstanding_GST() throws InterruptedException {
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(outstanding_gst_rec));
 		outstanding_gst_rec.click();
 	}
-	public void clickOnEndOfMonth() {
+	public void clickOnEndOfMonth() throws InterruptedException {
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(end_of_month));
 		end_of_month.click();
 	}
@@ -74,17 +76,23 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(update));
 		update.click();
 	}
-	public void getAgedRecievableValues() {
-		
-		if (exist.isDisplayed()) {
-			HashMap<String, Double> hm2 = new HashMap<>();
-			hm2.put("Add: GST on Debtors", RecievableAmount);
-			LAST_TABLE_DATA.add(hm2);
-		} else { 
-			RecievableAmount=Double.parseDouble(GST1.getText().replaceAll(",", ""));
-			HashMap<String, Double> hm2 = new HashMap<>();
-			hm2.put("Add: GST on Debtors", RecievableAmount);
-			LAST_TABLE_DATA.add(hm2);
+	public void getAgedRecievableValues() { 
+		  if (exist) {
+		        double RecievableAmount = 0.0;
+		        System.out.println(RecievableAmount);
+				HashMap<String, Double> hm2 = new HashMap<>();
+		    	hm2.put("Add: GST on Debtors", RecievableAmount);
+		        LAST_TABLE_DATA.add(hm2);
+		        System.out.println("Add: GST on Debtors "+LAST_TABLE_DATA.get(0));	
+		    }
+			else { 
+				wait.until(ExpectedConditions.visibilityOf(GST1));
+		        String gstText2 = GST1.getText().replaceAll(",", "");
+		        RecievableAmount = Double.parseDouble(gstText2);
+		        HashMap<String, Double> hm2 = new HashMap<>();
+				hm2.put("Add: GST on Debtors", RecievableAmount);
+				LAST_TABLE_DATA.add(hm2);
+				System.out.println("Add: GST on Debtors "+LAST_TABLE_DATA.get(0));	
 		}
 	}
 }

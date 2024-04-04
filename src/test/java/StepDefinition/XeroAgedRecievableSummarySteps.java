@@ -27,12 +27,12 @@ public class XeroAgedRecievableSummarySteps {
 	}
 
 	@When("User click on outstanding gst button")
-	public void user_click_on_outstanding_gst_button() {
+	public void user_click_on_outstanding_gst_button() throws InterruptedException {
 		xeroRecievableValues.clickOnOutstanding_GST();
 	}
 
 	@When("User click on end of month button")
-	public void user_click_on_end_of_month_button() {
+	public void user_click_on_end_of_month_button() throws InterruptedException {
 		xeroRecievableValues.clickOnEndOfMonth();
 	}
 

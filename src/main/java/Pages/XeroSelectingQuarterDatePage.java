@@ -26,7 +26,7 @@ public class XeroSelectingQuarterDatePage extends BaseClass{
 	@FindBy(xpath = "//a[contains(text(),'Reports')]")
 	WebElement reports;
 	@FindBy(xpath = "//*[@class='report-row-tooltip']//descendant::span[contains(text(),'Activity Statement')]")
-	WebElement activitySatement;
+	WebElement GSTreconcil;
 	@FindBy(xpath = "//input[@id='fromDate']")
 	WebElement From;
 	@FindBy(xpath = "//input[@id='dateTo']")
@@ -49,8 +49,8 @@ public class XeroSelectingQuarterDatePage extends BaseClass{
 		reports.click();
 	}
 	public void clickActivityStatement() {
-		wait.until(ExpectedConditions.elementToBeClickable(activitySatement));
-		activitySatement.click();
+		wait.until(ExpectedConditions.elementToBeClickable(GSTreconcil));
+		GSTreconcil.click();
 	}
 
 	public void enterFromoDate() throws ParseException {
@@ -71,4 +71,7 @@ public class XeroSelectingQuarterDatePage extends BaseClass{
 		UpdateButton.click();
 	}
 
+	//span[@id='R8C3']
+	
+	 //span[@id='R15C3']
 }

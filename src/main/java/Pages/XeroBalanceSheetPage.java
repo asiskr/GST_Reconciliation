@@ -43,13 +43,16 @@ public class XeroBalanceSheetPage extends BaseClass{
 		balanceSheet.click();
 	}
 	public void fetchingGST() {
-		
-		GST_asperBalanceSheet= Double.parseDouble((GST).getText().replaceAll(",", ""));
-		HashMap<String, Double> hm5 = new HashMap<>();
-		hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
-		LAST_TABLE_DATA.add(hm5);
-		
-		HashMap<String, Double> hm6 = new HashMap<>();
+	    // Parse GST value from the text and store it
+	    GST_asperBalanceSheet = Double.parseDouble(GST.getText().replaceAll(",", ""));
+	    
+	    // Add GST as per balance sheet to LAST_TABLE_DATA
+	    HashMap<String, Double> hm5 = new HashMap<>();
+	    hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
+	    LAST_TABLE_DATA.add(hm5);
+	    
+	    // Calculate and add the difference between Total and GST as per balance sheet to LAST_TABLE_DATA
+	    HashMap<String, Double> hm6 = new HashMap<>();
 		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(3).get("Total") - LAST_TABLE_DATA.get(4).get("GST as per Balance sheet")));
 		LAST_TABLE_DATA.add(hm6);
 	}

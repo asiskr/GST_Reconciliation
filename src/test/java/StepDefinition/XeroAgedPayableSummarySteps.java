@@ -24,11 +24,11 @@ public class XeroAgedPayableSummarySteps {
 		xeroPaybaleValues.clickColmSelected();
 	}
 	@When("user click on outstanding gst button")
-	public void user_click_on_outstanding_gst_button() {
+	public void user_click_on_outstanding_gst_button() throws InterruptedException {
 		xeroPaybaleValues.clickOutstanding_GST();
 	}
 	@When("user click on end of month button")
-	public void user_click_on_end_of_month_button() {
+	public void user_click_on_end_of_month_button() throws InterruptedException {
 		xeroPaybaleValues.clickEndOfMonth();
 	}
 	@When("user click on last financial year button")

@@ -42,7 +42,7 @@ public class Main extends BaseClass{
 			// Set To: header field of the header
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(senderMail));
 			// Set Subject: header field
-			message.setSubject("Test Email from Java");
+			message.setSubject("Testing Email from Java");
 			// Now set the actual message
 			message.setText(emailBody);
 

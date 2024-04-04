@@ -30,7 +30,7 @@ public class GenerateEmail extends BaseClass {
         Double unknownVar = 0.0; // Assuming these are defined elsewhere
         Double reportingVar = 0.0; // Assuming these are defined elsewhere
 
-        String from = "topfinancial@theoutsourcepro.com.au";
+		String from = "toptechautomation@theoutsourcepro.com.au";
         String password = "Guf87765";
 
         Properties props = new Properties();

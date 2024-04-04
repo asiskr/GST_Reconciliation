@@ -13,7 +13,7 @@ com\asis\ATOExcel.class
 com\asis\Excel.class
 com\asis\QuaterData.class
 Pages\ATOfetchingICAStatement.class
-Driver_manager\BrowserStackTest.class
+Pages\SelectTOPIdPage.class
 com\asis\Main.class
 com\asis\XeroTesting.class
 Pages\XeroGetActivityStatementValuesPage.class
@@ -31,8 +31,10 @@ com\asis\util\xeroexcel.class
 Pages\closingATOPage.class
 com\asis\util\ExcelUtil.class
 Pages\ATOClientNameSearchPage.class
+Pages\XEROSearchClientPage.class
 com\asis\util\BaseClass.class
 com\asis\Main$1.class
+Pages\ATOLoginBusinessPage.class
 com\asis\InputPage.class
 Pages\ATOExtractingBASValuesPage.class
 Pages\ATOLoginPage.class

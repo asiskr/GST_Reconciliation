@@ -1,5 +1,6 @@
 StepDefinition\ATOSearchClientNameStep.class
 TestRunners\TestRunner.class
+StepDefinition\XEROSearchClientSteps.class
 StepDefinition\ATOFetchingICAStatementSteps.class
 StepDefinition\GenrateExcel.class
 StepDefinition\XeroLoginStep.class

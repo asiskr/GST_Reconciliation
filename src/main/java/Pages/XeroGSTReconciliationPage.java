@@ -18,6 +18,12 @@ public class XeroGSTReconciliationPage extends BaseClass {
 	WebElement reports;
 	@FindBy(xpath = "//*[@class='report-row-tooltip']//descendant::span[contains(text(),'GST Reconciliation')]")
 	WebElement GSTreconcil;
+	@FindBy(xpath = "//input[@id='fromDate']")
+	WebElement From;
+	@FindBy(xpath = "//input[@id='toDate']")
+	WebElement To;
+	@FindBy(xpath = "//a[@id='ext-gen26']")
+	WebElement UpdateButton;
 	@FindBy(xpath = "//span[contains(text(),'Export')]")
 	WebElement export;
 	@FindBy(xpath = "//a[@title='Export to Excel']")
@@ -43,11 +49,21 @@ public class XeroGSTReconciliationPage extends BaseClass {
 		GSTreconcil.click();
 	}
 	public void clickExport() {
+		String StringFromDate = XERO_FROM_DATE;
+		wait.until(ExpectedConditions.elementToBeClickable(From));
+		From.clear();
+		From.sendKeys(StringFromDate);
+	}
+	public void clickOnExportToExcel() throws InterruptedException {
+		String StringToDate = XERO_TO_DATE;
+		wait.until(ExpectedConditions.elementToBeClickable(To));
+		To.clear();
+		To.sendKeys(StringToDate);
+		wait.until(ExpectedConditions.elementToBeClickable(UpdateButton));
+		UpdateButton.click();
 		js.executeScript("arguments[0].scrollIntoView(true)", export);
 		wait.until(ExpectedConditions.elementToBeClickable(export));
 		export.click();
-	}
-	public void clickOnExportToExcel() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(exportToExcel));
 		exportToExcel.click();
 		Thread.sleep(3000);

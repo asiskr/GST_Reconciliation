@@ -620,51 +620,55 @@ public class Excel {
 	private void printICAStatementSheet(ArrayList<ArrayList<String>> activity_statement_data, Sheet ica_sheet, String[] client_data, Sheet sheetName) {
 		// TODO Auto-generated method stub
 		
-		Font boldFont = wb.createFont();
-		boldFont.setBold(true);
-		CellStyle boldCenterStyle = wb.createCellStyle();
-		boldCenterStyle.setAlignment(HorizontalAlignment.CENTER);
-		boldCenterStyle.setFont(boldFont);
+		 Font boldFont = wb.createFont();
+	        boldFont.setBold(true);
+	        CellStyle boldCenterStyle = wb.createCellStyle();
+	        boldCenterStyle.setAlignment(HorizontalAlignment.CENTER);
+	        boldCenterStyle.setFont(boldFont);
 
-		int start_row = 0;
-		String[][] ica_col_data = { 
-				{ "Activity statement" ,"1"},
-				{client_data[0]}, 
-				{ "Processed Date", "Effective Date","Description", "Debit(DR)","Credit(CR)", "Running Balance" }
-		};
-		
-		 // Loop through ica_col_data to create column headers
-	    for (int i = 0; i < ica_col_data.length; i++) {
-	        start_row = i;
-	        Row row = ica_sheet.createRow(start_row);
-	        for (int j = 0; j < ica_col_data[i].length; j++) {
-	            Cell cell = row.createCell(j);
-	            cell.setCellValue(ica_col_data[i][j]);
-	            // Apply bold style to column headers
-	            cell.setCellStyle(boldCenterStyle);
+	        // Fill color setup (light green)
+	        CellStyle greenCellStyle = wb.createCellStyle();
+	        greenCellStyle.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
+	        greenCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+	        greenCellStyle.setAlignment(HorizontalAlignment.CENTER);
+	        greenCellStyle.setFont(boldFont);
+
+	        int start_row = 0;
+	        String[][] ica_col_data = {
+	                {"Activity statement", "1"},
+	                {client_data[0]},
+	                {"Processed Date", "Effective Date", "Description", "Debit(DR)", "Credit(CR)", "Running Balance"}
+	        };
+
+	        // Loop through ica_col_data to create column headers
+	        for (int i = 0; i < ica_col_data.length; i++) {
+	            Row row = ica_sheet.createRow(start_row);
+	            for (int j = 0; j < ica_col_data[i].length; j++) {
+	                Cell cell = row.createCell(j);
+	                cell.setCellValue(ica_col_data[i][j]);
+	                // Apply bold style to all cells in the first two rows
+	                if (i <= 2) {
+	                    cell.setCellStyle(boldCenterStyle);
+	                    cell.setCellStyle(greenCellStyle);
+	                }
+	                // Apply light green fill color to all cells in the third row
+	            }
+	            start_row++; // Increment start_row for the next iteration
+	        }
+
+	        // Populate activity statement data
+	        for (ArrayList<String> row_data : activity_statement_data) {
+	            Row row = ica_sheet.createRow(start_row++);
+	            int col_start = 0;
+	            for (String col_data : row_data) {
+	                Cell cell = row.createCell(col_start++);
+	                cell.setCellValue(col_data);
+	            }
+	        }
+	        for (int i = 0; i < ica_col_data[0].length; i++) {
+	            ica_sheet.autoSizeColumn(i);
 	        }
 	    }
-		/*
-		for(int i = 0; i < ica_col_data.length; i++) {
-			start_row = i;
-			Row row = ica_sheet.createRow(start_row);
-			for(int j = 0; j < ica_col_data[i].length; j++) {
-				Cell cell = row.createCell(j);
-				cell.setCellValue(ica_col_data[i][j]); 
-			}
-		}
-*/
-		for(ArrayList<String> row_data : activity_statement_data) {
-			start_row++;
-			Row row = ica_sheet.createRow(start_row);
-			int cold_start = 0;
-			for(String col_data : row_data) {
-				Cell cell = row.createCell(cold_start);
-				cell.setCellValue(col_data); 
-				cold_start++;
-			}
-		}
-	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Excel obj = new Excel();
