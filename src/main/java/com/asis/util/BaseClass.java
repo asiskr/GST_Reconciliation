@@ -33,6 +33,10 @@ public class BaseClass {
 	public static String XERO_FILE_NAME="";
 
 	
+	public static String TAXATION=" ";
+	public static String BUSINESS=" ";
+
+	
 	public static String XERO_USER_NAME="";
 	public static String XERO_PASSWORD="";
 	public static String XERO_SECURITY_QUEST1="";
@@ -144,8 +148,9 @@ public class BaseClass {
 		ATO_APR_QUARTER=System.getProperty("aprQuarter");
 		USERNAME=System.getProperty("userNameLaptop");
 		SENDER_TO=System.getProperty("senderTo");
-		
-		
+		TAXATION=System.getProperty("taxation");
+		BUSINESS=System.getProperty("business");
+
 	}
 
 	public static void lauchSite(String url) {

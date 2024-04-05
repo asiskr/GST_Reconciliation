@@ -5,45 +5,45 @@ import org.openqa.selenium.WebDriver;
 import com.asis.util.BaseClass;
 
 import Driver_manager.DriverManager;
+import Pages.ATOClientNameSearchPage;
+import Pages.ATOGoToQuarterName;
 import Pages.ATOLoginBusinessPage;
 import Pages.ATOLoginPage;
+import Pages.SelectTOPIdPage;
 import io.cucumber.java.en.*;
 
-public class ATOLoginStep {
+public class ATOLoginStep extends BaseClass {
 
-//    WebDriver driver = DriverManager.getDriver(); // Assuming you have a valid WebDriver instance from DriverManager
+	//    WebDriver driver = DriverManager.getDriver(); // Assuming you have a valid WebDriver instance from DriverManager
+	public SelectTOPIdPage selectTOP= new SelectTOPIdPage();
+	public ATOClientNameSearchPage clientSearchPage  = new ATOClientNameSearchPage();
+	public ATOGoToQuarterName quaterNamePage;
 	ATOLoginBusinessPage businessPage;
-	
-	
+	ATOLoginPage loginPage;
+	String taxtation = TAXATION;
+
 	@Given("User launch website")
-	public void user_launch_website() {
+	public void user_launch_website() throws InterruptedException {
 		BaseClass.setupDriver("Chrome");
 		businessPage = new ATOLoginBusinessPage();
-		BaseClass.lauchSite("https://onlineservices.ato.gov.au/Business/?logout=true"); 
+		loginPage = new ATOLoginPage();
+		if (taxtation.equalsIgnoreCase("taxation")) {
+			BaseClass.lauchSite("https://onlineservices.ato.gov.au/onlineservices/");  
+			loginPage.clickOnMyGOVButton();
+			loginPage.sendingEmailAddress();
+			loginPage.clickOnLoginButton();
+		}
+		else {
+			BaseClass.lauchSite("https://onlineservices.ato.gov.au/Business/?logout=true"); 
+			businessPage.clickOnBusinessAccountLoginButton();
+			businessPage.sendingEmailAddress();
+			businessPage.clickOnLoginButton();
+		}
 	}
-	
-    @When("user tap on my gov button")
-    public void user_tap_on_my_gov_button() {
-    	businessPage.clickOnBusinessAccountLoginButton();
-	}
-    
-    @Then("user must redirected to login screen")
-    public void user_must_redirected_to_login_screen() {
-    	businessPage.sendingEmailAddress();
-    }
-    
-    @When("user do login as per provided in excel")
-    public void user_do_login_as_per_provided_in_excel() {
-    	businessPage.clickOnLoginButton();
-    }
-    
-    @When("click on login button")
-    public void click_on_login_button() {
- 
-    }
-//    ATOLoginPage loginPage;
-    /*
-    
+
+	//    ATOLoginPage loginPage;
+	/*
+
     @Given("User launch website")
     public void user_launch_website() {
         // Assuming the setupDriver method is implemented correctly in ATOLoginPage
@@ -53,31 +53,32 @@ public class ATOLoginStep {
 //        BaseClass.lauchSite("https://onlineservices.ato.gov.au/onlineservices/");   //FOR TAXTATION ACCOUNT
         BaseClass.lauchSite("https://onlineservices.ato.gov.au/Business/?logout=true");     //FOR BUSINESS ACCOUNT
     }
+	 
 
-    @When("user tap on my gov button")
-    public void user_tap_on_my_gov_button() {
-        // Assuming the clickOnMyGOVButton method is implemented correctly in ATOLoginPage
-    	//System.out.println("Hi");
-        loginPage.clickOnMyGOVButton();
-    }
+	@When("user tap on my gov button")
+	public void user_tap_on_my_gov_button() {
+		// Assuming the clickOnMyGOVButton method is implemented correctly in ATOLoginPage
+		//System.out.println("Hi");
+		loginPage.clickOnMyGOVButton();
+	}
 
-    @Then("user must redirected to login screen")
-    public void user_must_redirected_to_login_screen() {
-        System.out.println("user redirected to login screen");
-    }
+	@Then("user must redirected to login screen")
+	public void user_must_redirected_to_login_screen() {
+		System.out.println("user redirected to login screen");
+	}
 
-    @When("user do login as per provided in excel")
-    public void user_do_login_as_per_provided_in_excel() {
-        // Assuming the sendingEmailAddress method is implemented correctly in ATOLoginPage
-    	
-        loginPage.sendingEmailAddress();
-        
-    }
+	@When("user do login as per provided in excel")
+	public void user_do_login_as_per_provided_in_excel() {
+		// Assuming the sendingEmailAddress method is implemented correctly in ATOLoginPage
 
-    @When("click on login button")
-    public void click_on_login_button() {
-        // Assuming the clickOnLoginButton method is implemented correctly in ATOLoginPage
-        loginPage.clickOnLoginButton();
-    }
-    */
+		loginPage.sendingEmailAddress();
+
+	}
+
+	@When("click on login button")
+	public void click_on_login_button() {
+		// Assuming the clickOnLoginButton method is implemented correctly in ATOLoginPage
+		loginPage.clickOnLoginButton();
+	}
+*/
 }

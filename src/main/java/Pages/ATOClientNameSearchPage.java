@@ -49,10 +49,9 @@ public class ATOClientNameSearchPage extends BaseClass{
 	    /*
 	    if(noMatches.isDisplayed()) {
 	        DriverManager.getDriver().quit();
-	    } else {
-	        clientNameSearch.sendKeys(Keys.ENTER);
-	    }
+	    } 
 	    */
+	        clientNameSearch.sendKeys(Keys.ENTER);    
 	}
 
 }
