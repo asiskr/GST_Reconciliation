@@ -12,7 +12,6 @@ public class ATOSearchClientNameStep {
 	
 	@Given("I am on home page")
 	public void i_am_on_home_page() {
-//		System.out.println("clientSearchPage title"+ clientSearchPage.getPageTitle());
 	}
 
 	@When("I enter client name in search box")

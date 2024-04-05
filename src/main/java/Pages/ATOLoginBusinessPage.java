@@ -13,15 +13,11 @@ public class ATOLoginBusinessPage extends BaseClass{
 
 	@FindBy(xpath="//span[contains(text(),'Login')]")
 	WebElement Login;
-	
 	@FindBy(xpath= "//input[@placeholder='myGovID email']")
 	WebElement emailAddress;
-
 	@FindBy(xpath= "//button[@title='Submit']")
 	WebElement loginButton;
-
 	
-
 	public ATOLoginBusinessPage(){	
 		PageFactory.initElements(DriverManager.getDriver(), this);       
 	}

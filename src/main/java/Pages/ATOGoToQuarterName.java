@@ -16,7 +16,6 @@ public class ATOGoToQuarterName extends BaseClass {
     // List of WebElements
     @FindBy(xpath = "//div[@role='menubar']//span[contains(text(),'Lodgments')]")
     WebElement lodgements;
-
     @FindBy(xpath = "//div[@role='menubar']//span[contains(text(),'Lodgments')]/parent::div/following-sibling::ul/li")
     List<WebElement> options;
 

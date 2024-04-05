@@ -9,7 +9,6 @@ public class XeroAgedPayableSummarySteps {
 
 	@Given("user is on client Aged payable summary page")
 	public void user_is_on_client_aged_payable_summary_page() {
-//		System.out.println("XeroAgedPayableSummaryPage title" +xeroPaybaleValues.getPageTitle());
 	}
 	@When("user click on accounting button")
 	public void user_click_on_accounting_button() {

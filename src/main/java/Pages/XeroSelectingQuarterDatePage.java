@@ -40,7 +40,6 @@ public class XeroSelectingQuarterDatePage extends BaseClass{
 	}
 	//list  of all the actions on page
 	public void getPageTitle() {
-//		return DriverManager.getDriver().getTitle();
 	}
 	public void clickAccountingButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(accountingButton));
@@ -70,8 +69,4 @@ public class XeroSelectingQuarterDatePage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(UpdateButton));
 		UpdateButton.click();
 	}
-
-	//span[@id='R8C3']
-	
-	 //span[@id='R15C3']
 }

@@ -19,16 +19,12 @@ public class XeroLoginPage extends BaseClass{
 
 	@FindBy(id = "xl-form-email")
 	WebElement Emailaddress;
-
 	@FindBy(id = "xl-form-password")
 	WebElement Password;
-
 	@FindBy(id = "xl-form-submit")
 	WebElement loginButton;
-
 	@FindBy(xpath = "//button[contains(text(),\"Use another authentication method\")]")
 	WebElement anotherAuthMethod;
-
 	@FindBy(xpath = "//button[contains(text(),'Security questions')]")
 	WebElement securityQsn;
 
@@ -37,7 +33,6 @@ public class XeroLoginPage extends BaseClass{
 		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 	public void getPageTitle() {
-//		return DriverManager.getDriver().getTitle();
 	}
 	public void enterUserId() {
         String userId = XERO_USER_NAME;

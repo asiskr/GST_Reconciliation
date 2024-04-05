@@ -13,7 +13,6 @@ public class ATOFetchingICAStatementSteps {
 
 	@Given("user is on client home page and want to extract ICA statement")
 	public void user_is_on_client_home_page_and_want_to_extract_ica_statement() {
-//		System.out.println("fetchICAStatement title" +fetchICAStatement.getPageTitle());
 
 	}
 

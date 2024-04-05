@@ -13,11 +13,8 @@ public class SelectTOPIdPage extends BaseClass{
 
 	@FindBy(xpath="//span[contains(text(),'THE OUTSOURCE PRO PTY LTD')]")
 	WebElement TOP;
-	
 	@FindBy(xpath="//button[@id='atoo-of-atobutton-005']")
 	WebElement next;
-	
-	//button[@id='atoo-of-atobutton-005']
 	
 	public SelectTOPIdPage(){	
 		PageFactory.initElements(DriverManager.getDriver(), this);       

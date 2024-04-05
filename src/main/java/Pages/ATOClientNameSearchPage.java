@@ -26,8 +26,6 @@ public class ATOClientNameSearchPage extends BaseClass{
 	@FindBy(xpath = "//ul[contains(@class, 'error')]/li[contains(text(), 'No matches found')]")
 	WebElement noMatches;
 
-
-
 	//constructor
 	public ATOClientNameSearchPage(){
 		PageFactory.initElements(DriverManager.getDriver(), this);       
@@ -35,7 +33,6 @@ public class ATOClientNameSearchPage extends BaseClass{
 
 	//list  of all the actions on page
 	public void getPageTitle() {
-		//		return DriverManager.getDriver().getTitle();
 	}
 
 	public void enterClientName() throws InterruptedException {		

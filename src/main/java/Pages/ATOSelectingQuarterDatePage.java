@@ -24,20 +24,15 @@ public class ATOSelectingQuarterDatePage extends BaseClass{
 	// List of WebElements
 	@FindBy(xpath = "//div[@class='ato-tab']/ul/li[2]")
 	WebElement history;
-
 	@FindBy(xpath = "//h1/span[contains(text(),'Activity statements')]")
 	WebElement scrollTo;
-
 	@FindBy(xpath = "//span[contains(text(),'Filter')]")
 	WebElement filter;
-
 	@FindBy(xpath = "//input[@id='dp-atoo-as-from-date-002']")
 	WebElement From;
-
 	@FindBy(xpath = "//input[@id='dp-atoo-as-to-date-002']")
 	WebElement To;
-
-	@FindBy(xpath = "//button[@id='atoo-as-atobutton-016']")
+	@FindBy(xpath = "//button[contains(text(),'Filter')]")
 	WebElement filter2;
 
 	// Constructor
@@ -46,7 +41,6 @@ public class ATOSelectingQuarterDatePage extends BaseClass{
 	}
 
 	public void getPageTitle() {
-//		return DriverManager.getDriver().getTitle();
 	}
 
 	public void clickHistory() {
@@ -76,13 +70,13 @@ public class ATOSelectingQuarterDatePage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(To)).clear();
 //		To.clear();
 		To.sendKeys(StringToDate);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 	}
 
 
 	public void clickOnFilterButtonAfterEnteringDate() throws InterruptedException {
 		js.executeScript("arguments[0].click();", filter2);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 	}
 }

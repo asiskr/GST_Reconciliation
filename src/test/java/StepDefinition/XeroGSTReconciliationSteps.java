@@ -8,7 +8,6 @@ public class XeroGSTReconciliationSteps {
 	public XeroGSTReconciliationPage fetchGSTStatement  = new XeroGSTReconciliationPage();
 	@Given("User is on Balance Sheet page of client")
 	public void user_is_on_balance_sheet_page_of_client() {
-//		System.out.println("XeroGSTReconciliationPage title" +fetchGSTStatement.getPageTitle());
 	}
 
 	@When("user click on the Accounting Button")

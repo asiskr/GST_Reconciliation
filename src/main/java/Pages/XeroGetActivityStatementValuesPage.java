@@ -27,7 +27,6 @@ public class XeroGetActivityStatementValuesPage extends BaseClass{
 	WebElement reports;
 	@FindBy(xpath = "//*[@class='report-row-tooltip']//descendant::span[contains(text(),'Payroll Employee Summary')]")
 	WebElement payroll_Employee_Summary;
-	
 	@FindBy(xpath = "//button[@data-automationid='report-settings-convenience-date-dropdown-button']")
 	WebElement lastQuarter;
 	@FindBy(xpath = "//span[contains(text(),'Last financial year')]")
@@ -46,7 +45,6 @@ public class XeroGetActivityStatementValuesPage extends BaseClass{
 	}
 	//list  of all the actions on page
 	public void getPageTitle() {
-//		return DriverManager.getDriver().getTitle();
 	}
 	public void captureA1G1B1Data() {
 		fetchCaptureA1G1B1Data.add(G1.getText().replaceAll("[,]", ""));

@@ -13,17 +13,13 @@ public class XEROSearchClientPage extends BaseClass{
 
 	@FindBy(xpath = "//button[@data-automationid='xnav-appbutton']")
 	WebElement search;
-	
 	@FindBy(xpath = "//button[contains(text(),'Change organisation')]")
 	WebElement chnageOrganization;
-	
 	@FindBy(xpath = "//input[@title='Search organisations']")
 	WebElement searchBox;
-	
 	@FindBy(xpath = "//a[@data-menu-item-type='ORG']")
 	WebElement options;
 	
-	//a[contains(text(),'The Outsource Pro Pty Ltd')]
 	public XEROSearchClientPage() {
 		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
@@ -46,7 +42,5 @@ public class XEROSearchClientPage extends BaseClass{
 		}
 	}
 	public void doSearchClientName() throws InterruptedException {
-//	    Thread.sleep(3000);
-//	    searchBox.sendKeys(Keys.ENTER);
 	}
 }

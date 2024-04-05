@@ -108,6 +108,5 @@ public class GenerateEmail extends BaseClass {
         GenerateEmail obj = new GenerateEmail();
         obj.sendEmail("asis.kaur@theoutsourcepro.com.au");
 
-//        obj.sendEmail("asis.kaur@theoutsourcepro.com.au");
     }
 }

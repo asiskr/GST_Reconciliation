@@ -11,7 +11,6 @@ public class XeroSelectingQuarterDateSteps {
 
 	@Given("user is on client home page")
 	public void user_is_on_client_home_page() {
-//		System.out.println("XeroSelectingQuarterDatePage title" +xeroselectDate.getPageTitle());
 	}
 
 	@When("user click on Accounting button")
@@ -26,7 +25,6 @@ public class XeroSelectingQuarterDateSteps {
 
 	@Then("user is on client Activity statement page")
 	public void user_is_on_client_activity_statement_page(){
-//		System.out.println("XeroSelectingQuarterDatePage title" +xeroselectDate.getPageTitle());
 	}
 
 	@Then("User enter the From date on Xero software")

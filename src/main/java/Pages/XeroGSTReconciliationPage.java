@@ -35,7 +35,6 @@ public class XeroGSTReconciliationPage extends BaseClass {
 	}
 	//list  of all the actions on page
 	public static void getPageTitle() {
-//		return DriverManager.getDriver().getTitle();
 	}
 
 	public void clickOnAccountingButton() {

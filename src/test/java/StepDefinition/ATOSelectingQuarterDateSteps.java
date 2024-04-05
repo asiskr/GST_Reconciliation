@@ -10,7 +10,6 @@ public class ATOSelectingQuarterDateSteps {
 	
 	@Given("Client Activity statements")
 	public void client_activity_statements() {
-//		System.out.println("ATOSelectingQuarterDatePage title" +selectDate.getPageTitle());
 	}
 
 	@When("user click on History Button")

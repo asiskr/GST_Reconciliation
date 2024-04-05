@@ -14,16 +14,12 @@ public class XeroSecurityQuestionPage extends BaseClass{
 
 	@FindBy(xpath = "//label[contains(@class,\"auth-firstquestion\")]")
 	WebElement firstquestion;
-
 	@FindBy(xpath = "//div[contains(@data-automationid,\"auth-firstanswer\")]/div/input")
 	WebElement firstanswer;
-
 	@FindBy(xpath = "//label[contains(@class,\"auth-secondquestion\")]")
 	WebElement secondquestion;
-
 	@FindBy(xpath = "//div[contains(@data-automationid,\"auth-secondanswer\")]/div/input")
 	WebElement secondanswer;
-
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement submitAns;
 
@@ -32,7 +28,6 @@ public class XeroSecurityQuestionPage extends BaseClass{
 		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 	public void getPageTitle() {
-//		return DriverManager.getDriver().getTitle();
 	}
 	public void answerSecurityQuestions() {
 		String ques1 = XERO_SECURITY_QUEST1;
