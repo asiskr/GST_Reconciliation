@@ -1,4 +1,4 @@
-package Pages;
+package XERO;
 
 
 import java.io.IOException;
@@ -26,6 +26,7 @@ public class XeroLoginPage extends BaseClass{
 	@FindBy(xpath = "//button[contains(text(),\"Use another authentication method\")]")
 	WebElement anotherAuthMethod;
 	@FindBy(xpath = "//h2[contains(text(),'Security questions')]")
+	//h2[contains(text(),'Security questions')]
 	WebElement securityQsn;
 
 	// Constructor
