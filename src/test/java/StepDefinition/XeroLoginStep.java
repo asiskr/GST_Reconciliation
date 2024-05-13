@@ -2,7 +2,8 @@ package StepDefinition;
 
 
 import com.asis.util.BaseClass;
-import Pages.XeroLoginPage;
+
+import XERO.XeroLoginPage;
 import io.cucumber.java.en.*;
 
 public class XeroLoginStep {

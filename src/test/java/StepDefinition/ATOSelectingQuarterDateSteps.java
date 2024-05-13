@@ -1,7 +1,8 @@
 package StepDefinition;
 
 import java.text.ParseException;
-import Pages.ATOSelectingQuarterDatePage;
+
+import XERO.ATOSelectingQuarterDatePage;
 import io.cucumber.java.en.*;
 
 public class ATOSelectingQuarterDateSteps {

@@ -2,9 +2,9 @@ package StepDefinition;
 
 import com.asis.util.BaseClass;
 
-import Pages.ATOClientNameSearchPage;
-import Pages.ATOGoToQuarterName;
-import Pages.SelectTOPIdPage;
+import XERO.ATOClientNameSearchPage;
+import XERO.ATOGoToQuarterName;
+import XERO.SelectTOPIdPage;
 import io.cucumber.java.en.*;
 
 public class ATOSearchClientNameStep extends BaseClass{

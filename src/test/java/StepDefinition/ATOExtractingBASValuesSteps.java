@@ -3,7 +3,8 @@ package StepDefinition;
 import javax.mail.MessagingException;
 
 import com.asis.util.BaseClass;
-import Pages.ATOExtractingBASValuesPage;
+
+import XERO.ATOExtractingBASValuesPage;
 import io.cucumber.java.en.*;
 
 public class ATOExtractingBASValuesSteps {

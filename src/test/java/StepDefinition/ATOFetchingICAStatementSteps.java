@@ -2,8 +2,8 @@ package StepDefinition;
 
 import java.text.ParseException;
 
-import Pages.ATOSelectingQuarterDatePage;
-import Pages.ATOfetchingICAStatement;
+import XERO.ATOSelectingQuarterDatePage;
+import XERO.ATOfetchingICAStatement;
 import io.cucumber.java.en.*;
 
 public class ATOFetchingICAStatementSteps {

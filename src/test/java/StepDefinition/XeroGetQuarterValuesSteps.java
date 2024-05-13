@@ -1,6 +1,6 @@
 package StepDefinition;
 
-import Pages.XeroGetActivityStatementValuesPage;
+import XERO.XeroGetActivityStatementValuesPage;
 import io.cucumber.java.en.*;
 
 public class XeroGetQuarterValuesSteps {

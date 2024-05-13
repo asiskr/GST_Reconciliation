@@ -1,6 +1,6 @@
 package StepDefinition;
 
-import Pages.XeroAgedRecievableSummaryPage;
+import XERO.XeroAgedRecievableSummaryPage;
 import io.cucumber.java.en.*;
 
 public class XeroAgedRecievableSummarySteps {

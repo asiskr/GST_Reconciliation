@@ -1,7 +1,7 @@
 package StepDefinition;
 
 
-import Pages.XeroSecurityQuestionPage;
+import XERO.XeroSecurityQuestionPage;
 import io.cucumber.java.en.*;
 
 public class XeroSecurityQuestionSteps {

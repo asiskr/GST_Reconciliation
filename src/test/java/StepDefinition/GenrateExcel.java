@@ -2,7 +2,7 @@ package StepDefinition;
 
 import com.asis.util.BaseClass;
 
-import Pages.GenratingExcelPage;
+import XERO.GenratingExcelPage;
 import io.cucumber.java.en.*;
 
 public class GenrateExcel {

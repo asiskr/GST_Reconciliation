@@ -1,6 +1,6 @@
 package StepDefinition;
 
-import Pages.XeroGSTReconciliationPage;
+import XERO.XeroGSTReconciliationPage;
 import io.cucumber.java.en.*;
 
 public class XeroGSTReconciliationSteps {

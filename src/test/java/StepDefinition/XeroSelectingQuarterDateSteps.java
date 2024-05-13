@@ -2,7 +2,7 @@ package StepDefinition;
 
 import java.text.ParseException;
 
-import Pages.XeroSelectingQuarterDatePage;
+import XERO.XeroSelectingQuarterDatePage;
 import io.cucumber.java.en.*;
 
 public class XeroSelectingQuarterDateSteps {

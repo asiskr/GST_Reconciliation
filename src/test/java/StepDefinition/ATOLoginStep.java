@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import com.asis.util.BaseClass;
 
 import Driver_manager.DriverManager;
-import Pages.ATOClientNameSearchPage;
-import Pages.ATOGoToQuarterName;
-import Pages.ATOLoginBusinessPage;
-import Pages.ATOLoginPage;
-import Pages.SelectTOPIdPage;
+import XERO.ATOClientNameSearchPage;
+import XERO.ATOGoToQuarterName;
+import XERO.ATOLoginBusinessPage;
+import XERO.ATOLoginPage;
+import XERO.SelectTOPIdPage;
 import io.cucumber.java.en.*;
 
 public class ATOLoginStep extends BaseClass {
@@ -40,6 +40,40 @@ public class ATOLoginStep extends BaseClass {
 			businessPage.clickOnLoginButton();
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	//    ATOLoginPage loginPage;
 	/*

@@ -1,7 +1,7 @@
 package StepDefinition;
 
-import Pages.closingATOPage;
-import Pages.ATOExtractingBASValuesPage;
+import XERO.ATOExtractingBASValuesPage;
+import XERO.closingATOPage;
 import io.cucumber.java.en.*;
 
 public class closingAtoSteps {

@@ -1,6 +1,6 @@
 package StepDefinition;
 
-import Pages.XeroBalanceSheetPage;
+import XERO.XeroBalanceSheetPage;
 import io.cucumber.java.en.*;
 
 public class XeroBalanceSheetSteps {

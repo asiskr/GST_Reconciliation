@@ -1,6 +1,6 @@
 package StepDefinition;
 
-import Pages.XEROSearchClientPage;
+import XERO.XEROSearchClientPage;
 import io.cucumber.java.en.*;
 
 public class XEROSearchClientSteps {
