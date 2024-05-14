@@ -58,12 +58,12 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		colmSelected.click();
 	}
 	public void clickOutstanding_GST() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		wait.until(ExpectedConditions.elementToBeClickable(Outstanding_GST));
 		Outstanding_GST.click();
 	}
 	public void clickEndOfMonth() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(endOfMonth));
 		endOfMonth.click();
 	}

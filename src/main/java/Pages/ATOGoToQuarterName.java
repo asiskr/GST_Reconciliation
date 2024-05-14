@@ -25,7 +25,7 @@ public class ATOGoToQuarterName extends BaseClass {
     }
 
     public void clickLodgments() throws InterruptedException {
-    	Thread.sleep(3000);
+    	Thread.sleep(5000);
     	wait.until(ExpectedConditions.elementToBeClickable(lodgements));
         lodgements.click();
     }
