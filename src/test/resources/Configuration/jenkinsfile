@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'config', defaultValue: '/Xero/src/test/resources/Configuration/config.properties', description: 'Path to the properties file')
+    }
+    environment {
+        // Load properties from the specified file
+        def props = readProperties file: params.PROPERTIES_FILE
+        // Define environment variables dynamically from properties
+        DYNAMIC_PARAM1 = props['param1']
+        DYNAMIC_PARAM2 = props['param2']
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your code from version control
+                git url: 'your-repo-url.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                // Example: Run your Java application with the parameters
+                sh 'java -jar yourapp.jar ${DYNAMIC_PARAM1} ${DYNAMIC_PARAM2}'
+            }
+        }
+    }
+}
