@@ -23,6 +23,11 @@ public class MYOBGSTReportPage extends BaseClass{
 	WebElement A1;
 	@FindBy(xpath="//div[contains(., 'GST on purchases')]/following-sibling::div[@role='cell']/text()")
 	WebElement B1;
+	
+	@FindBy(xpath="//div[contains(text(),'Reporting')]")
+	WebElement reporting;
+	@FindBy(xpath="//span[contains(text(),'Reports')]")
+	WebElement reports;
 	/*
 	@FindBy(xpath="//div[contains(., 'Total salary, wages and other payments')]/following-sibling::div[@role='cell']/text()")
 	WebElement W1;
@@ -48,5 +53,15 @@ public class MYOBGSTReportPage extends BaseClass{
 		fetchCaptureA1G1B1Data.add(B1.getText().replaceAll("[,]", ""));
 //		fetchCaptureA1G1B1Data.add(W1.getText().replaceAll("[,]", ""));
 //		fetchCaptureA1G1B1Data.add(_4.getText().replaceAll("[,]", ""));
+	}
+	
+
+	public void clickReportingButton() {
+		wait.until(ExpectedConditions.elementToBeClickable(reporting));
+		reporting.click();
+	}
+	public void clickReportsButton() {
+		wait.until(ExpectedConditions.elementToBeClickable(reports));
+		reports.click();
 	}
 }

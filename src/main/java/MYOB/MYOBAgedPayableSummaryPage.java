@@ -11,11 +11,11 @@ import com.asis.util.BaseClass;
 
 import Driver_manager.DriverManager;
 
-public class MYOBAgedRecieveablePage extends BaseClass{
+public class MYOBAgedPayableSummaryPage extends BaseClass{
 
-	@FindBy(xpath="//div[contains(text(),'Receivables reconciliation with tax')]")
-	WebElement receivable;
-	@FindBy(xpath="//input[@id='Input_HJVwL-Fa9NR']")
+	@FindBy(xpath="//div[contains(text(),'Payables reconciliation with tax')]")
+	WebElement payable;
+	@FindBy(xpath="//input[@id='Input_S1VDcoZ0cEC']")
 	WebElement toDate;
 	@FindBy(xpath="//div[@role='row' and .//span[text()='Total']]//div[3]//span")
 	WebElement total;
@@ -23,30 +23,32 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 	WebElement reporting;
 	@FindBy(xpath="//span[contains(text(),'Reports')]")
 	WebElement reports;
-	public static double RecievableAmount = 0.0;
+	public static double PayableAmount = 0.0;
 
-	public MYOBAgedRecieveablePage(){	
-		PageFactory.initElements(DriverManager.getDriver(), this);    
+	public MYOBAgedPayableSummaryPage() {	
+		PageFactory.initElements(DriverManager.getDriver(), this); 
 	}
-	public void passToDate() {
-		wait.until(ExpectedConditions.elementToBeClickable(toDate));
+	//list  of all the actions on page
+	public void clickPayable() {
+		wait.until(ExpectedConditions.visibilityOf(payable));
+		payable.click();
+	}
+	public void toDate() {
+		wait.until(ExpectedConditions.visibilityOf(toDate));
 		toDate.click();
-		toDate.sendKeys("01/07/2022");
 	}
-	public void receivableAmount() {
+	public void getPayableTotal() {
 		wait.until(ExpectedConditions.visibilityOf(total));
-		String totalAmount= total.getText().replaceAll(",", "");
+		String totalPayable = total.getText().replaceAll(",", "");
 		try {
-			RecievableAmount = Double.parseDouble(totalAmount);
+			PayableAmount = Double.parseDouble(totalPayable);
 		} catch (NumberFormatException e) {
-			System.err.println("Error parsing GST amount: " + totalAmount);
+			System.err.println("Error parsing GST amount: " + totalPayable);
 		}
-		HashMap<String, Double> hm2 = new HashMap<>();
-		hm2.put("Add: GST on Debtors", RecievableAmount);
-		LAST_TABLE_DATA.add(hm2);
-		System.out.println("Add: GST on Debtors "+LAST_TABLE_DATA.get(0));	
+		HashMap<String, Double> hm3 = new HashMap<>();
+		hm3.put("Less: GST on Creditors", PayableAmount);
+		LAST_TABLE_DATA.add(hm3);
 	}
-
 	public void clickReportingButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(reporting));
 		reporting.click();
