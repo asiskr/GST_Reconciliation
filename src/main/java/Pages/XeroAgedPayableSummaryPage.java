@@ -1,6 +1,7 @@
 package Pages;
 
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -30,9 +31,9 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 	@FindBy(xpath = "//button[contains(text(),'Update')]")
 	WebElement Update;
 	@FindBy(xpath = "//div[contains(text(),'Nothing to show here')]")
-	boolean exist;
+	public WebElement noShowDiv;
 	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[9]/span/div")
-	WebElement GST2;
+	public WebElement GST2;
 	public static double payableAmount = 0.0;
 	public static double Total = 0.0;
 	// Constructor
@@ -76,22 +77,29 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		Update.click();
 	}
 	public void getAgedPayableValues() {
-		if (exist) {
-			double payable_amount = 0.0;
-			System.out.println(payable_amount);
-			HashMap<String, Double> hm3 = new HashMap<>();
-			hm3.put("Less: GST on Creditors", payable_amount);
-			LAST_TABLE_DATA.add(hm3);
+		boolean exists = false;
+		try {
+			exists = noShowDiv.isDisplayed();
+		} catch (NoSuchElementException e) {
+			exists = false; // Element is not present, hence set exists to false
 		}
-		else { 
+
+		double payableAmount = 0.0;
+		if (exists) {
+			System.out.println("No data to show: " + payableAmount);
+		} else { 
 			wait.until(ExpectedConditions.visibilityOf(GST2));
 			String gstText = GST2.getText().replaceAll(",", "");
-			payableAmount = Double.parseDouble(gstText);
-			HashMap<String, Double> hm3 = new HashMap<>();
-			hm3.put("Less: GST on Creditors", payableAmount);
-			LAST_TABLE_DATA.add(hm3);
-
+			try {
+				payableAmount = Double.parseDouble(gstText);
+			} catch (NumberFormatException e) {
+				System.err.println("Error parsing GST amount: " + gstText);
+			}
 		}
+		HashMap<String, Double> hm3 = new HashMap<>();
+		hm3.put("Less: GST on Creditors", payableAmount);
+		LAST_TABLE_DATA.add(hm3);
+
 		HashMap<String, Double> hm4 = new HashMap<>();
 		double juneBAS = LAST_TABLE_DATA.get(0).get("June BAS") != null ? LAST_TABLE_DATA.get(0).get("June BAS") : 0.0;
 		double total = juneBAS + payableAmount + XeroAgedRecievableSummaryPage.RecievableAmount;

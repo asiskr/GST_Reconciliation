@@ -25,7 +25,7 @@ public class XeroLoginPage extends BaseClass{
 	WebElement loginButton;
 	@FindBy(xpath = "//button[contains(text(),\"Use another authentication method\")]")
 	WebElement anotherAuthMethod;
-	@FindBy(xpath = "//button[contains(text(),'Security questions')]")
+	@FindBy(xpath = "//h2[contains(text(),'Security questions')]")
 	WebElement securityQsn;
 
 	// Constructor
