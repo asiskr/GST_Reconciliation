@@ -1,5 +1,7 @@
 package MYOB;
 
+import javax.swing.JOptionPane;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -20,8 +22,13 @@ public class MYOBLoginPage extends BaseClass{
 	WebElement password;
 	@FindBy(xpath= "//button[contains(text(),'Sign in')]")
 	WebElement signin;
-	String userId = "bookkeeping@fortunaadvisors.com.au";
-	String passwordValue = "ForB00k!23";
+	String userId = "accountant2@fortunaadvisors.com.au";
+	String passwordValue = "User123456@";
+	@FindBy(xpath= "//input[@id='code']")
+	WebElement authenti;
+	@FindBy(xpath= "//button[contains(text(),'Continue')]")
+	WebElement continueButton;
+	//button[contains(text(),'Continue')]
 
 	public MYOBLoginPage(){	
 		PageFactory.initElements(DriverManager.getDriver(), this);    
@@ -43,4 +50,14 @@ public class MYOBLoginPage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(signin));
 		signin.click();
 	}
+	  public void enterAuthenticationCode() {
+	        String authenticationCode = JOptionPane.showInputDialog("Enter your Authentication code:");
+	        if (authenticationCode == null || authenticationCode.trim().isEmpty()) {
+	            System.out.println("Authentication code is required");
+	            return;
+	        }
+	        wait.until(ExpectedConditions.elementToBeClickable(authenti));
+	        authenti.sendKeys(authenticationCode);
+	        continueButton.click();
+	    }
 }

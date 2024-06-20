@@ -1,4 +1,4 @@
-package StepDefinition;
+package MYOBSteps;
 
 import com.asis.util.BaseClass;
 
@@ -34,5 +34,6 @@ public class MYOBLoginSteps {
 	@Then("click on signin button")
 	public void click_on_signin_button() {
 		MYOBlogin.clickOnSigninButton();
+		MYOBlogin.enterAuthenticationCode();
 	}
 }
