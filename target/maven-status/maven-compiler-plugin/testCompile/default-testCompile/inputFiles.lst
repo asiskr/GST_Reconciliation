@@ -1,5 +1,3 @@
-C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBStepDefinition\MYOBLoginSteps.java
-C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBStepDefinition\MYOBReportsStep.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ATOSearchClientNameStep.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroBalanceSheetSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\TestRunners\TestRunner.java
@@ -7,8 +5,10 @@ C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\GenrateExc
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroGSTReconciliationSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ATOExtractingBASValuesSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroSecurityQuestionSteps.java
+C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBSteps\MYOBLoginSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ATOFetchingICAStatementSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ATOLoginStep.java
+C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBSteps\MYOBReportsStep.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ATOSelectingQuarterDateSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroGetQuarterValuesSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroLoginStep.java

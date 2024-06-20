@@ -5,9 +5,9 @@ import com.asis.util.BaseClass;
 import MYOB.MYOBLoginPage;
 import io.cucumber.java.en.*;
 
-public class MYOBLoginSteps {
+public class MYOBLoginSteps extends BaseClass{
 
-	MYOBLoginPage MYOBlogin;
+	MYOBLoginPage MYOBlogin = new MYOBLoginPage();;
 	
 	@Given("User user is on MYOB Login Page")
 	public void user_user_is_on_myob_login_page() {

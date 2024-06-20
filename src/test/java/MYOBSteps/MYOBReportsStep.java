@@ -1,9 +1,11 @@
 package MYOBSteps;
 
+import com.asis.util.BaseClass;
+
 import MYOB.MYOBReportingPage;
 import io.cucumber.java.en.*;
 
-public class MYOBReportsStep  {
+public class MYOBReportsStep extends BaseClass{
 
 	MYOBReportingPage reports = new MYOBReportingPage();
 	

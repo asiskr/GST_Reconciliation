@@ -37,6 +37,10 @@ public class MYOBGSTReportPage extends BaseClass{
 	public MYOBGSTReportPage(){	
 		PageFactory.initElements(DriverManager.getDriver(), this);    
 	}
+	public void clickGSTReportPage(){	
+		wait.until(ExpectedConditions.elementToBeClickable(gstReturn));
+		gstReturn.click();
+	}
 	public void passFromDate() {
 		wait.until(ExpectedConditions.elementToBeClickable(from));
 		from.click();

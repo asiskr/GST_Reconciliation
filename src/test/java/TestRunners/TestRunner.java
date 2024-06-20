@@ -12,7 +12,8 @@ import io.cucumber.junit.CucumberOptions;
 		
 				{
 					"src/test/resources/Features/MYOBLogin.feature",
-					"src/test/resources/Features/MYOBReports.feature"
+					"src/test/resources/Features/MYOBReports.feature",
+					"src/test/resources/Features/MYOBActivity.feature"
 ////					"src/test/resources/Features/2test_ATOsearchClientName.feature",
 			},
 //				/*
@@ -36,7 +37,7 @@ import io.cucumber.junit.CucumberOptions;
 //				 "src/test/resources/Features/test7_GenratingExcel.feature",
 //		},
 //		*/
-		glue={"StepDefinition","MyHooks"},
+		glue={"MYOBSteps","MyHooks"},
 		plugin = {"pretty"}
 //		tags= "@order1 or @order2 or @order5 or @order6"
 		)
