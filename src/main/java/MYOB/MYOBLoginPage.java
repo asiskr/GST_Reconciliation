@@ -26,6 +26,9 @@ public class MYOBLoginPage extends BaseClass{
 	String passwordValue = "User123456@";
 	@FindBy(xpath= "//input[@id='code']")
 	WebElement authenti;
+	@FindBy(xpath= "//span[@aria-label='Error']")
+	WebElement error;
+	//span[@aria-label='Error']
 	@FindBy(xpath= "//button[contains(text(),'Continue')]")
 	WebElement continueButton;
 	//button[contains(text(),'Continue')]

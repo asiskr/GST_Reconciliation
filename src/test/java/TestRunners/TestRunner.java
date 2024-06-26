@@ -11,9 +11,9 @@ import io.cucumber.junit.CucumberOptions;
 //	{"src/test/resources/Features/"},
 		
 				{
-					"src/test/resources/Features/MYOBLogin.feature",
-					"src/test/resources/Features/MYOBReports.feature",
-					"src/test/resources/Features/MYOBActivity.feature"
+					"src/test/resources/Features/1MYOBLogin.feature",
+					"src/test/resources/Features/2MYOBReports.feature",
+					"src/test/resources/Features/3MYOBActivity.feature"
 ////					"src/test/resources/Features/2test_ATOsearchClientName.feature",
 			},
 //				/*
