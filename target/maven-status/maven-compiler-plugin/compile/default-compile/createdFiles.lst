@@ -4,6 +4,7 @@ Pages\ATOLoginPage$1.class
 com\asis\ExcelData.class
 com\asis\TestRunner.class
 Driver_manager\DriverManager.class
+Pages\Screenshot.class
 Pages\XeroAgedRecievableSummaryPage.class
 Pages\GenerateEmail$1.class
 com\asis\TestCreateExcel.class
@@ -32,12 +33,14 @@ com\asis\util\xeroexcel.class
 Pages\closingATOPage.class
 com\asis\util\ExcelUtil.class
 Pages\ATOClientNameSearchPage.class
+com\asis\Screenshot.class
 Pages\XEROSearchClientPage.class
 com\asis\util\BaseClass.class
 com\asis\Main$1.class
 Pages\ATOLoginBusinessPage.class
 com\asis\InputPage.class
 Pages\ATOExtractingBASValuesPage.class
+com\asis\Screenshot$1.class
 Pages\ATOLoginPage.class
 com\asis\GST_template.class
 Pages\ATOGoToQuarterName.class

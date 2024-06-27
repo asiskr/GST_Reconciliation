@@ -12,6 +12,7 @@ C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroGetQua
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroLoginStep.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MyHooks\AppHooks.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\closingAtoSteps.java
+C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ScreenshotSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroSelectingQuarterDateSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroAgedPayableSummarySteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroAgedRecievableSummarySteps.java

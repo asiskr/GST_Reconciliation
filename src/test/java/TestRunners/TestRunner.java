@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 //	{"src/test/resources/Features/"},
 		
 			{
-					"src/test/resources/Features/1test_ATOLogin.feature",
+					"src/test/resources/Features/Screen.feature",
 //					"src/test/resources/Features/2test_ATOsearchClientName.feature",
 			},
 	
