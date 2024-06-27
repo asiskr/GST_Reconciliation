@@ -1,27 +1,26 @@
 package Pages;
 
-import java.io.IOException;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.asis.util.BaseClass;
-import com.asis.util.ExcelUtil;
 
 import Driver_manager.DriverManager;
 
 public class ATOLoginPage extends BaseClass{	
 	
+	private byte[] screenshotBytes;
+
 	@FindBy(xpath="//a[@id='btn-myGovID']")
-	WebElement myGOV;
+	private WebElement myGOV;
 	@FindBy(xpath= "//input[@placeholder='myGovID email']")
-	WebElement emailAddress;
+	private WebElement emailAddress;
 	@FindBy(xpath= "//button[@title='Submit']")
-	WebElement loginButton;
+	private WebElement loginButton;
 
 	public ATOLoginPage(){	
 		PageFactory.initElements(DriverManager.getDriver(), this);       
@@ -37,8 +36,11 @@ public class ATOLoginPage extends BaseClass{
 		emailAddress.sendKeys(user_id);
 	}
 
-	public void clickOnLoginButton() {
+	public byte[] clickOnLoginButton() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(loginButton));
 		loginButton.click();
+		Thread.sleep(1000);
+		screenshotBytes = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
+		return screenshotBytes;
 	}
 }

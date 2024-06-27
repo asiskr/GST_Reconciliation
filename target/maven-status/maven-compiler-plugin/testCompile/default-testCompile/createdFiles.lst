@@ -13,6 +13,7 @@ StepDefinition\XeroAgedRecievableSummarySteps.class
 StepDefinition\XeroBalanceSheetSteps.class
 StepDefinition\ATOExtractingBASValuesSteps.class
 StepDefinition\XeroAgedPayableSummarySteps.class
+StepDefinition\ATOLoginStep$1.class
 StepDefinition\XeroGetQuarterValuesSteps.class
 StepDefinition\ATOLoginStep.class
 MyHooks\AppHooks.class
