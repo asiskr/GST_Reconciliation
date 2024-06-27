@@ -1,5 +1,6 @@
 com\asis\ReadExcel.class
 Pages\ATOHomePage.class
+Pages\ATOLoginPage$1.class
 com\asis\ExcelData.class
 com\asis\TestRunner.class
 Driver_manager\DriverManager.class

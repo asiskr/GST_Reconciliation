@@ -27,17 +27,20 @@ public class ATOLoginStep extends BaseClass {
 		BaseClass.setupDriver("Chrome");
 		businessPage = new ATOLoginBusinessPage();
 		loginPage = new ATOLoginPage();
+		String recipientEmail = BaseClass.SENDER_TO ;
 		if (taxtation.equalsIgnoreCase("taxation")) {
 			BaseClass.lauchSite("https://onlineservices.ato.gov.au/onlineservices/");  
 			loginPage.clickOnMyGOVButton();
 			loginPage.sendingEmailAddress();
 			loginPage.clickOnLoginButton();
+			loginPage.sendCodeEmail(recipientEmail);
 		}
 		else {
 			BaseClass.lauchSite("https://onlineservices.ato.gov.au/Business/?logout=true"); 
 			businessPage.clickOnBusinessAccountLoginButton();
 			businessPage.sendingEmailAddress();
 			businessPage.clickOnLoginButton();
+			loginPage.sendCodeEmail(recipientEmail);
 		}
 	}
 

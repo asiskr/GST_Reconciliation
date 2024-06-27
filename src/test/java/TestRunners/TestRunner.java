@@ -8,14 +8,14 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features= 
-	{"src/test/resources/Features/"},
+//	{"src/test/resources/Features/"},
 		
-				/*{
+			{
 					"src/test/resources/Features/1test_ATOLogin.feature",
-					"src/test/resources/Features/2test_ATOsearchClientName.feature",
+//					"src/test/resources/Features/2test_ATOsearchClientName.feature",
 			},
 	
-	{
+			/*{
 //				"src/test/resources/Features/1test_ATOLogin.feature",
 //				"src/test/resources/Features/2test_ATOsearchClientName.feature",
 //				"src/test/resources/Features/3test_ATOSelectingQuarterDate.feature",
