@@ -25,7 +25,7 @@ import io.cucumber.java.en.*;
 public class ScreenshotSteps extends BaseClass {
 
     private Screenshot sc = new Screenshot();
-    private String recipientEmail = "asis.kaur@theoutsourcepro.com.au";
+    private String recipientEmail = "samarth.soni@theoutsourcepro.com.au";
 
     @Given("User launch google website")
     public void user_launch_google_website() throws InterruptedException {
