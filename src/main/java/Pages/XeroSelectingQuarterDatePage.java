@@ -20,7 +20,6 @@ import Driver_manager.DriverManager;
 
 public class XeroSelectingQuarterDatePage extends BaseClass{
 
-	//list of webelements
 	@FindBy(xpath = "//button[@data-name='navigation-menu/accounting']")
 	WebElement accountingButton;
 	@FindBy(xpath = "//a[contains(text(),'Reports')]")
@@ -34,14 +33,13 @@ public class XeroSelectingQuarterDatePage extends BaseClass{
 	@FindBy(xpath = "//a[@id='ext-gen27']")
 	WebElement UpdateButton;
 
-	//constructor
 	public XeroSelectingQuarterDatePage(){
 		PageFactory.initElements(DriverManager.getDriver(), this);       
 	}
-	//list  of all the actions on page
 	public void getPageTitle() {
 	}
-	public void clickAccountingButton() {
+	public void clickAccountingButton() throws InterruptedException {
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(accountingButton));
 		accountingButton.click();
 		wait.until(ExpectedConditions.elementToBeClickable(reports));

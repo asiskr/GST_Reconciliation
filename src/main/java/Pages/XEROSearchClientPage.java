@@ -23,7 +23,10 @@ public class XEROSearchClientPage extends BaseClass{
 	public XEROSearchClientPage() {
 		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
-	public void clickOnSearchButton() {
+	public static String getPageTitle() {
+		return DriverManager.getDriver().getTitle();
+	}
+	public void clickOnSearchButton() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(search));
 		search.click();
 	}

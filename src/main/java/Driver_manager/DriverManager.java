@@ -13,8 +13,8 @@ public class DriverManager {
 	public static void setDriver(String browser) {
 		if(browser == "Chrome") {
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless");
-			options.addArguments("--disable-gpu");
+			options.addArguments("--headless=new");
+//			options.addArguments("--disable-gpu");
 			driver = new ChromeDriver(options);
 			
 		}else {

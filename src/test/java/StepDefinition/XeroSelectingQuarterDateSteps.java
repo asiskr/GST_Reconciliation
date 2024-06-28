@@ -14,7 +14,7 @@ public class XeroSelectingQuarterDateSteps {
 	}
 
 	@When("user click on Accounting button")
-	public void user_click_on_accounting_button() {
+	public void user_click_on_accounting_button() throws InterruptedException {
 		xeroselectDate.clickAccountingButton();
 	}
 

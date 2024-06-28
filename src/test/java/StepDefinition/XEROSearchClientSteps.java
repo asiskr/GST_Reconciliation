@@ -8,7 +8,9 @@ public class XEROSearchClientSteps {
 	XEROSearchClientPage searchpagexero = new XEROSearchClientPage();
 
 	@Given("I am on home page of XERO")
-	public void i_am_on_home_page_of_xero() {
+	public void i_am_on_home_page_of_xero() throws InterruptedException {
+		String pageTitle = searchpagexero.getPageTitle();
+        System.out.println("Page title is: " + pageTitle);
 		searchpagexero.clickOnSearchButton();
 	}
 
