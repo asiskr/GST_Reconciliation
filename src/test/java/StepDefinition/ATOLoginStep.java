@@ -1,5 +1,6 @@
 package StepDefinition;
 
+import java.net.MalformedURLException;
 import java.util.Properties;
 
 import javax.activation.DataHandler;
@@ -31,7 +32,7 @@ public class ATOLoginStep extends BaseClass {
     private String recipientEmail = "asis.kaur@theoutsourcepro.com.au";
 
     @Given("User launch website")
-    public void user_launch_website() throws InterruptedException {
+    public void user_launch_website() throws InterruptedException, MalformedURLException {
         setupDriver("Chrome");
         loginPage = new ATOLoginPage();
         businessPage = new ATOLoginBusinessPage();

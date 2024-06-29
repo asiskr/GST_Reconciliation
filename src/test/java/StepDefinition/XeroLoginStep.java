@@ -1,6 +1,8 @@
 package StepDefinition;
 
 
+import java.net.MalformedURLException;
+
 import com.asis.util.BaseClass;
 import Pages.XeroLoginPage;
 import io.cucumber.java.en.*;
@@ -10,7 +12,7 @@ public class XeroLoginStep {
 	XeroLoginPage xerologinPage;
 
 	@Given("User user is on Login Page")
-	public void user_user_is_on_login_page() {
+	public void user_user_is_on_login_page() throws MalformedURLException {
 		BaseClass.setupDriver("Chrome");
 		xerologinPage = new XeroLoginPage();
 		BaseClass.lauchSite("https://login.xero.com");
