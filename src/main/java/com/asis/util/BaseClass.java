@@ -3,6 +3,7 @@ package com.asis.util;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -119,8 +120,9 @@ public class BaseClass {
 	public static double TEMP_JUNE_GST_Refund = 0.0;
 	/**
 	 * Method to setup WebDriver
+	 * @throws MalformedURLException 
 	 */
-	public static void setupDriver(String browser) {
+	public static void setupDriver(String browser) throws MalformedURLException {
 		DriverManager.setDriver(browser);
 	}
 	/**
