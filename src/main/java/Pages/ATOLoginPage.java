@@ -27,7 +27,7 @@ public class ATOLoginPage extends BaseClass{
 	}
 
 	public void clickOnMyGOVButton() throws InterruptedException {
-		Thread.sleep(10000);
+//		Thread.sleep(10000);
 		myGOV.click();
 	}
 
