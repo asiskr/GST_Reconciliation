@@ -157,7 +157,7 @@ public class BaseClass {
 		DriverManager.getDriver().get(url);
 		DriverManager.getDriver().manage().window().maximize();
 		DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(120));
+		wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(30));
 		js = (JavascriptExecutor) DriverManager.getDriver();
 	}
 	/**
