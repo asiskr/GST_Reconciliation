@@ -157,9 +157,8 @@ public class BaseClass {
 	}
 
 	public static void lauchSite(String url) {
-		DriverManager.getDriver().get(url);
-		DriverManager.getDriver().manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		DriverManager.getDriver().manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(60));
 		js = (JavascriptExecutor) DriverManager.getDriver();
 	}
