@@ -26,7 +26,8 @@ public class ATOLoginPage extends BaseClass{
 		PageFactory.initElements(DriverManager.getDriver(), this);       
 	}
 
-	public void clickOnMyGOVButton() {
+	public void clickOnMyGOVButton() throws InterruptedException {
+		Thread.sleep(3000);
 		wait.until(ExpectedConditions.elementToBeClickable(myGOV));
 		myGOV.click();
 	}

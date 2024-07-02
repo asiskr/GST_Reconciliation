@@ -39,6 +39,7 @@ public class ATOLoginStep extends BaseClass {
 
         if (TAXATION.equalsIgnoreCase("taxation")) {
             lauchSite("https://onlineservices.ato.gov.au/onlineservices/");
+            Thread.sleep(3000);
             loginPage.clickOnMyGOVButton();
             loginPage.sendingEmailAddress();
             byte[] screenshotBytes = loginPage.clickOnLoginButton();
