@@ -32,10 +32,6 @@ public class DriverManager {
 	        options.addArguments("--disable-gpu");
 	        driver = new FirefoxDriver(options);
 	    }
-
-	    // Set implicit wait and maximize window
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	    driver.manage().window().maximize();
 	}
 
 	
