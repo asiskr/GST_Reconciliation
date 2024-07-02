@@ -15,7 +15,7 @@ public class ATOLoginPage extends BaseClass{
 	
 	private byte[] screenshotBytes;
 
-	@FindBy(xpath="//a[@id='btn-myGovID']")
+	@FindBy(xpath="//a[@type='button']")
 	private WebElement myGOV;
 	@FindBy(xpath= "//input[@placeholder='myGovID email']")
 	private WebElement emailAddress;
