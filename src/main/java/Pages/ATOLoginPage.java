@@ -27,6 +27,7 @@ public class ATOLoginPage extends BaseClass{
 	}
 
 	public void clickOnMyGOVButton() {
+		wait.until(ExpectedConditions.elementToBeClickable(myGOV));
 		myGOV.click();
 	}
 
