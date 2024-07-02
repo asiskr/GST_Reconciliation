@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -27,7 +28,7 @@ import com.asis.QuaterData;
 import Driver_manager.DriverManager;
 
 public class BaseClass {
-	public WebDriver driver;
+	public static WebDriver driver;
 	public static String ATO_FILE_PATH="";
 	public static String ATO_FILE_NAME="";
 	public static String XERO_FILE_PATH="";
@@ -158,7 +159,7 @@ public class BaseClass {
 	public static void lauchSite(String url) {
 		DriverManager.getDriver().get(url);
 		DriverManager.getDriver().manage().window().maximize();
-		DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(60));
 		js = (JavascriptExecutor) DriverManager.getDriver();
 	}
