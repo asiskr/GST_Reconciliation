@@ -2,6 +2,7 @@ package Driver_manager;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,24 +16,28 @@ public class DriverManager {
 	private static WebDriver driver;
 	
 	public static void setDriver(String browser) throws MalformedURLException {
-		if(browser.equals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
-			ChromeOptions options = new ChromeOptions();
-			// options.setBinary("/usr/bin/google-chrome");
-			options.addArguments("--headless=new");
-			options.addArguments("--no-sandbox");
-			// options.addArguments("--disable-gpu");
-			
-			driver = new RemoteWebDriver(new URL("http://10.122.0.2:4444/wd/hub"), options);
-			
-		} else {
-			System.setProperty("webdriver.gecko.driver","/usr/bin/geckodriver");
-			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("--headless");
-			options.addArguments("--disable-gpu");
-			driver = new FirefoxDriver(options);
-		}
+	    if(browser.equals("Chrome")) {
+	        System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+	        ChromeOptions options = new ChromeOptions();
+	        // options.setBinary("/usr/bin/google-chrome");
+	        options.addArguments("--headless=new");
+	        options.addArguments("--no-sandbox");
+	        // options.addArguments("--disable-gpu");
+
+	        driver = new RemoteWebDriver(new URL("http://10.122.0.2:4444/wd/hub"), options);
+	    } else {
+	        System.setProperty("webdriver.gecko.driver","/usr/bin/geckodriver");
+	        FirefoxOptions options = new FirefoxOptions();
+	        options.addArguments("--headless");
+	        options.addArguments("--disable-gpu");
+	        driver = new FirefoxDriver(options);
+	    }
+
+	    // Set implicit wait and maximize window
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    driver.manage().window().maximize();
 	}
+
 	
 	public static WebDriver getDriver() {
 		return driver;
