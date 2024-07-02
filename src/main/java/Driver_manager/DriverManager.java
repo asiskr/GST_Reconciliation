@@ -16,12 +16,13 @@ public class DriverManager {
 	
 	public static void setDriver(String browser) throws MalformedURLException {
 		if(browser == "Chrome") {
+			System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 			ChromeOptions options = new ChromeOptions();
-			
 			options.addArguments("--headless=new");
 			options.addArguments("--no-sandbox");
 //			options.addArguments("--disable-gpu");
-			WebDriver driver = new RemoteWebDriver(new URL("http://10.122.0.2:5555/wd/hub"),options);
+			
+			WebDriver driver = new RemoteWebDriver(new URL("http://10.122.0.2:4444/wd/hub"),options);
 			
 		}else {
 			FirefoxOptions options = new FirefoxOptions();
