@@ -12,20 +12,21 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverManager {
 	
-	public static WebDriver driver;
+	private static WebDriver driver;
 	
 	public static void setDriver(String browser) throws MalformedURLException {
-		if(browser == "Chrome") {
+		if(browser.equals("Chrome")) {
 			System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 			ChromeOptions options = new ChromeOptions();
-//			options.setBinary("/usr/bin/google-chrome");
+			// options.setBinary("/usr/bin/google-chrome");
 			options.addArguments("--headless=new");
 			options.addArguments("--no-sandbox");
-//			options.addArguments("--disable-gpu");
+			// options.addArguments("--disable-gpu");
 			
-			WebDriver driver = new RemoteWebDriver(new URL("http://10.122.0.2:4444/wd/hub"),options);
+			driver = new RemoteWebDriver(new URL("http://10.122.0.2:4444/wd/hub"), options);
 			
-		}else {
+		} else {
+			System.setProperty("webdriver.gecko.driver","/usr/bin/geckodriver");
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless");
 			options.addArguments("--disable-gpu");
