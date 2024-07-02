@@ -18,7 +18,7 @@ public class DriverManager {
 		if(browser == "Chrome") {
 			System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 			ChromeOptions options = new ChromeOptions();
-			options.setBinary("/usr/bin/google-chrome");
+//			options.setBinary("/usr/bin/google-chrome");
 			options.addArguments("--headless=new");
 			options.addArguments("--no-sandbox");
 //			options.addArguments("--disable-gpu");
