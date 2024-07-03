@@ -28,10 +28,13 @@ public class DriverManager {
 	    } else {
 	        System.setProperty("webdriver.gecko.driver","/usr/bin/geckodriver");
 	        FirefoxOptions options = new FirefoxOptions();
-	        options.addArguments("--headless");
-	        options.addArguments("--disable-gpu");
-	        driver = new FirefoxDriver(options);
+	        options.addArguments("--headless=new");
+	        options.addArguments("--no-sandbox");
+//	        options.addArguments("--disable-gpu");
+	        driver = new RemoteWebDriver(new URL("http://10.122.0.2:4444/wd/hub"), options);
 	    }
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    driver.manage().window().maximize();
 	}
 
 	
