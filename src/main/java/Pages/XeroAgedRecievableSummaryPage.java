@@ -3,6 +3,7 @@ package Pages;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -31,7 +32,7 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 	@FindBy(xpath = "//*[@id=\"report-settings\"]/div/div/div[7]/button")
 	WebElement update;
 	@FindBy(xpath = "//div[contains(text(),'Nothing to show here')]")
-	public WebElement noShowDiv;
+	public boolean noShowDiv;
 	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[9]/span/div")
 	public WebElement GST1;
 	public static double RecievableAmount = 0.0;
@@ -76,6 +77,24 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 		update.click();
 	}
 	public void getAgedRecievableValues() { 
+		
+		if (noShowDiv) {
+			RecievableAmount=0.0;
+			System.out.println(RecievableAmount);
+			HashMap<String, Double> hm2 = new HashMap<>();
+			hm2.put("Add: GST on Debtors", RecievableAmount);
+			LAST_TABLE_DATA.add(hm2);
+			System.out.println("Add: GST on Debtors");
+		}
+		else {
+			RecievableAmount= Double.parseDouble((GST1).getText().replaceAll(",", ""));
+
+			HashMap<String, Double> hm2 = new HashMap<>();
+			hm2.put("Add: GST on Debtors", RecievableAmount);
+			LAST_TABLE_DATA.add(hm2);	
+		}		
+	}
+		/*
 		boolean exists = false;
 		try {
 			exists = noShowDiv.isDisplayed();
@@ -102,4 +121,5 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 		LAST_TABLE_DATA.add(hm2);
 		System.out.println("Add: GST on Debtors "+LAST_TABLE_DATA.get(0));	
 	}
+	*/
 }
