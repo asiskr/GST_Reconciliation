@@ -40,7 +40,7 @@ public class ATOLoginPage extends BaseClass{
 	public byte[] clickOnLoginButton() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(loginButton));
 		loginButton.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		screenshotBytes = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
 		return screenshotBytes;
 	}
