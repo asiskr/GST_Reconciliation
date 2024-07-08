@@ -1,3 +1,5 @@
+@order2
+
 Feature: User login Succesfully
 
   Scenario: Verify user able to go to reports

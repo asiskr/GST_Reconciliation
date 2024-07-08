@@ -2,6 +2,7 @@ package MYOB;
 
 import java.util.HashMap;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,7 +16,7 @@ public class MYOBAgedPayableSummaryPage extends BaseClass{
 
 	@FindBy(xpath="//div[contains(text(),'Payables reconciliation with tax')]")
 	WebElement payable;
-	@FindBy(xpath="//input[@id='Input_S1VDcoZ0cEC']")
+	@FindBy(xpath="//input[@name='AS_AT_DATE']")
 	WebElement toDate;
 	@FindBy(xpath="//div[@role='row' and .//span[text()='Total']]//div[3]//span")
 	WebElement total;
@@ -33,9 +34,14 @@ public class MYOBAgedPayableSummaryPage extends BaseClass{
 		wait.until(ExpectedConditions.visibilityOf(payable));
 		payable.click();
 	}
-	public void toDate() {
-		wait.until(ExpectedConditions.visibilityOf(toDate));
-		toDate.click();
+	public void toDate() throws InterruptedException {
+		wait.until(ExpectedConditions.elementToBeClickable(toDate));
+		String StringToDate =XERO_TO_DATE;
+		toDate.sendKeys(Keys.CONTROL + "a");
+		toDate.sendKeys(Keys.DELETE);
+
+		toDate.sendKeys(StringToDate);
+		Thread.sleep(3000);
 	}
 	public void getPayableTotal() {
 		wait.until(ExpectedConditions.visibilityOf(total));

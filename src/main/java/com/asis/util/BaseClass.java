@@ -35,6 +35,8 @@ public class BaseClass {
 	
 	public static String TAXATION=" ";
 	public static String BUSINESS=" ";
+	public static String SOFTWARE1=" ";
+	public static String SOFTWARE2=" ";
 
 	
 	public static String XERO_USER_NAME="";
@@ -150,6 +152,8 @@ public class BaseClass {
 		SENDER_TO=System.getProperty("senderTo");
 		TAXATION=System.getProperty("ForB00k!23");
 		BUSINESS=System.getProperty("business");
+		SOFTWARE1=System.getProperty("userName");
+		SOFTWARE2=System.getProperty("userName");
 
 	}
 

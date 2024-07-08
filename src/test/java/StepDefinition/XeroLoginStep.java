@@ -3,17 +3,21 @@ package StepDefinition;
 
 import com.asis.util.BaseClass;
 
+import MYOB.MYOBLoginPage;
 import XERO.XeroLoginPage;
 import io.cucumber.java.en.*;
 
 public class XeroLoginStep {
 
 	XeroLoginPage xerologinPage;
+	MYOBLoginPage myobloginPage;
 
 	@Given("User user is on Login Page")
 	public void user_user_is_on_login_page() {
 		BaseClass.setupDriver("Chrome");
 		xerologinPage = new XeroLoginPage();
+		myobloginPage = new MYOBLoginPage();
+//		if()
 		BaseClass.lauchSite("https://login.xero.com");
 	}
 

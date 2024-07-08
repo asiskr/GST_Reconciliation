@@ -11,10 +11,15 @@ import io.cucumber.junit.CucumberOptions;
 //	{"src/test/resources/Features/"},
 		
 				{
-					"src/test/resources/Features/1MYOBLogin.feature",
-					"src/test/resources/Features/2MYOBReports.feature",
-					"src/test/resources/Features/3MYOBActivity.feature"
-////					"src/test/resources/Features/2test_ATOsearchClientName.feature",
+					"src/test/resources/Features/_1MYOBLogin.feature",
+					"src/test/resources/Features/_2MYOBReports.feature",
+					"src/test/resources/Features/_3MYOBActivity.feature",
+					"src/test/resources/Features/_4MYOBPayroll.feature",
+					"src/test/resources/Features/_5MYOBAgedReceivable.feature",
+					"src/test/resources/Features/_6MYOBAgedPayable.feature",
+					"src/test/resources/Features/_7MYOBBalanceSheet.feature"
+					
+////					"src/test/resources/Features/2test_ATOsearchClientName.feature",  
 			},
 //				/*
 	

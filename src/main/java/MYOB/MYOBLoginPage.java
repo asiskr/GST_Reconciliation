@@ -22,8 +22,6 @@ public class MYOBLoginPage extends BaseClass{
 	WebElement password;
 	@FindBy(xpath= "//button[contains(text(),'Sign in')]")
 	WebElement signin;
-	String userId = "accountant2@fortunaadvisors.com.au";
-	String passwordValue = "User123456@";
 	@FindBy(xpath= "//input[@id='code']")
 	WebElement authenti;
 	@FindBy(xpath= "//span[@aria-label='Error']")
@@ -38,8 +36,9 @@ public class MYOBLoginPage extends BaseClass{
 	}
 	public void enterEmailAddress() {
 		wait.until(ExpectedConditions.elementToBeClickable(emailAddress));
+		String StringToDate = XERO_TO_DATE;
 		System.out.println(emailAddress);
-		emailAddress.sendKeys(userId);
+		emailAddress.sendKeys(StringToDate);
 	}
 	public void clickOnNextButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(nextButton));
@@ -47,6 +46,7 @@ public class MYOBLoginPage extends BaseClass{
 	}
 	public void enterPassword() {
 		wait.until(ExpectedConditions.elementToBeClickable(password));
+		String passwordValue =XERO_PASSWORD;
 		password.sendKeys(passwordValue);
 	}
 	public void clickOnSigninButton() {

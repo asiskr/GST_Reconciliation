@@ -2,6 +2,7 @@ package MYOB;
 
 import java.util.HashMap;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,7 +16,7 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 
 	@FindBy(xpath="//div[contains(text(),'Receivables reconciliation with tax')]")
 	WebElement receivable;
-	@FindBy(xpath="//input[@id='Input_HJVwL-Fa9NR']")
+	@FindBy(xpath="//input[@name='AS_AT_DATE']")
 	WebElement toDate;
 	@FindBy(xpath="//div[@role='row' and .//span[text()='Total']]//div[3]//span")
 	WebElement total;
@@ -28,10 +29,19 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 	public MYOBAgedRecieveablePage(){	
 		PageFactory.initElements(DriverManager.getDriver(), this);    
 	}
-	public void passToDate() {
+	public void clickReceivableButton() {
+		wait.until(ExpectedConditions.elementToBeClickable(receivable));
+		receivable.click();
+	}
+	
+	public void passToDate() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(toDate));
-		toDate.click();
-		toDate.sendKeys("01/07/2022");
+		String StringToDate =XERO_TO_DATE;
+		toDate.sendKeys(Keys.CONTROL + "a");
+		toDate.sendKeys(Keys.DELETE);
+
+		toDate.sendKeys(StringToDate);
+		Thread.sleep(3000);
 	}
 	public void receivableAmount() {
 		wait.until(ExpectedConditions.visibilityOf(total));
