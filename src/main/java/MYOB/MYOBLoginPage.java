@@ -36,9 +36,9 @@ public class MYOBLoginPage extends BaseClass{
 	}
 	public void enterEmailAddress() {
 		wait.until(ExpectedConditions.elementToBeClickable(emailAddress));
-		String StringToDate = XERO_TO_DATE;
+		String email = XERO_USER_NAME;
 		System.out.println(emailAddress);
-		emailAddress.sendKeys(StringToDate);
+		emailAddress.sendKeys(email);
 	}
 	public void clickOnNextButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(nextButton));

@@ -150,10 +150,10 @@ public class BaseClass {
 		ATO_APR_QUARTER=System.getProperty("aprQuarter");
 		USERNAME=System.getProperty("userNameLaptop");
 		SENDER_TO=System.getProperty("senderTo");
-		TAXATION=System.getProperty("ForB00k!23");
+		TAXATION=System.getProperty("taxation");
 		BUSINESS=System.getProperty("business");
-		SOFTWARE1=System.getProperty("userName");
-		SOFTWARE2=System.getProperty("userName");
+		SOFTWARE1=System.getProperty("myob");
+		SOFTWARE2=System.getProperty("xero");
 
 	}
 
