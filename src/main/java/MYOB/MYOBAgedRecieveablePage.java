@@ -24,7 +24,7 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 	WebElement reporting;
 	@FindBy(xpath="//span[contains(text(),'Reports')]")
 	WebElement reports;
-	public static double RecievableAmount = 0.0;
+	public static double RecievableAmounts = 0.0;
 
 	public MYOBAgedRecieveablePage(){	
 		PageFactory.initElements(DriverManager.getDriver(), this);    
@@ -47,12 +47,12 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 		wait.until(ExpectedConditions.visibilityOf(total));
 		String totalAmount= total.getText().replaceAll(",", "");
 		try {
-			RecievableAmount = Double.parseDouble(totalAmount);
+			RecievableAmounts = Double.parseDouble(totalAmount);
 		} catch (NumberFormatException e) {
 			System.err.println("Error parsing GST amount: " + totalAmount);
 		}
 		HashMap<String, Double> hm2 = new HashMap<>();
-		hm2.put("Add: GST on Debtors", RecievableAmount);
+		hm2.put("Add: GST on Debtors", RecievableAmounts);
 		LAST_TABLE_DATA.add(hm2);
 		System.out.println("Add: GST on Debtors "+LAST_TABLE_DATA.get(0));	
 	}

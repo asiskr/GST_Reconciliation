@@ -97,22 +97,20 @@ public class MYOBBalanceSheetPage extends BaseClass {
         HashMap<String, Double> hm5 = new HashMap<>();
         hm5.put("GST as per Balance sheet", finalGst);
         LAST_TABLE_DATA.set(3, hm5); // Set at index 3
+        System.out.println(hm5);
 
         // Ensure LAST_TABLE_DATA has at least 5 elements before accessing index 3 and 4
         while (LAST_TABLE_DATA.size() < 5) {
             LAST_TABLE_DATA.add(new HashMap<>());
         }
 
-        Double totalValue = LAST_TABLE_DATA.get(4).get("Total");
+        Double totalValue = LAST_TABLE_DATA.get(5).get("Total");
+        System.out.println(totalValue);
 
-        if (totalValue != null) {
-            HashMap<String, Double> hm6 = new HashMap<>();
-            hm6.put("Total - GST as per balance sheet", totalValue - finalGst);
-            LAST_TABLE_DATA.add(hm6);
-            System.out.println("hm6: " + hm6);
-        } else {
-            System.out.println("Total value not found in LAST_TABLE_DATA.");
-        }
+        HashMap<String, Double> hm6 = new HashMap<>();
+		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(5).get("Total") - LAST_TABLE_DATA.get(3).get("GST as per Balance sheet")));
+
+		LAST_TABLE_DATA.add(hm6);
     }
     
     public void clickReportingButton() {
