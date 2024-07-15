@@ -33,7 +33,7 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(receivable));
 		receivable.click();
 	}
-	
+
 	public void passToDate() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(toDate));
 		String StringToDate =XERO_TO_DATE;
@@ -44,18 +44,28 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 		Thread.sleep(3000);
 	}
 	public void receivableAmount() {
-		wait.until(ExpectedConditions.visibilityOf(total));
-		String totalAmount= total.getText().replaceAll(",", "");
-		try {
-			RecievableAmounts = Double.parseDouble(totalAmount);
-		} catch (NumberFormatException e) {
-			System.err.println("Error parsing GST amount: " + totalAmount);
-		}
-		HashMap<String, Double> hm2 = new HashMap<>();
-		hm2.put("Add: GST on Debtors", RecievableAmounts);
-		LAST_TABLE_DATA.add(hm2);
-		System.out.println("Add: GST on Debtors "+LAST_TABLE_DATA.get(0));	
+	    wait.until(ExpectedConditions.visibilityOf(total));
+	    String totalAmount = total.getText().replaceAll(",", "");
+	    try {
+	        RecievableAmounts = Double.parseDouble(totalAmount);
+	    } catch (NumberFormatException e) {
+	        System.err.println("Error parsing GST amount: " + totalAmount);
+	    }
+	    HashMap<String, Double> hm2 = new HashMap<>();
+	    hm2.put("Add: GST on Debtors", RecievableAmounts);
+	    LAST_TABLE_DATA.add(hm2);
+
+	    // Print the index of the newly added value
+	    System.out.println("Add: GST on Debtors " + LAST_TABLE_DATA.get(LAST_TABLE_DATA.size() - 1));
+
+	    // Print all elements in LAST_TABLE_DATA with their indices
+	    System.out.println("Contents of LAST_TABLE_DATA:");
+	    for (int i = 0; i < LAST_TABLE_DATA.size(); i++) {
+	        HashMap<String, Double> map = LAST_TABLE_DATA.get(i);
+	        System.out.println("Index " + i + ": " + map);
+	    }
 	}
+
 
 	public void clickReportingButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(reporting));

@@ -30,20 +30,13 @@ public class MYOBBalanceSheetSteps extends BaseClass {
     @Then("user extracts GSTCollected, GSTPaid, GSTActual, GSTLastYear")
     public void user_extracts_gst_collected_gst_paid_gst_actual_gst_last_year() {
         balanceSheet.getTextGst();
-        
-        // Ensure LAST_TABLE_DATA is accessed correctly
-        if (MYOBBalanceSheetPage.LAST_TABLE_DATA.size() > 4) {
-            System.out.println("Total: " + MYOBAgedPayableSummaryPage.LAST_TABLE_DATA.get(4).get("Total"));
-        } else {
-            System.out.println("Total value not found in LAST_TABLE_DATA.");
-            
-        }
-        
-        // Print the entire LAST_TABLE_DATA for debugging
-        System.out.println("Contents of LAST_TABLE_DATA:");
-        for (int i = 0; i < MYOBBalanceSheetPage.LAST_TABLE_DATA.size(); i++) {
-            System.out.println("Index " + i + ": " + MYOBBalanceSheetPage.LAST_TABLE_DATA.get(i));
-        }
+               
+//        balanceSheet.getMYOBData();
+//        for (int i = 0; i < MYOBBalanceSheetPage.LAST_TABLE_DATA.size(); i++) {
+//            System.out.println("Index " + i + ": " + MYOBBalanceSheetPage.LAST_TABLE_DATA.get(i));
+//        }
+//        String recipientEmail = BaseClass.SENDER_TO ; // Replace with the actual recipient's email address
+//        balanceSheet.generateExcelAndSendEmail(recipientEmail);
     }
 
     @When("user clicks on the reporting and reports button")
