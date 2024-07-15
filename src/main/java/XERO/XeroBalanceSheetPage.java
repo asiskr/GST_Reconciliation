@@ -42,14 +42,21 @@ public class XeroBalanceSheetPage extends BaseClass{
 		balanceSheet.click();
 	}
 	public void fetchingGST() {
-	    GST_asperBalanceSheet = Double.parseDouble(GST.getText().replaceAll(",", ""));
-	    
-	    HashMap<String, Double> hm5 = new HashMap<>();
-	    hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
-	    LAST_TABLE_DATA.add(hm5);
-	    
-	    HashMap<String, Double> hm6 = new HashMap<>();
-		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(3).get("Total") - LAST_TABLE_DATA.get(4).get("GST as per Balance sheet")));
+		GST_asperBalanceSheet = Double.parseDouble(GST.getText().replaceAll(",", ""));
+
+		HashMap<String, Double> hm5 = new HashMap<>();
+		hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
+		LAST_TABLE_DATA.add(hm5);
+		int index = LAST_TABLE_DATA.indexOf(hm5);
+		System.out.println("Index of hm5: " + index);
+
+		HashMap<String, Double> hm6 = new HashMap<>();
+		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(2).get("Total") - LAST_TABLE_DATA.get(3).get("GST as per Balance sheet")));
 		LAST_TABLE_DATA.add(hm6);
+
+		for (int i = 0; i < LAST_TABLE_DATA.size(); i++) {
+			HashMap<String, Double> map = LAST_TABLE_DATA.get(i);
+			System.out.println("Index " + i + ": " + map);
+		}
 	}
 }

@@ -1,7 +1,9 @@
 package XERO;
+
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -30,7 +32,7 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 	@FindBy(xpath = "//*[@id=\"report-settings\"]/div/div/div[7]/button")
 	WebElement update;
 	@FindBy(xpath = "//div[contains(text(),'Nothing to show here')]")
-	public WebElement noShowDiv;
+	public boolean noShowDiv;
 	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[9]/span/div")
 	public WebElement GST1;
 	public static double RecievableAmount = 0.0;
@@ -75,6 +77,23 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 		update.click();
 	}
 	public void getAgedRecievableValues() { 
+
+		if (noShowDiv) {
+			RecievableAmount=0.0;
+			System.out.println(RecievableAmount);
+			HashMap<String, Double> hm2 = new HashMap<>();
+			hm2.put("Add: GST on Debtors", RecievableAmount);
+			LAST_TABLE_DATA.add(hm2);
+			System.out.println("Add: GST on Debtors");
+		}
+		else {
+			RecievableAmount= Double.parseDouble((GST1).getText().replaceAll(",", ""));
+
+			HashMap<String, Double> hm2 = new HashMap<>();
+			hm2.put("Add: GST on Debtors", RecievableAmount);
+			LAST_TABLE_DATA.add(hm2);	
+		}		
+		/*
 		boolean exists = false;
 		try {
 			exists = noShowDiv.isDisplayed();
@@ -86,8 +105,8 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 		if (exists) {
 			System.out.println("No data to show: " + RecievableAmount);
 		} else { 
-			
-			
+
+
 			wait.until(ExpectedConditions.visibilityOf(GST1));
 			String gstText2 = GST1.getText().replaceAll(",", "");
 			try {
@@ -100,5 +119,12 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 		hm2.put("Add: GST on Debtors", RecievableAmount);
 		LAST_TABLE_DATA.add(hm2);
 		System.out.println("Add: GST on Debtors "+LAST_TABLE_DATA.get(0));	
+	}
+		 */
+
+		for (int i = 0; i < LAST_TABLE_DATA.size(); i++) {
+			HashMap<String, Double> map = LAST_TABLE_DATA.get(i);
+			System.out.println("Index " + i + ": " + map);
+		}
 	}
 }

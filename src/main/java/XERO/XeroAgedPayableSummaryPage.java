@@ -107,6 +107,10 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		LAST_TABLE_DATA.add(hm4);
 		System.out.println("Total: " + LAST_TABLE_DATA.get(1));
 
-
+		System.out.println("Contents of LAST_TABLE_DATA:");
+		for (int i = 0; i < LAST_TABLE_DATA.size(); i++) {
+			HashMap<String, Double> map = LAST_TABLE_DATA.get(i);
+			System.out.println("Index " + i + ": " + map);
+		}
 	}
 }
