@@ -54,9 +54,7 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 	    HashMap<String, Double> hm2 = new HashMap<>();
 	    hm2.put("Add: GST on Debtors", RecievableAmounts);
 	    LAST_TABLE_DATA.add(hm2);
-
-	    // Print the index of the newly added value
-	    System.out.println("Add: GST on Debtors " + LAST_TABLE_DATA.get(LAST_TABLE_DATA.size() - 1));
+//	    LAST_TABLE_DATA.set(1,hm2);
 
 	    // Print all elements in LAST_TABLE_DATA with their indices
 	    System.out.println("Contents of LAST_TABLE_DATA:");

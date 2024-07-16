@@ -66,20 +66,21 @@ public class GenrateExcel extends BaseClass {
 		while (LAST_TABLE_DATA.size() <= 6) {
 			LAST_TABLE_DATA.add(new HashMap<>()); // Ensure the list has enough elements
 		}
-		LAST_TABLE_DATA.set(6, hm7);
+		LAST_TABLE_DATA.add(6, hm7);
 
 		HashMap<String, Double> hm8 = new HashMap<>();
 		hm8.put("Reporting variance", variance.get_GST_Refund());
 		while (LAST_TABLE_DATA.size() <= 7) {
 			LAST_TABLE_DATA.add(new HashMap<>()); // Ensure the list has enough elements
 		}
-		LAST_TABLE_DATA.set(7, hm8);
+		LAST_TABLE_DATA.add(7, hm8);
 
 		// Ensure we handle null values when calculating 'Unknown variance'
 		HashMap<String, Double> hm9 = new HashMap<>();
 		Double totalGST = LAST_TABLE_DATA.get(5).get("Total - GST as per balance sheet");
 		Double reasonForVariance = LAST_TABLE_DATA.get(6).get("Reason for Variance:");
 		Double reportingVariance = LAST_TABLE_DATA.get(7).get("Reporting variance");
+		System.out.println(totalGST);
 
 		if (totalGST == null) totalGST = 0.0;
 		if (reasonForVariance == null) reasonForVariance = 0.0;
@@ -89,8 +90,8 @@ public class GenrateExcel extends BaseClass {
 		while (LAST_TABLE_DATA.size() <= 8) {
 			LAST_TABLE_DATA.add(new HashMap<>()); // Ensure the list has enough elements
 		}
-		LAST_TABLE_DATA.add(hm9);
-		LAST_TABLE_DATA.set(8, hm9);
+//		LAST_TABLE_DATA.add(hm9);
+		LAST_TABLE_DATA.add(8, hm9);
 
 		ArrayList<QuaterData> bas_relodged_data = new ArrayList<>();
 		QuaterData bas_relodged = new QuaterData("BAS to be relodged for Period ended Jun 23");

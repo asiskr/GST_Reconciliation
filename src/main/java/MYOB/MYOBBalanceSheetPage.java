@@ -61,15 +61,13 @@ public class MYOBBalanceSheetPage extends BaseClass {
 
 	Double unknownVar ;
 	Double reportingVar;
-	public static double gstColl;
-	public static double gstPai;
-	public static double gstAdjustmentAactu;
-	public static double gstAdjustmentlast;
+	public static double gstColl=0.0;
+	public static double gstPai=0.0;
+	public static double gstAdjustmentAactu=0.0;
+	public static double gstAdjustmentlast=0.0;
 	public static double finalGst = 0.0;
 	public static double GST_asperBalanceSheet = 0.0;
 
-	// Shared data structure
-	public static final List<HashMap<String, Double>> LAST_TABLE_DATA = MYOBAgedPayableSummaryPage.LAST_TABLE_DATA;
 
 	public MYOBBalanceSheetPage() {    
 		PageFactory.initElements(DriverManager.getDriver(), this); 
@@ -127,18 +125,17 @@ public class MYOBBalanceSheetPage extends BaseClass {
 
 	    // Add GST as per Balance sheet
 	    HashMap<String, Double> hm5 = new HashMap<>();
-	    hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
-	    LAST_TABLE_DATA.set(4, hm5);  // Ensure we place this at the correct index
+		hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
+//		LAST_TABLE_DATA.add(hm5);
+		LAST_TABLE_DATA.set(4,hm5);
+		int index = LAST_TABLE_DATA.indexOf(hm5);
+		System.out.println("Index of hm5: " + index);
 
-	    HashMap<String, Double> hm6 = new HashMap<>();
-	    Double total = LAST_TABLE_DATA.get(1).get("Total");
-	    Double gstAsPerBalanceSheet = LAST_TABLE_DATA.get(4).get("GST as per Balance sheet");
-	    if (total != null && gstAsPerBalanceSheet != null) {
-	        hm6.put("Total - GST as per balance sheet", total - gstAsPerBalanceSheet);
-	    } else {
-	        System.err.println("Total or GST as per Balance sheet is null");
-	    }
-	    LAST_TABLE_DATA.set(5, hm6);  // Ensure we place this at the correct index
+		HashMap<String, Double> hm6 = new HashMap<>();
+		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(3).get("Total") - LAST_TABLE_DATA.get(4).get("GST as per Balance sheet")));
+//		LAST_TABLE_DATA.add(hm6);
+		LAST_TABLE_DATA.set(5,hm6);
+
 
 	    // Print all elements in LAST_TABLE_DATA with their indices
 	    System.out.println("Contents of LAST_TABLE_DATA:");

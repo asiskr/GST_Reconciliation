@@ -70,9 +70,9 @@ public class GenratingExcelPage extends BaseClass {
 		hm8.put("Reporting variance", variance.get_GST_Refund());
 		LAST_TABLE_DATA.add(hm8);
 
-		reportingVarValue=LAST_TABLE_DATA.get(7).get("Reporting variance");
-		formattedreportingVar = String.format("%.2f", reportingVarValue);
-		reportingVar = Double.parseDouble(formattedreportingVar);
+//		reportingVarValue=LAST_TABLE_DATA.get(7).get("Reporting variance");
+//		formattedreportingVar = String.format("%.2f", reportingVarValue);
+//		reportingVar = Double.parseDouble(formattedreportingVar);
 
 		HashMap<String, Double> hm9 = new HashMap<>();
 		hm9.put("Unknown variance",	LAST_TABLE_DATA.get(5).get("Total - GST as per balance sheet")+
@@ -80,9 +80,9 @@ public class GenratingExcelPage extends BaseClass {
 				LAST_TABLE_DATA.get(7).get("Reporting variance"));
 		LAST_TABLE_DATA.add(hm9);
 
-		unknownVarValue = LAST_TABLE_DATA.get(8).get("Unknown variance");
-		formattedUnknownVar = String.format("%.2f", unknownVarValue);
-		unknownVar = Double.parseDouble(formattedUnknownVar);
+//		unknownVarValue = LAST_TABLE_DATA.get(8).get("Unknown variance");
+//		formattedUnknownVar = String.format("%.2f", unknownVarValue);
+//		unknownVar = Double.parseDouble(formattedUnknownVar);
 
 		ArrayList<QuaterData> bas_relodged_data = new ArrayList<>();
 		QuaterData bas_relodged = new QuaterData("BAS to be relodged for Period ended Jun 23");
@@ -206,6 +206,3 @@ public class GenratingExcelPage extends BaseClass {
 		}
 	}
 }
-
-
-
