@@ -43,11 +43,8 @@ public class MYOBPayrollEmployeSummarryPage extends BaseClass {
 
 	public void passFromDate() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(fromDate));
-
-		// Send a sequence of backspace or delete keys to clear the field
 		fromDate.sendKeys(Keys.CONTROL + "a");
 		fromDate.sendKeys(Keys.DELETE);
-
 		fromDate.sendKeys("01/07/2022");
 		Thread.sleep(3000);
 	}
@@ -57,7 +54,6 @@ public class MYOBPayrollEmployeSummarryPage extends BaseClass {
 		String StringToDate =XERO_TO_DATE;
 		toDate.sendKeys(Keys.CONTROL + "a");
 		toDate.sendKeys(Keys.DELETE);
-
 		toDate.sendKeys(StringToDate);
 		Thread.sleep(3000);
 	}

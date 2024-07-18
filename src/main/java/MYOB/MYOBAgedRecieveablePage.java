@@ -39,7 +39,6 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 		String StringToDate =XERO_TO_DATE;
 		toDate.sendKeys(Keys.CONTROL + "a");
 		toDate.sendKeys(Keys.DELETE);
-
 		toDate.sendKeys(StringToDate);
 		Thread.sleep(3000);
 	}
@@ -54,16 +53,8 @@ public class MYOBAgedRecieveablePage extends BaseClass{
 	    HashMap<String, Double> hm2 = new HashMap<>();
 	    hm2.put("Add: GST on Debtors", RecievableAmounts);
 	    LAST_TABLE_DATA.add(hm2);
-//	    LAST_TABLE_DATA.set(1,hm2);
 
-	    // Print all elements in LAST_TABLE_DATA with their indices
-	    System.out.println("Contents of LAST_TABLE_DATA:");
-	    for (int i = 0; i < LAST_TABLE_DATA.size(); i++) {
-	        HashMap<String, Double> map = LAST_TABLE_DATA.get(i);
-	        System.out.println("Index " + i + ": " + map);
-	    }
 	}
-
 
 	public void clickReportingButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(reporting));
