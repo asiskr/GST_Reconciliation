@@ -27,6 +27,7 @@ XERO\ATOClientNameSearchPage.class
 XERO\XeroGSTReconciliationPage.class
 com\asis\GST_template.class
 XERO\GenerateEmail.class
+com\asis\EmailFetcher.class
 com\asis\TestCreateExcel.class
 XERO\ATOfetchingICAStatement.class
 com\asis\ATOExcel.class
