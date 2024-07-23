@@ -46,7 +46,6 @@ MYOB\GenrateEmail$1.class
 com\asis\ATOdata.class
 com\asis\util\xeroexcel.class
 com\asis\util\ExcelUtil.class
-MYOB\MYOBBalanceSheetPage$1.class
 XERO\XeroBalanceSheetPage.class
 com\asis\util\BaseClass.class
 com\asis\Main$1.class

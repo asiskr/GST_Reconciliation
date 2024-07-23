@@ -162,6 +162,8 @@
 
 							<userNameLaptop>${userNameLaptop}</userNameLaptop>
 							<senderTo>${senderTo}</senderTo>
+							<software1>${myob}</software1>
+							<myobcode>${code}</myobcode>
 						</systemPropertyVariables>
 					</configuration>
 				</plugin>

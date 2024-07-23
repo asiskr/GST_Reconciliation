@@ -34,6 +34,7 @@ public class MYOBLoginSteps extends BaseClass{
 	@Then("click on signin button")
 	public void click_on_signin_button() {
 		MYOBlogin.clickOnSigninButton();
-		MYOBlogin.enterAuthenticationCode();
+		MYOBlogin.enterCode();
+//		MYOBlogin.enterAuthenticationCode();
 	}
 }

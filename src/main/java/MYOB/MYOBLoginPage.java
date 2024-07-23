@@ -53,6 +53,14 @@ public class MYOBLoginPage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(signin));
 		signin.click();
 	}
+	
+	public void enterCode() {
+		wait.until(ExpectedConditions.elementToBeClickable(authenti));
+		String code =MYOBCODE;
+		authenti.sendKeys(code);
+		continueButton.click();
+	}
+	/*
 	  public void enterAuthenticationCode() {
 	        String authenticationCode = JOptionPane.showInputDialog("Enter your Authentication code:");
 	        if (authenticationCode == null || authenticationCode.trim().isEmpty()) {
@@ -63,4 +71,5 @@ public class MYOBLoginPage extends BaseClass{
 	        authenti.sendKeys(authenticationCode);
 	        continueButton.click();
 	    }
+	    */
 }
