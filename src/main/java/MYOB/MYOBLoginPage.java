@@ -29,8 +29,6 @@ public class MYOBLoginPage extends BaseClass{
 	//span[@aria-label='Error']
 	@FindBy(xpath= "//button[contains(text(),'Continue')]")
 	WebElement continueButton;
-	//button[contains(text(),'Continue')]
-
 	public MYOBLoginPage(){	
 		PageFactory.initElements(DriverManager.getDriver(), this);    
 	}
@@ -62,4 +60,6 @@ public class MYOBLoginPage extends BaseClass{
 	        authenti.sendKeys(authenticationCode);
 	        continueButton.click();
 	    }
+	  
+	  //accountant2@fortunaadvisors.com.au
 }

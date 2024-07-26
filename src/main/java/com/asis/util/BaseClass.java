@@ -33,12 +33,10 @@ public class BaseClass {
 	public static String XERO_FILE_NAME="";
 
 	
-	public static String TAXATION=" ";
-	public static String BUSINESS=" ";
-	public static String SOFTWARE1=" ";
-	public static String SOFTWARE2=" ";
-
-	
+	public static String TAXATION="";
+	public static String BUSINESS="";
+	public static String SOFTWARE1="";
+	public static String MYOBCODE="";
 	public static String XERO_USER_NAME="";
 	public static String XERO_PASSWORD="";
 	public static String XERO_SECURITY_QUEST1="";
@@ -153,7 +151,7 @@ public class BaseClass {
 		TAXATION=System.getProperty("taxation");
 		BUSINESS=System.getProperty("business");
 		SOFTWARE1=System.getProperty("myob");
-		SOFTWARE2=System.getProperty("xero");
+		MYOBCODE=System.getProperty("myobcode");
 
 	}
 

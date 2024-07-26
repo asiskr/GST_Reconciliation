@@ -18,7 +18,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.activation.DataSource;
-import javax.activation.FileDataSource;
+import javax.activation.FileDataSource; 
 import javax.mail.internet.MimeMessage;
 import javax.activation.DataHandler;
 import com.asis.Excel;
@@ -39,64 +39,88 @@ public class GenrateExcel extends BaseClass {
 	public void getMYOBData() {
 		ArrayList<QuaterData> xero_data = new ArrayList<>();
 		QuaterData xeroObj = new QuaterData("As per the book");
-		xeroObj.set_G1(Double.parseDouble(fetchCaptureA1G1B1Data.get(0)),false);
-		xeroObj.set_1A(Double.parseDouble(fetchCaptureA1G1B1Data.get(1)),false);
-		xeroObj.set_1B(Double.parseDouble(fetchCaptureA1G1B1Data.get(2)),false);
-		xeroObj.set_W1(Double.parseDouble(fetchCaptureA1G1B1Data.get(3)),false);
-		xeroObj.set_4(Double.parseDouble(fetchCaptureA1G1B1Data.get(4)),false);
-		xeroObj.set_GST_Refund(xeroObj.get_1A() - xeroObj.get_1B(),false);
-		xeroObj.set_ATO_Total_Refund(xeroObj.get_GST_Refund() + xeroObj.get_4() + xeroObj.get_5A() - xeroObj.get_7D(),false);
+		xeroObj.set_G1(Double.parseDouble(fetchCaptureA1G1B1Data.get(0)), false);
+		xeroObj.set_1A(Double.parseDouble(fetchCaptureA1G1B1Data.get(1)), false);
+		xeroObj.set_1B(Double.parseDouble(fetchCaptureA1G1B1Data.get(2)), false);
+		xeroObj.set_W1(Double.parseDouble(fetchCaptureA1G1B1Data.get(3)), false);
+		xeroObj.set_4(Double.parseDouble(fetchCaptureA1G1B1Data.get(4)), false);
+		xeroObj.set_GST_Refund(xeroObj.get_1A() - xeroObj.get_1B(), false);
+		xeroObj.set_ATO_Total_Refund(xeroObj.get_GST_Refund() + xeroObj.get_4() + xeroObj.get_5A() - xeroObj.get_7D(), false);
 		xero_data.add(xeroObj);
 		XERO_DATA.add(xero_data);
 
 		ArrayList<QuaterData> variance_data = new ArrayList<>();
 		QuaterData variance = new QuaterData("Variance");
-		variance.set_G1(QuaterData.getTotal_of_year_G1() - xeroObj.get_G1(),false);
-		variance.set_1A(QuaterData.getTotal_of_year_1A() - xeroObj.get_1A(),false);
-		variance.set_1B(QuaterData.getTotal_of_year_1B() - xeroObj.get_1B(),false);
-		variance.set_W1(QuaterData.getTotal_of_year_W1() - xeroObj.get_W1(),false);
-		variance.set_4(QuaterData.getTotal_of_year_4() - xeroObj.get_4(),false);
-		variance.set_GST_Refund(variance.get_1A() - variance.get_1B(),false);
-		variance.set_ATO_Total_Refund(variance.get_GST_Refund() + variance.get_4() + variance.get_5A() - variance.get_7D(),false);
+		variance.set_G1(QuaterData.getTotal_of_year_G1() - xeroObj.get_G1(), false);
+		variance.set_1A(QuaterData.getTotal_of_year_1A() - xeroObj.get_1A(), false);
+		variance.set_1B(QuaterData.getTotal_of_year_1B() - xeroObj.get_1B(), false);
+		variance.set_W1(QuaterData.getTotal_of_year_W1() - xeroObj.get_W1(), false);
+		variance.set_4(QuaterData.getTotal_of_year_4() - xeroObj.get_4(), false);
+		variance.set_GST_Refund(variance.get_1A() - variance.get_1B(), false);
+		variance.set_ATO_Total_Refund(variance.get_GST_Refund() + variance.get_4() + variance.get_5A() - variance.get_7D(), false);
 		variance_data.add(variance);
-		XERO_DATA.add(variance_data);	
+		XERO_DATA.add(variance_data);    
 
 		HashMap<String, Double> hm7 = new HashMap<>();
 		hm7.put("Reason for Variance:", 0.0);
-		LAST_TABLE_DATA.add(hm7);
+		while (LAST_TABLE_DATA.size() <= 6) {
+			LAST_TABLE_DATA.add(new HashMap<>()); // Ensure the list has enough elements
+		}
+		LAST_TABLE_DATA.add(6, hm7);
 
 		HashMap<String, Double> hm8 = new HashMap<>();
 		hm8.put("Reporting variance", variance.get_GST_Refund());
-		LAST_TABLE_DATA.add(hm8);
+		while (LAST_TABLE_DATA.size() <= 7) {
+			LAST_TABLE_DATA.add(new HashMap<>()); // Ensure the list has enough elements
+		}
+		LAST_TABLE_DATA.add(7, hm8);
 
-		reportingVarValue=LAST_TABLE_DATA.get(7).get("Reporting variance");
-		formattedreportingVar = String.format("%.2f", reportingVarValue);
-		reportingVar = Double.parseDouble(formattedreportingVar);
-
+		// Ensure we handle null values when calculating 'Unknown variance'
 		HashMap<String, Double> hm9 = new HashMap<>();
-		hm9.put("Unknown variance",	LAST_TABLE_DATA.get(5).get("Total - GST as per balance sheet")+
-				LAST_TABLE_DATA.get(6).get("Reason for Variance:")+
-				LAST_TABLE_DATA.get(7).get("Reporting variance"));
-		LAST_TABLE_DATA.add(hm9);
+		Double totalGST = LAST_TABLE_DATA.get(5).get("Total - GST as per balance sheet");
+		Double reasonForVariance = LAST_TABLE_DATA.get(6).get("Reason for Variance:");
+		Double reportingVariance = LAST_TABLE_DATA.get(7).get("Reporting variance");
+		System.out.println(totalGST);
 
-		unknownVarValue = LAST_TABLE_DATA.get(8).get("Unknown variance");
-		formattedUnknownVar = String.format("%.2f", unknownVarValue);
-		unknownVar = Double.parseDouble(formattedUnknownVar);
+		if (totalGST == null) totalGST = 0.0;
+		if (reasonForVariance == null) reasonForVariance = 0.0;
+		if (reportingVariance == null) reportingVariance = 0.0;
+
+		hm9.put("Unknown variance", totalGST + reasonForVariance + reportingVariance);
+		while (LAST_TABLE_DATA.size() <= 8) {
+			LAST_TABLE_DATA.add(new HashMap<>()); // Ensure the list has enough elements
+		}
+//		LAST_TABLE_DATA.add(hm9);
+		LAST_TABLE_DATA.add(8, hm9);
 
 		ArrayList<QuaterData> bas_relodged_data = new ArrayList<>();
 		QuaterData bas_relodged = new QuaterData("BAS to be relodged for Period ended Jun 23");
 
-		bas_relodged.set_G1(TEMP_JUNE_G1 - variance.get_G1(),false);
-		bas_relodged.set_1A(TEMP_JUNE_A1 - variance.get_1A(),false);
-		bas_relodged.set_1B(TEMP_JUNE_B1 - variance.get_1B(),false);
-		bas_relodged.set_W1(TEMP_JUNE_W1 - variance.get_W1(),false);
-		bas_relodged.set_4(TEMP_JUNE_4 - variance.get_4(),false);
-		bas_relodged.set_GST_Refund(TEMP_JUNE_GST_Refund - variance.get_GST_Refund(),false);
-		bas_relodged.set_ATO_Total_Refund(bas_relodged.get_GST_Refund() + bas_relodged.get_4() + bas_relodged.get_5A() - bas_relodged.get_7D(),false);
+		bas_relodged.set_G1(TEMP_JUNE_G1 - variance.get_G1(), false);
+		bas_relodged.set_1A(TEMP_JUNE_A1 - variance.get_1A(), false);
+		bas_relodged.set_1B(TEMP_JUNE_B1 - variance.get_1B(), false);
+		bas_relodged.set_W1(TEMP_JUNE_W1 - variance.get_W1(), false);
+		bas_relodged.set_4(TEMP_JUNE_4 - variance.get_4(), false);
+		bas_relodged.set_GST_Refund(TEMP_JUNE_GST_Refund - variance.get_GST_Refund(), false);
+		bas_relodged.set_ATO_Total_Refund(bas_relodged.get_GST_Refund() + bas_relodged.get_4() + bas_relodged.get_5A() - bas_relodged.get_7D(), false);
 		bas_relodged_data.add(bas_relodged);
-		XERO_DATA.add(bas_relodged_data);
+		XERO_DATA.add(bas_relodged_data);	
 
-		/*
+		// Ensure the total and total - GST as per balance sheet are included in the final Excel
+		if (LAST_TABLE_DATA.size() > 5 && LAST_TABLE_DATA.get(3).get("Total") != null) {
+			System.out.println("Total: " + LAST_TABLE_DATA.get(3).get("Total"));
+		}else {
+			System.out.println("null");
+		}
+		if (LAST_TABLE_DATA.size() > 8 && LAST_TABLE_DATA.get(8).get("Unknown variance") != null) {
+			System.out.println("Unknown variance: " + LAST_TABLE_DATA.get(8).get("Unknown variance"));
+		}
+		else {
+			System.out.println("null");
+		}
+		
+	}
+	/*
 		bas_relodged.set_G1(qd_jun.get_G1() - variance.get_G1(),false);
 		bas_relodged.set_1A(qd_jun.get_1A() - variance.get_1A(),false);
 		bas_relodged.set_1B(qd_jun.get_1B() - variance.get_1B(),false);
@@ -107,8 +131,8 @@ public class GenrateExcel extends BaseClass {
 		bas_relodged_data.add(bas_relodged);
 		XERO_DATA.add(bas_relodged_data);
 
-		 */
-	}
+	 */
+
 	public void generateExcelAndSendEmail(String recipientEmail) {
 		String[] client_data = {ATO_CLIENT_NAME, ATO_TO_DATE};
 		String excelName = ATO_CLIENT_NAME+" "+ATO_TO_DATE;

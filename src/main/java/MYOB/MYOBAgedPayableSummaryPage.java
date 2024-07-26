@@ -23,7 +23,7 @@ public class MYOBAgedPayableSummaryPage extends BaseClass {
 	@FindBy(xpath = "//input[@name='AS_AT_DATE']")
 	WebElement toDate;
 	@FindBy(xpath = "//div[@role='row' and .//span[text()='Total']]//div[3]//span")
-	public WebElement total;
+	public static WebElement total;
 	@FindBy(xpath = "//div[contains(text(),'Reporting')]")
 	WebElement reporting;
 	@FindBy(xpath = "//span[contains(text(),'Reports')]")

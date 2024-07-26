@@ -111,7 +111,7 @@ public class MYOBBalanceSheetPage extends BaseClass {
 	    }
 	    GST_asperBalanceSheet = finalGst;
 
-	    while (LAST_TABLE_DATA.size() < 6) {
+	    while (LAST_TABLE_DATA.size() < 6) { 
 	        LAST_TABLE_DATA.add(new HashMap<>());
 	    }
 
