@@ -131,10 +131,10 @@ public class MYOBBalanceSheetPage extends BaseClass {
 		int index = LAST_TABLE_DATA.indexOf(hm5);
 		System.out.println("Index of hm5: " + index);
 
-		HashMap<String, Double> hm6 = new HashMap<>();
-		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(3).get("Total") - LAST_TABLE_DATA.get(4).get("GST as per Balance sheet")));
+//		HashMap<String, Double> hm6 = new HashMap<>();
+//		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(3).get("Total") - LAST_TABLE_DATA.get(4).get("GST as per Balance sheet")));
 //		LAST_TABLE_DATA.add(hm6);
-		LAST_TABLE_DATA.set(5,hm6);
+//		LAST_TABLE_DATA.set(5,hm6);
 
 
 	    // Print all elements in LAST_TABLE_DATA with their indices

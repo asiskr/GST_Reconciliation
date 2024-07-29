@@ -36,7 +36,7 @@ public class BaseClass {
 	public static String TAXATION=" ";
 	public static String BUSINESS=" ";
 	public static String SOFTWARE1=" ";
-	public static String SOFTWARE2=" ";
+	public static String MYOBCODE=" ";
 
 	
 	public static String XERO_USER_NAME="";
@@ -153,7 +153,7 @@ public class BaseClass {
 		TAXATION=System.getProperty("taxation");
 		BUSINESS=System.getProperty("business");
 		SOFTWARE1=System.getProperty("myob");
-		SOFTWARE2=System.getProperty("xero");
+		MYOBCODE=System.getProperty("xero");
 
 	}
 
