@@ -1,3 +1,4 @@
+
 package MYOB;
 
 import javax.swing.JOptionPane;
@@ -53,23 +54,23 @@ public class MYOBLoginPage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(signin));
 		signin.click();
 	}
-	
+
 	public void enterCode() {
 		wait.until(ExpectedConditions.elementToBeClickable(authenti));
 		String code =MYOBCODE;
 		authenti.sendKeys(code);
 		continueButton.click();
 	}
-	/*
-	  public void enterAuthenticationCode() {
-	        String authenticationCode = JOptionPane.showInputDialog("Enter your Authentication code:");
-	        if (authenticationCode == null || authenticationCode.trim().isEmpty()) {
-	            System.out.println("Authentication code is required");
-	            return;
-	        }
-	        wait.until(ExpectedConditions.elementToBeClickable(authenti));
-	        authenti.sendKeys(authenticationCode);
-	        continueButton.click();
-	    }
-	    */
+
+	public void enterAuthenticationCode() {
+		String authenticationCode = JOptionPane.showInputDialog("Enter your Authentication code:");
+		if (authenticationCode == null || authenticationCode.trim().isEmpty()) {
+			System.out.println("Authentication code is required");
+			return;
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(authenti));
+		authenti.sendKeys(authenticationCode);
+		continueButton.click();
+	}
+
 }
