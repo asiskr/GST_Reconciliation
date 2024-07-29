@@ -72,11 +72,11 @@ public class MYOBAgedPayableSummaryPage extends BaseClass {
 		
 
 		// Example of calculating and adding "Total"
-		HashMap<String, Double> hm4 = new HashMap<>();
-		double juneBAS = LAST_TABLE_DATA.get(0).getOrDefault("June BAS", 0.0);
-		double total = juneBAS + PayableAmount + MYOBAgedRecieveablePage.RecievableAmounts;
-		hm4.put("Total", total);
-		LAST_TABLE_DATA.add(hm4);
+//		HashMap<String, Double> hm4 = new HashMap<>();
+//		double juneBAS = LAST_TABLE_DATA.get(0).getOrDefault("June BAS", 0.0);
+//		double total = juneBAS + MYOBAgedPayableSummaryPage.PayableAmount + MYOBAgedRecieveablePage.RecievableAmounts;
+//		hm4.put("Total", total);
+//		LAST_TABLE_DATA.add(hm4);
 //		LAST_TABLE_DATA.set(3,hm4);
 
 		// Print all elements in LAST_TABLE_DATA with their indices

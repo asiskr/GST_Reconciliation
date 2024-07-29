@@ -9,12 +9,12 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = {
-				"src/test/resources/Features/1test_ATOLogin.feature",
-				"src/test/resources/Features/2test_ATOsearchClientName.feature",
-				"src/test/resources/Features/3test_ATOSelectingQuarterDate.feature",
-				"src/test/resources/Features/4test_ATOExtractingBASValues.feature",
-				"src/test/resources/Features/5test_ATOFetchingICAStatement.feature",
-				"src/test/resources/Features/6test_CloseATOProtal.feature",
+//				"src/test/resources/Features/1test_ATOLogin.feature",
+//				"src/test/resources/Features/2test_ATOsearchClientName.feature",
+//				"src/test/resources/Features/3test_ATOSelectingQuarterDate.feature",
+//				"src/test/resources/Features/4test_ATOExtractingBASValues.feature",
+//				"src/test/resources/Features/5test_ATOFetchingICAStatement.feature",
+//				"src/test/resources/Features/6test_CloseATOProtal.feature",
 				"src/test/resources/Features/_1MYOBLogin.feature",
 				"src/test/resources/Features/_2MYOBReports.feature",
 				"src/test/resources/Features/_3MYOBActivity.feature",

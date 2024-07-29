@@ -35,6 +35,8 @@ public class GenrateExcel extends BaseClass {
 
 	Double unknownVar ;
 	Double reportingVar;
+	
+	int index ;
 
 	public void getMYOBData() {
 		ArrayList<QuaterData> xero_data = new ArrayList<>();
@@ -61,6 +63,14 @@ public class GenrateExcel extends BaseClass {
 		variance_data.add(variance);
 		XERO_DATA.add(variance_data);    
 
+		HashMap<String, Double> hm4 = new HashMap<>();
+		double juneBAS = LAST_TABLE_DATA.get(0).getOrDefault("June BAS", 0.0);
+		double total = juneBAS + MYOBAgedPayableSummaryPage.PayableAmount + MYOBAgedRecieveablePage.RecievableAmounts;
+		hm4.put("Total", total);
+		LAST_TABLE_DATA.add(3,hm4);
+		System.out.println(hm4);
+        System.out.println(LAST_TABLE_DATA.indexOf(hm4));
+		
 		HashMap<String, Double> hm7 = new HashMap<>();
 		hm7.put("Reason for Variance:", 0.0);
 		while (LAST_TABLE_DATA.size() <= 6) {
@@ -74,6 +84,31 @@ public class GenrateExcel extends BaseClass {
 			LAST_TABLE_DATA.add(new HashMap<>()); // Ensure the list has enough elements
 		}
 		LAST_TABLE_DATA.add(7, hm8);
+		
+		/*
+		HashMap<String, Double> hm4 = new HashMap<>();
+		double juneBAS = LAST_TABLE_DATA.get(0).getOrDefault("June BAS", 0.0);
+		double total = juneBAS + MYOBAgedPayableSummaryPage.PayableAmount + MYOBAgedRecieveablePage.RecievableAmounts;
+		hm4.put("Total", total);
+		LAST_TABLE_DATA.add(hm4);
+		System.out.println(hm4);
+        System.out.println(LAST_TABLE_DATA.indexOf(hm4));
+		*/
+		Double total23 = LAST_TABLE_DATA.get(3).get("Total");
+		System.out.println(total23);
+		
+//		System.out.println(LAST_TABLE_DATA.indexOf(hm5));
+		
+		Double gstAsPerBalanceSheet =  MYOBBalanceSheetPage.GST_asperBalanceSheet;
+		System.out.println(gstAsPerBalanceSheet);
+		  HashMap<String, Double> hm5 = new HashMap<>();
+			hm5.put("GST as per Balance sheet", MYOBBalanceSheetPage.GST_asperBalanceSheet);
+//			LAST_TABLE_DATA.add(hm5);
+			LAST_TABLE_DATA.set(4,hm5);
+		HashMap<String, Double> hm6 = new HashMap<>();
+		hm6.put("Total - GST as per balance sheet",  total23 - gstAsPerBalanceSheet);
+//		LAST_TABLE_DATA.add(hm6);
+		LAST_TABLE_DATA.set(5,hm6);
 
 		// Ensure we handle null values when calculating 'Unknown variance'
 		HashMap<String, Double> hm9 = new HashMap<>();

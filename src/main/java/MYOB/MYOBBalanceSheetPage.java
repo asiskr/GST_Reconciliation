@@ -135,7 +135,7 @@ public class MYOBBalanceSheetPage extends BaseClass {
 //		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(3).get("Total") - LAST_TABLE_DATA.get(4).get("GST as per Balance sheet")));
 //		LAST_TABLE_DATA.add(hm6);
 //		LAST_TABLE_DATA.set(5,hm6);
-
+ 
 
 	    // Print all elements in LAST_TABLE_DATA with their indices
 	    System.out.println("Contents of LAST_TABLE_DATA:");
