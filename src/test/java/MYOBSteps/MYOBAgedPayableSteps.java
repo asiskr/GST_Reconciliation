@@ -24,8 +24,6 @@ public class MYOBAgedPayableSteps {
     @Then("user extract aged Payable value")
     public void user_extract_aged_payable_value() {
         agedPayable.getPayableTotal();
-//        System.out.println("Total: " + MYOBAgedPayableSummaryPage.PayableAmount);
-
     }
 
     @When("user click on the reporting button")

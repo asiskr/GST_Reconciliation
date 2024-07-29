@@ -36,6 +36,8 @@ public class GenrateExcel extends BaseClass {
 	Double unknownVar ;
 	Double reportingVar;
 
+	int index ;
+
 	public void getMYOBData() {
 		ArrayList<QuaterData> xero_data = new ArrayList<>();
 		QuaterData xeroObj = new QuaterData("As per the book");
@@ -61,6 +63,12 @@ public class GenrateExcel extends BaseClass {
 		variance_data.add(variance);
 		XERO_DATA.add(variance_data);    
 
+		HashMap<String, Double> hm4 = new HashMap<>();
+		double juneBAS = LAST_TABLE_DATA.get(0).getOrDefault("June BAS", 0.0);
+		double total = juneBAS + MYOBAgedPayableSummaryPage.PayableAmount + MYOBAgedRecieveablePage.RecievableAmounts;
+		hm4.put("Total", total);
+		LAST_TABLE_DATA.add(3,hm4);
+
 		HashMap<String, Double> hm7 = new HashMap<>();
 		hm7.put("Reason for Variance:", 0.0);
 		while (LAST_TABLE_DATA.size() <= 6) {
@@ -75,12 +83,26 @@ public class GenrateExcel extends BaseClass {
 		}
 		LAST_TABLE_DATA.add(7, hm8);
 
+		Double total23 = LAST_TABLE_DATA.get(3).get("Total");
+		Double gstAsPerBalanceSheet =  MYOBBalanceSheetPage.GST_asperBalanceSheet;
+		HashMap<String, Double> hm5 = new HashMap<>();
+		hm5.put("GST as per Balance sheet", MYOBBalanceSheetPage.GST_asperBalanceSheet);
+
+		LAST_TABLE_DATA.set(4,hm5);
+		HashMap<String, Double> hm6 = new HashMap<>();
+		hm6.put("Total - GST as per balance sheet",  total23 - gstAsPerBalanceSheet);
+
+		LAST_TABLE_DATA.set(5,hm6);
+		reportingVarValue=LAST_TABLE_DATA.get(7).get("Reporting variance");
+		formattedreportingVar = String.format("%.2f", reportingVarValue);
+		reportingVar = Double.parseDouble(formattedreportingVar);
+		
+
 		// Ensure we handle null values when calculating 'Unknown variance'
 		HashMap<String, Double> hm9 = new HashMap<>();
 		Double totalGST = LAST_TABLE_DATA.get(5).get("Total - GST as per balance sheet");
 		Double reasonForVariance = LAST_TABLE_DATA.get(6).get("Reason for Variance:");
 		Double reportingVariance = LAST_TABLE_DATA.get(7).get("Reporting variance");
-		System.out.println(totalGST);
 
 		if (totalGST == null) totalGST = 0.0;
 		if (reasonForVariance == null) reasonForVariance = 0.0;
@@ -90,9 +112,12 @@ public class GenrateExcel extends BaseClass {
 		while (LAST_TABLE_DATA.size() <= 8) {
 			LAST_TABLE_DATA.add(new HashMap<>()); // Ensure the list has enough elements
 		}
-//		LAST_TABLE_DATA.add(hm9);
 		LAST_TABLE_DATA.add(8, hm9);
 
+		unknownVarValue = LAST_TABLE_DATA.get(8).get("Unknown variance");
+		formattedUnknownVar = String.format("%.2f", unknownVarValue);
+		unknownVar = Double.parseDouble(formattedUnknownVar);
+		
 		ArrayList<QuaterData> bas_relodged_data = new ArrayList<>();
 		QuaterData bas_relodged = new QuaterData("BAS to be relodged for Period ended Jun 23");
 
@@ -106,25 +131,17 @@ public class GenrateExcel extends BaseClass {
 		bas_relodged_data.add(bas_relodged);
 		XERO_DATA.add(bas_relodged_data);
 
-		// Log the contents of LAST_TABLE_DATA to verify the values
-		for (int i = 0; i < LAST_TABLE_DATA.size(); i++) {
-			System.out.println("Index " + i + ": " + LAST_TABLE_DATA.get(i));
-		}
-	
-
-		// Ensure the total and total - GST as per balance sheet are included in the final Excel
+				// Ensure the total and total - GST as per balance sheet are included in the final Excel
 		if (LAST_TABLE_DATA.size() > 5 && LAST_TABLE_DATA.get(3).get("Total") != null) {
-			System.out.println("Total: " + LAST_TABLE_DATA.get(3).get("Total"));
 		}else {
 			System.out.println("null");
 		}
 		if (LAST_TABLE_DATA.size() > 8 && LAST_TABLE_DATA.get(8).get("Unknown variance") != null) {
-			System.out.println("Unknown variance: " + LAST_TABLE_DATA.get(8).get("Unknown variance"));
 		}
 		else {
 			System.out.println("null");
 		}
-		
+
 	}
 
 
@@ -230,7 +247,6 @@ public class GenrateExcel extends BaseClass {
 
 			// Send message
 			Transport.send(message);
-			System.out.println("Email with attachment sent successfully to " + recipientEmail);
 		} catch (AuthenticationFailedException e) {
 			System.out.println("Authentication failed. Please check your credentials and try again.");
 		} catch (MessagingException e) {

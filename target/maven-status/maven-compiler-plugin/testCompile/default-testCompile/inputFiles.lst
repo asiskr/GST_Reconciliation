@@ -1,6 +1,4 @@
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBSteps\MYOBGSTReport.java
-C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\TestRunners\CucumberTestConfig.java
-C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\TestRunners\CucumberOptionsAnnotationConfigurator.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBSteps\GenarteExcel.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\GenrateExcel.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBSteps\MYOBPayrollActivitySteps.java
@@ -11,7 +9,6 @@ C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroSelect
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBSteps\MYOBAgedPayableSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XEROSearchClientSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBSteps\MYOBBalanceSheetSteps.java
-C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\TestRunners\XEROTestRunner.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ATOSearchClientNameStep.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroBalanceSheetSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\TestRunners\TestRunner.java

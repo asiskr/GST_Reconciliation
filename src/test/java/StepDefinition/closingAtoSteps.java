@@ -10,9 +10,7 @@ public class closingAtoSteps {
 
 	
 	@Given("User done with the ATO data")
-	public void user_done_with_the_ATO_data() {
-		System.out.println("closingATOPage title"+ closingATOPage.getPageTitle());
-		
+	public void user_done_with_the_ATO_data() {		
 	}
 
 	@When("User close the browser")

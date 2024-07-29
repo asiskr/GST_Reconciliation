@@ -16,7 +16,6 @@ XERO\ATOLoginPage.class
 MYOB\MYOBAgedPayableSummaryPage.class
 MYOB\GenrateEmail.class
 com\asis\Excel.class
-MYOB\UserEnterMYOB.class
 XERO\GenerateEmail$1.class
 com\asis\Main.class
 MYOB\MYOBReportingPage.class

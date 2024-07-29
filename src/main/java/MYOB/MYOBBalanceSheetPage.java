@@ -73,6 +73,7 @@ public class MYOBBalanceSheetPage extends BaseClass {
 		PageFactory.initElements(DriverManager.getDriver(), this); 
 	}
 
+	// List of all the actions on page
 	public void clickBalanceSheet() {
 		wait.until(ExpectedConditions.visibilityOf(balanceSheet));
 		balanceSheet.click();
@@ -83,6 +84,7 @@ public class MYOBBalanceSheetPage extends BaseClass {
 		String StringToDate = XERO_TO_DATE;
 		toDate.sendKeys(Keys.CONTROL + "a");
 		toDate.sendKeys(Keys.DELETE);
+
 		toDate.sendKeys(StringToDate);
 		Thread.sleep(3000);
 	}
@@ -95,7 +97,7 @@ public class MYOBBalanceSheetPage extends BaseClass {
 	    wait.until(ExpectedConditions.visibilityOf(gstPaid));
 	    String gstPaiStr = gstPaid.getText().replaceAll(",", "").replaceAll("[()]", "");
 	    gstPai = gstPaiStr.startsWith("(") ? -Double.parseDouble(gstPaiStr) : Double.parseDouble(gstPaiStr);
-	    
+
 	    wait.until(ExpectedConditions.visibilityOf(gstAdjustmentActual));
 	    String gstAdjustmentAactuStr = gstAdjustmentActual.getText().replaceAll(",", "").replaceAll("[()]", "");
 	    gstAdjustmentAactu = gstAdjustmentAactuStr.startsWith("(") ? -Double.parseDouble(gstAdjustmentAactuStr) : Double.parseDouble(gstAdjustmentAactuStr);
@@ -111,18 +113,15 @@ public class MYOBBalanceSheetPage extends BaseClass {
 	    }
 	    GST_asperBalanceSheet = finalGst;
 
+	    // Ensure LAST_TABLE_DATA has at least 6 elements before accessing index 1 and 4
 	    while (LAST_TABLE_DATA.size() < 6) {
 	        LAST_TABLE_DATA.add(new HashMap<>());
 	    }
 
+	    // Add GST as per Balance sheet
 	    HashMap<String, Double> hm5 = new HashMap<>();
 		hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
 		LAST_TABLE_DATA.set(4,hm5);
-		int index = LAST_TABLE_DATA.indexOf(hm5);
-
-		HashMap<String, Double> hm6 = new HashMap<>();
-		hm6.put("Total - GST as per balance sheet",  (LAST_TABLE_DATA.get(3).get("Total") - LAST_TABLE_DATA.get(4).get("GST as per Balance sheet")));
-		LAST_TABLE_DATA.set(5,hm6);
 	}
 
 	public void clickReportingButton() {

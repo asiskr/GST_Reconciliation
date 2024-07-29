@@ -5,11 +5,9 @@ MYOBSteps\MYOBBalanceSheetSteps.class
 StepDefinition\XeroGSTReconciliationSteps.class
 MYOBSteps\MYOBLoginSteps.class
 MYOBSteps\MYOBAgedReceivableSteps.class
-TestRunners\XEROTestRunner.class
 StepDefinition\XeroSelectingQuarterDateSteps.class
 StepDefinition\XeroSecurityQuestionSteps.class
 StepDefinition\XeroAgedRecievableSummarySteps.class
-TestRunners\CucumberTestConfig.class
 MYOBSteps\MYOBAgedPayableSteps.class
 StepDefinition\XeroBalanceSheetSteps.class
 StepDefinition\ATOLoginStep.class
@@ -19,7 +17,6 @@ StepDefinition\XEROSearchClientSteps.class
 StepDefinition\ATOFetchingICAStatementSteps.class
 StepDefinition\GenrateExcel.class
 MYOBSteps\GenarteExcel.class
-TestRunners\CucumberOptionsAnnotationConfigurator.class
 StepDefinition\ATOSelectingQuarterDateSteps.class
 MYOBSteps\MYOBReportsStep.class
 StepDefinition\closingAtoSteps.class

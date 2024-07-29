@@ -67,17 +67,9 @@ public class MYOBGSTReportPage extends BaseClass {
 
 
     public void extractG1A1B1Value() {
-        fetchCaptureA1G1B1Data.add(G1.getText().replaceAll("[,]", ""));
-        System.out.println("G1: " + G1.getText().replaceAll("[,]", ""));
-        
+        fetchCaptureA1G1B1Data.add(G1.getText().replaceAll("[,]", ""));        
         fetchCaptureA1G1B1Data.add(A1.getText().replaceAll("[,]", ""));
-        System.out.println("A1: " + A1.getText().replaceAll("[,]", ""));
-        
         fetchCaptureA1G1B1Data.add(B1.getText().replaceAll("[,]", ""));
-        System.out.println("B1: " + B1.getText().replaceAll("[,]", ""));
-        // Uncomment and use the below lines if W1 and _4 elements are added and needed
-        // fetchCaptureA1G1B1Data.add(W1.getText().replaceAll("[,]", ""));
-        // fetchCaptureA1G1B1Data.add(_4.getText().replaceAll("[,]", ""));
     }
 
     public void clickReportingButton() {

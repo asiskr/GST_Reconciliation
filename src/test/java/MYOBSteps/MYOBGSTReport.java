@@ -20,9 +20,7 @@ public class MYOBGSTReport {
 	@Then("User enter from and to date")
 	public void user_enter_from_and_to_date() throws InterruptedException {
 		gstReports.passFromDate();
-		System.out.println("FROM");
 		gstReports.passToDate();
-		System.out.println("TO");
 	}
 
 	@Then("User extract A1 B1 and G1")
@@ -33,7 +31,6 @@ public class MYOBGSTReport {
 	@Then("User click on reporting and reports button")
 	public void user_click_on_reporting_and_reports_button() {
 		gstReports.clickReportingButton();
-		System.out.println("gstReports");
 		gstReports.clickReportsButton();
 	}
 }
