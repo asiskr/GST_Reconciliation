@@ -26,7 +26,6 @@ public class ATOSearchClientNameStep extends BaseClass{
 		else {
 			selectTOP.clickOnTOPButton();
 		}
-		System.out.println("client name");
 	}
 
 	@When("I press enter keyword")

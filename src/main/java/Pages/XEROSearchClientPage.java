@@ -23,8 +23,7 @@ public class XEROSearchClientPage extends BaseClass{
 	public XEROSearchClientPage() {
 		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
-	public static String getPageTitle() {
-		return DriverManager.getDriver().getTitle();
+	public void  getPageTitle() {
 	}
 	public void clickOnSearchButton() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(search));
@@ -40,9 +39,10 @@ public class XEROSearchClientPage extends BaseClass{
 		Thread.sleep(1000);
 		searchBox.sendKeys(client_name);
 		Thread.sleep(3000);
-		if (options.getText().trim().equalsIgnoreCase(ATO_CLIENT_NAME)) {
-		 options.click();
+		if (options.getText().trim().toLowerCase().startsWith(ATO_CLIENT_NAME.toLowerCase())) {
+		    options.click();
 		}
+
 	}
 	public void doSearchClientName() throws InterruptedException {
 	}

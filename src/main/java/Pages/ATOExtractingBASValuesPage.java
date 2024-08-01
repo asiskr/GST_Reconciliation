@@ -90,7 +90,6 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 			qd_sept.set_ATO_Total_Refund((qd_sept.get_GST_Refund() + qd_sept.get_4() + qd_sept.get_5A() - qd_sept.get_7D()), true);
 			sept_quater_data_row.add(qd_sept);
 			ATO_ROW_DATA.add(sept_quater_data_row);
-			System.out.println(sept_quater_data_row);
 		}
 	}
 	public void clickOnOctQuarter() throws InterruptedException {

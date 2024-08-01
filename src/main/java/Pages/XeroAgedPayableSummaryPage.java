@@ -77,7 +77,7 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		Update.click();
 	}
 	public void getAgedPayableValues() {
-		
+
 		boolean exists = false;
 		try {
 			exists = noShowDiv.isDisplayed();
@@ -87,7 +87,6 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 
 		double payableAmount = 0.0;
 		if (exists) {
-			System.out.println("No data to show: " + payableAmount);
 		} else { 
 			wait.until(ExpectedConditions.visibilityOf(GST2));
 			String gstText = GST2.getText().replaceAll(",", "");
@@ -106,8 +105,6 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		double total = juneBAS + payableAmount + XeroAgedRecievableSummaryPage.RecievableAmount;
 		hm4.put("Total", total);
 		LAST_TABLE_DATA.add(hm4);
-		System.out.println("Total: " + LAST_TABLE_DATA.get(1));
-
 
 	}
 }
