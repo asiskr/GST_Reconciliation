@@ -17,6 +17,7 @@ C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MYOBSteps\MYOBLoginSteps.
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ATOFetchingICAStatementSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ATOLoginStep.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ATOSelectingQuarterDateSteps.java
+C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\ReadFilesSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroGetQuarterValuesSteps.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\StepDefinition\XeroLoginStep.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\test\java\MyHooks\AppHooks.java

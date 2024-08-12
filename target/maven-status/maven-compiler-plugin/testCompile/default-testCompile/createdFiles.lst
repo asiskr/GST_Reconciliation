@@ -17,6 +17,7 @@ StepDefinition\XEROSearchClientSteps.class
 StepDefinition\ATOFetchingICAStatementSteps.class
 StepDefinition\GenrateExcel.class
 MYOBSteps\GenarteExcel.class
+StepDefinition\ReadFilesSteps.class
 StepDefinition\ATOSelectingQuarterDateSteps.class
 MYOBSteps\MYOBReportsStep.class
 StepDefinition\closingAtoSteps.class

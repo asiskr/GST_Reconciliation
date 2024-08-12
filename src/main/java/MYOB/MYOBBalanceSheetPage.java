@@ -39,13 +39,13 @@ public class MYOBBalanceSheetPage extends BaseClass {
 	WebElement balanceSheet;
 	@FindBy(xpath = "//input[@name='BALANCE_DATE']")
 	WebElement toDate;
-	@FindBy(xpath = "//div[@role='row'][17]/div[1]//span[@class='btn__content _19fk75g19 _19fk75g1a']")
+	@FindBy(xpath = "//div[@role='row'][17]/div[1]//span[@class='btn__content _19fk75g1a _19fk75g1b']")
 	WebElement gstCollected;
 	@FindBy(xpath = "//div[@role='row'][18]/div[1]//span[@class='btn__content _19fk75g19 _19fk75g1a']")
 	WebElement gstPaid;
-	@FindBy(xpath = "//div[@role='row'][27]/div[1]//span[@class='btn__content _19fk75g19 _19fk75g1a']")
+	@FindBy(xpath = "//div[@role='row'][18]/div[1]//span[@class='btn__content _19fk75g1a _19fk75g1b']")
 	WebElement gstAdjustmentActual;
-	@FindBy(xpath = "//div[@role='row'][27]/div[2]//span[@class='btn__content _19fk75g19 _19fk75g1a']")
+	@FindBy(xpath = "//div[@role='row'][27]/div[2]//span[@class='btn__content _19fk75g1a _19fk75g1b']")
 	WebElement gstAdjustmentLastYear;
 	@FindBy(xpath = "//div[contains(text(),'Reporting')]")
 	WebElement reporting;

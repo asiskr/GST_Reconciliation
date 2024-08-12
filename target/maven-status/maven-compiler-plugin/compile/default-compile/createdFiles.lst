@@ -23,6 +23,7 @@ XERO\GenratingExcelPage$1.class
 MYOB\GenrateExcel$1.class
 XERO\XeroAgedRecievableSummaryPage.class
 XERO\XeroSecurityQuestionPage.class
+com\asis\PDFTextExtractor.class
 XERO\ATOClientNameSearchPage.class
 XERO\XeroGSTReconciliationPage.class
 com\asis\GST_template.class
@@ -31,6 +32,7 @@ com\asis\TestCreateExcel.class
 XERO\ATOfetchingICAStatement.class
 com\asis\ATOExcel.class
 com\asis\QuaterData.class
+XERO\ReadFiles.class
 XERO\ATOGoToQuarterName.class
 com\asis\XeroTesting.class
 MYOB\MYOBSearchClientNamePage.class

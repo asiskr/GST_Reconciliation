@@ -6,6 +6,7 @@ C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\XERO\GenratingExcelPage.j
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\XERO\ATOExtractingBASValuesPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\ReadExcel.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\XERO\GenerateEmail.java
+C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\PDFTextExtractor.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\MYOB\MYOBGSTReportPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\XERO\XeroSecurityQuestionPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\MYOB\MYOBPayrollEmployeSummarryPage.java
@@ -35,6 +36,7 @@ C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\MYOB\MYOBReportingPage.ja
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\TestCreateExcel.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\XERO\XeroAgedPayableSummaryPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\XERO\XeroGSTReconciliationPage.java
+C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\XERO\ReadFiles.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\XERO\ATOClientNameSearchPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\com\asis\InputPage.java
 C:\Users\AsisKaur\eclipse-workspace\Xero\src\main\java\MYOB\MYOBBalanceSheetPage.java

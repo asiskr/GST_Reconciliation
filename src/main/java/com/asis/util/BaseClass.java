@@ -32,6 +32,11 @@ public class BaseClass {
 	public static String XERO_FILE_PATH="";
 	public static String XERO_FILE_NAME="";
 
+	public static String FILE1="";
+	public static String FILE2="";
+	public static String FILE3="";
+	public static String FILE4="";
+	
 	
 	public static String TAXATION="";
 	public static String BUSINESS="";
@@ -154,6 +159,10 @@ public class BaseClass {
 		BUSINESS=System.getProperty("business");
 		SOFTWARE1=System.getProperty("myob");
 		MYOBCODE=System.getProperty("myobcode");
+		FILE1=System.getProperty("file1");
+		FILE2=System.getProperty("file2");	
+		FILE3=System.getProperty("file3");
+		FILE4=System.getProperty("file4");
 
 	}
 
