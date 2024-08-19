@@ -24,10 +24,14 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 	WebElement colmSelected;
 	@FindBy(xpath = "//span[contains(text(),'Outstanding GST')]")
 	WebElement Outstanding_GST;
-	@FindBy(xpath = "//body/div[4]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/div[1]")
-	WebElement endOfMonth;
-	@FindBy(xpath = "//span[contains(text(),'End of last financial year ')]")
-	WebElement lastFinancialYear;
+//	@FindBy(xpath = "//body/div[4]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/div[1]")
+//	WebElement select;
+//	@FindBy(xpath = "//span[contains(text(),'Custom date')]")
+//	WebElement end_of_month;
+	@FindBy(xpath = "//input[@id='report-settings-custom-date-input-to']")
+	WebElement date;
+	//	@FindBy(xpath = "//span[contains(text(),'End of last financial year ')]")
+	//	WebElement lastFinancialYear;
 	@FindBy(xpath = "//button[contains(text(),'Update')]")
 	WebElement Update;
 	@FindBy(xpath = "//div[contains(text(),'Nothing to show here')]")
@@ -65,14 +69,14 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 	}
 	public void clickEndOfMonth() throws InterruptedException {
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(endOfMonth));
-		endOfMonth.click();
 	}
 	public void clickLastFinancialYear() {
-		wait.until(ExpectedConditions.elementToBeClickable(lastFinancialYear));
-		lastFinancialYear.click();
+		wait.until(ExpectedConditions.elementToBeClickable(date));
+		date.click();
+		date.sendKeys(XERO_TO_DATE);
 	}
-	public void clickUpdate() {
+	public void clickUpdate() throws InterruptedException {
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(Update));
 		Update.click();
 	}
