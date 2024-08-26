@@ -9,4 +9,3 @@ Feature: Search for specific client name
 		Then I should land on client home screen
 		When I go to Lodgments 
 		And Select Activity statements 
-		

@@ -2,8 +2,10 @@ package Pages;
 
 import java.util.HashMap;
 import java.util.NoSuchElementException;
+import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,42 +14,41 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.asis.util.BaseClass;
 import Driver_manager.DriverManager;
 
-public class XeroAgedPayableSummaryPage extends BaseClass{
+public class XeroAgedPayableSummaryPage extends BaseClass {
 
 	@FindBy(xpath = "//button[contains(text(),'Accounting')]")
 	WebElement accountingButton;
+
 	@FindBy(xpath = "//a[contains(text(),'Reports')]")
 	WebElement reports;
+
 	@FindBy(xpath = "//*[@class='report-row-tooltip']//descendant::span[contains(text(),'Aged Payables Summary')]")
 	WebElement payable;
+
 	@FindBy(xpath = "//button[@id='report-settings-columns-button']")
 	WebElement colmSelected;
+
 	@FindBy(xpath = "//span[contains(text(),'Outstanding GST')]")
 	WebElement Outstanding_GST;
-//	@FindBy(xpath = "//body/div[4]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/div[1]")
-//	WebElement select;
-//	@FindBy(xpath = "//span[contains(text(),'Custom date')]")
-//	WebElement end_of_month;
+
 	@FindBy(xpath = "//input[@id='report-settings-custom-date-input-to']")
 	WebElement date;
-	//	@FindBy(xpath = "//span[contains(text(),'End of last financial year ')]")
-	//	WebElement lastFinancialYear;
+
 	@FindBy(xpath = "//button[contains(text(),'Update')]")
 	WebElement Update;
+
 	@FindBy(xpath = "//div[contains(text(),'Nothing to show here')]")
-	public WebElement noShowDiv;
-	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[9]/span/div")
-	public WebElement GST2;
+	boolean noShowDiv;
+
+	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[7]/span/div")
+	WebElement GST2;
+
 	public static double payableAmount = 0.0;
-	public static double Total = 0.0;
+
 	// Constructor
-	public XeroAgedPayableSummaryPage() {	
+	public XeroAgedPayableSummaryPage() {    
 		PageFactory.initElements(DriverManager.getDriver(), this); 
 	}
-	//list  of all the actions on page
-	public static void getPageTitle() {
-	}
-
 	public void clickAccountingButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(accountingButton));
 		accountingButton.click();
@@ -62,13 +63,15 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(colmSelected));
 		colmSelected.click();
 	}
+
 	public void clickOutstanding_GST() throws InterruptedException {
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(Outstanding_GST));
-		Outstanding_GST.click();
+		((JavascriptExecutor) DriverManager.getDriver()).executeScript("arguments[0].click();", Outstanding_GST);
 	}
 	public void clickEndOfMonth() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		// Implementation needed if required
 	}
 	public void clickLastFinancialYear() {
 		wait.until(ExpectedConditions.elementToBeClickable(date));
@@ -80,8 +83,39 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(Update));
 		Update.click();
 	}
-	public void getAgedPayableValues() {
+	public boolean isElementPresent(By locator) {
+		try {
+			//			DriverManager.getDriver().findElement(locator);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+	public void getAgedPayableValues() throws TimeoutException, InterruptedException {
+		if (noShowDiv) {
+			payableAmount=0.0;
+			System.out.println(payableAmount);
+			HashMap<String, Double> hm3 = new HashMap<>();
+			hm3.put("Less: GST on Creditors", payableAmount);
+			LAST_TABLE_DATA.add(hm3);
+		}
+		else {
+			payableAmount= Double.parseDouble((GST2).getText().replaceAll(",", ""));
 
+			HashMap<String, Double> hm3 = new HashMap<>();
+			hm3.put("Less: GST on Creditors", payableAmount);
+			LAST_TABLE_DATA.add(hm3);	
+		}		
+		 System.out.println("payableAmount : " +payableAmount);
+		 HashMap<String, Double> hm4 = new HashMap<>();
+			double juneBAS = LAST_TABLE_DATA.get(0).get("June BAS") != null ? LAST_TABLE_DATA.get(0).get("June BAS") : 0.0;
+			double total = juneBAS + payableAmount + XeroAgedRecievableSummaryPage.RecievableAmount;
+			hm4.put("Total", total);
+			LAST_TABLE_DATA.add(hm4);
+			System.out.println(hm4);
+			System.out.println("Total: " + LAST_TABLE_DATA.get(3));
+	}
+		/*
 		boolean exists = false;
 		try {
 			exists = noShowDiv.isDisplayed();
@@ -91,6 +125,7 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 
 		double payableAmount = 0.0;
 		if (exists) {
+			System.out.println("No data to show: " + payableAmount);
 		} else { 
 			wait.until(ExpectedConditions.visibilityOf(GST2));
 			String gstText = GST2.getText().replaceAll(",", "");
@@ -109,6 +144,9 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 		double total = juneBAS + payableAmount + XeroAgedRecievableSummaryPage.RecievableAmount;
 		hm4.put("Total", total);
 		LAST_TABLE_DATA.add(hm4);
+		System.out.println("Total: " + LAST_TABLE_DATA.get(1));
+		System.out.println("payableAmount: " + payableAmount);
 
 	}
+		 */
 }

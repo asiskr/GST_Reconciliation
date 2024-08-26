@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import java.util.concurrent.TimeoutException;
+
 import Pages.XeroAgedRecievableSummaryPage;
 import io.cucumber.java.en.*;
 
@@ -46,7 +48,7 @@ public class XeroAgedRecievableSummarySteps {
 	}
 
 	@Then("User check if the Aged Recievable summary exist then the Recievable value is mentioned on web else Zero")
-	public void user_check_if_the_aged_recievable_summary_exist_then_the_recievable_value_is_mentioned_on_web_else_zero() {
+	public void user_check_if_the_aged_recievable_summary_exist_then_the_recievable_value_is_mentioned_on_web_else_zero() throws TimeoutException, InterruptedException {
 		xeroRecievableValues.getAgedRecievableValues();
 	}
 }

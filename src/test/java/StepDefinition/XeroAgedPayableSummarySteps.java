@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import java.util.concurrent.TimeoutException;
+
 import Pages.XeroAgedPayableSummaryPage;
 import io.cucumber.java.en.*;
 
@@ -39,7 +41,7 @@ public class XeroAgedPayableSummarySteps {
 		xeroPaybaleValues.clickUpdate();
 	}
 	@Then("user check if the Aged payable summary exist then the payable value is mentioned on web else Zero")
-	public void user_check_if_the_aged_payable_summary_exist_then_the_payable_value_is_mentioned_on_web_else_zero() {
+	public void user_check_if_the_aged_payable_summary_exist_then_the_payable_value_is_mentioned_on_web_else_zero() throws TimeoutException, InterruptedException {
 		xeroPaybaleValues.getAgedPayableValues();
 	}
 }

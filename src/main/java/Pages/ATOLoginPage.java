@@ -12,9 +12,7 @@ import com.asis.util.BaseClass;
 import Driver_manager.DriverManager;
 
 public class ATOLoginPage extends BaseClass{	
-	
-	private byte[] screenshotBytes;
-
+		private byte[] screenshotBytes;
 	@FindBy(xpath="//a[@id='btn-myGovID']")
 	private WebElement myGOV;
 	@FindBy(xpath= "//input[@type='email']")
@@ -25,18 +23,14 @@ public class ATOLoginPage extends BaseClass{
 	public ATOLoginPage(){	
 		PageFactory.initElements(DriverManager.getDriver(), this);       
 	}
-
 	public void clickOnMyGOVButton() throws InterruptedException {
-//		Thread.sleep(10000);
 		myGOV.click();
 	}
-
 	public void sendingEmailAddress() {
 		String user_id=ATO_USER_NAME;
 		wait.until(ExpectedConditions.elementToBeClickable(emailAddress));
 		emailAddress.sendKeys(user_id);
 	}
-
 	public byte[] clickOnLoginButton() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(loginButton));
 		loginButton.click();
