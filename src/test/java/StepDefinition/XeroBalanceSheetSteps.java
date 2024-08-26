@@ -16,7 +16,7 @@ public class XeroBalanceSheetSteps {
 	}
 
 	@When("user click on Balance Sheet button")
-	public void user_click_on_balance_sheet_button() {
+	public void user_click_on_balance_sheet_button() throws InterruptedException {
 		xeroBalanceSheetValues.clickOnBalanceSheetButton();
 	}
 

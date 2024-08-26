@@ -25,10 +25,14 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 	WebElement colSelected;
 	@FindBy(xpath = "//span[contains(text(),'Outstanding GST')]")
 	WebElement outstanding_gst_rec;
-	@FindBy(xpath = "//body/div[4]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/div[1]")
-	WebElement end_of_month;
-	@FindBy(xpath = "//span[contains(text(),'End of last financial year')]")
-	WebElement last_financial_year;
+//	@FindBy(xpath = "//body/div[4]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/div[1]")
+//	WebElement select;
+//	@FindBy(xpath = "//span[contains(text(),'Custom date')]")
+//	WebElement end_of_month;
+	@FindBy(xpath = "//input[@id='report-settings-custom-date-input-to']")
+	WebElement date;
+	//	@FindBy(xpath = "//span[contains(text(),'End of last financial year')]")
+	//	WebElement last_financial_year;
 	@FindBy(xpath = "//*[@id=\"report-settings\"]/div/div/div[7]/button")
 	WebElement update;
 	@FindBy(xpath = "//div[contains(text(),'Nothing to show here')]")
@@ -65,19 +69,18 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 	}
 	public void clickOnEndOfMonth() throws InterruptedException {
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(end_of_month));
-		end_of_month.click();
 	}
 	public void clickOnLastFinancialYear() {
-		wait.until(ExpectedConditions.elementToBeClickable(last_financial_year));
-		last_financial_year.click();
+		wait.until(ExpectedConditions.elementToBeClickable(date));
+		date.click();
+		date.sendKeys(XERO_TO_DATE);
 	}
 	public void clickOnUpdate() {
 		wait.until(ExpectedConditions.elementToBeClickable(update));
 		update.click();
 	}
 	public void getAgedRecievableValues() { 
-		
+
 		if (noShowDiv) {
 			RecievableAmount=0.0;
 			System.out.println(RecievableAmount);
@@ -94,7 +97,7 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 			LAST_TABLE_DATA.add(hm2);	
 		}		
 	}
-		/*
+	/*
 		boolean exists = false;
 		try {
 			exists = noShowDiv.isDisplayed();
@@ -106,8 +109,8 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 		if (exists) {
 			System.out.println("No data to show: " + RecievableAmount);
 		} else { 
-			
-			
+
+
 			wait.until(ExpectedConditions.visibilityOf(GST1));
 			String gstText2 = GST1.getText().replaceAll(",", "");
 			try {
@@ -121,5 +124,5 @@ public class XeroAgedRecievableSummaryPage extends BaseClass{
 		LAST_TABLE_DATA.add(hm2);
 		System.out.println("Add: GST on Debtors "+LAST_TABLE_DATA.get(0));	
 	}
-	*/
+	 */
 }

@@ -188,7 +188,7 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 			
 			
 			HashMap<String, Double> hm1 = new HashMap<>();
-			hm1.put("June BAS", qd_jun.get_ATO_Total_Refund());
+			hm1.put("June BAS", qd_jun.get_GST_Refund());
 			LAST_TABLE_DATA.add(hm1);
 		}
 	}

@@ -35,7 +35,7 @@ public class XeroAgedPayableSummarySteps {
 		xeroPaybaleValues.clickLastFinancialYear();
 	}
 	@When("user click on update button")
-	public void user_click_on_update_button() {
+	public void user_click_on_update_button() throws InterruptedException {
 		xeroPaybaleValues.clickUpdate();
 	}
 	@Then("user check if the Aged payable summary exist then the payable value is mentioned on web else Zero")
