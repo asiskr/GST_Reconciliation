@@ -27,7 +27,7 @@ public class XeroLoginStep {
 	}
 
 	@Then("click on xero login button")
-	public void click_on_xero_login_button() {
+	public void click_on_xero_login_button() throws InterruptedException {
 		xerologinPage.clickLoginButton();
 	}
 	@When("user click on another authentication method")
