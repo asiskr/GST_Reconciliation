@@ -8,12 +8,12 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features= 
-//	{"src/test/resources/Features/"},
+	{"src/test/resources/Features/"},
 		
 				/*{
 					"src/test/resources/Features/1test_ATOLogin.feature",
 					"src/test/resources/Features/2test_ATOsearchClientName.feature",
-			},*/
+			},
 			
 	
 	{
@@ -27,8 +27,8 @@ import io.cucumber.junit.CucumberOptions;
 				"src/test/resources/Features/8test_XeroSecurityQuestion.feature",
 				"src/test/resources/Features/9test_XEROSearchClient.feature",
 //				"src/test/resources/Features/test1_XeroSelectingQuarterDate.feature",
-				"src/test/resources/Features/test3_XeroExtractingAgedRecievableSummary.feature",
-//				"src/test/resources/Features/test4_XeroExtractingAgedPayableValues.feature",
+//				"src/test/resources/Features/test3_XeroExtractingAgedRecievableSummary.feature",
+				"src/test/resources/Features/test4_XeroExtractingAgedPayableValues.feature",
 //				"src/test/resources/Features/test5_XeroBalanceSheet.feature", 
 //				 "src/test/resources/Features/test6_GenratingExcel.feature",
 		},

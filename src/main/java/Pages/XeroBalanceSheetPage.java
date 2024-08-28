@@ -74,44 +74,27 @@ public class XeroBalanceSheetPage extends BaseClass {
 		GSTPayable_asperBalanceSheet = getElementValue(GSTPayable, "GST Payable Adj");
 
 		GST_asperBalanceSheet = GSTNormal_asperBalanceSheet + GSTInputTax_asperBalanceSheet + GSTPayable_asperBalanceSheet;
-		        System.out.println("GST_asperBalanceSheet: " + GST_asperBalanceSheet);
+//		System.out.println("GST_asperBalanceSheet: " + GST_asperBalanceSheet);
 
 		HashMap<String, Double> hm5 = new HashMap<>();
 		hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
 		LAST_TABLE_DATA.add(hm5);
 
-		
-        HashMap<String, Double> hm6 = new HashMap<>();
+
+		HashMap<String, Double> hm6 = new HashMap<>();
 		hm6.put("Total - GST as per balance sheet", (LAST_TABLE_DATA.get(3).get("Total") - LAST_TABLE_DATA.get(4).get("GST as per Balance sheet")));
 		LAST_TABLE_DATA.add(hm6);
-		 
+
 	}
 
 	private double getElementValue(WebElement element, String name) {
 		try {
-			if (isElementPresent(element)) {
-				String gstText = element.getText().replaceAll(",", "").replaceAll("[()]", "");
-				//                System.out.println(name + " value: " + gstText); // Log value for debugging
-				return parseFinancialValue(gstText);
-			} else {
-				//                System.out.println(name + " not found, setting value to 0.0");
-				return 0.0;
-			}
-		} catch (NoSuchElementException e) {
-			//            System.out.println(name + " not found, setting value to 0.0");
-			return 0.0;
+			String gstText = element.getText().replaceAll(",", "").replaceAll("[()]", "").trim();
+//			System.out.println(name + " value: " + gstText); 
+			return parseFinancialValue(gstText);
 		} catch (Exception e) {
-			//            System.err.println("Error retrieving " + name + " value: " + e.getMessage());
+			//	        System.err.println("Error retrieving " + name + " value: " + e.getMessage());
 			return 0.0;
-		}
-	}
-
-	private boolean isElementPresent(WebElement element) {
-		try {
-			wait.until(ExpectedConditions.visibilityOf(element));
-			return true;
-		} catch (NoSuchElementException | TimeoutException e) {
-			return false;
 		}
 	}
 

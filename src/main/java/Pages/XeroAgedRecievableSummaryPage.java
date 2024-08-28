@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,7 +37,7 @@ public class XeroAgedRecievableSummaryPage extends BaseClass {
 	WebElement update;
 
 	@FindBy(xpath = "//div[contains(text(),'Nothing to show here')]")
-	WebElement noShowDiv;
+	boolean noShowDiv;
 
 	@FindBy(xpath = "//thead//th[.//span[contains(text(), 'Current')]]")
 	WebElement current;
@@ -46,7 +45,7 @@ public class XeroAgedRecievableSummaryPage extends BaseClass {
 	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[8]/span/div")
 	WebElement GST4;
 
-	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[7]/span/div")
+	@FindBy(xpath = "//tr//descendant::div[text()='Total']/ancestor::tr/td[9]/span/div")
 	WebElement GST1;
 
 	public static double RecievableAmount = 0.0;
@@ -54,11 +53,6 @@ public class XeroAgedRecievableSummaryPage extends BaseClass {
 	// Constructor
 	public XeroAgedRecievableSummaryPage() {
 		PageFactory.initElements(DriverManager.getDriver(), this);
-	}
-
-	// List of all the actions on page
-	public static void getPageTitle() {
-		// Implement the title retrieval logic if necessary
 	}
 
 	public void clickOnAccountingButton() {
@@ -79,10 +73,6 @@ public class XeroAgedRecievableSummaryPage extends BaseClass {
 		((JavascriptExecutor) DriverManager.getDriver()).executeScript("arguments[0].click();", outstanding_gst_rec);
 	}
 
-	public void clickOnEndOfMonth() {
-		// Implement end of month logic if necessary
-	}
-
 	public void clickOnLastFinancialYear() {
 		wait.until(ExpectedConditions.elementToBeClickable(date)).click();
 		date.sendKeys(XERO_TO_DATE);
@@ -91,86 +81,54 @@ public class XeroAgedRecievableSummaryPage extends BaseClass {
 	public void clickOnUpdate() {
 		wait.until(ExpectedConditions.elementToBeClickable(update)).click();
 	}
-
-	public boolean isElementPresent(By locator) {
-		try {
-			//            DriverManager.getDriver().findElement(locator);
-			return true;
-		} catch (NoSuchElementException e) {
-			return false;
-		}
-	}
-
 	public void getAgedRecievableValues() throws TimeoutException, InterruptedException {
-		Thread.sleep(1000);
 		HashMap<String, Double> hm2 = new HashMap<>();
-		Thread.sleep(2000);
-		if (isElementPresent(By.xpath("//div[contains(text(),'Nothing to show here')]"))) {
-			RecievableAmount = 0.0;
-			hm2.put("Add: GST on Debtors", RecievableAmount);
-		} else if (isElementPresent(By.xpath("//thead//th[.//span[contains(text(), 'Current')]]"))) {
-			RecievableAmount = Double.parseDouble(GST4.getText().replaceAll(",", ""));
-			hm2.put("Add: GST on Debtors", RecievableAmount);
-		} else {
-			RecievableAmount = Double.parseDouble(GST1.getText().replaceAll(",", ""));
-			hm2.put("Add: GST on Debtors", RecievableAmount);
-		}
+		  try {
+//		        wait.until(ExpectedConditions.visibilityOf(GST2));
+		        String text = GST1.getText().replaceAll(",", "").trim();
+		        RecievableAmount = Double.parseDouble(text); // Use Double to handle decimal values
+//		        System.out.println("RecievableAmount is : " +RecievableAmount);
+		    } catch (Exception e) {
+		    	RecievableAmount = 0.0; // Default to 0.0 in case of any exception
+//		        System.out.println(e);
+		    }
+		    
+		/*
+		HashMap<String, Double> hm2 = new HashMap<>();
 
-		LAST_TABLE_DATA.add(hm2);
-		System.out.println("RecievableAmount : " + RecievableAmount);
+		if (noShowDiv) {
+			RecievableAmount = 0.0;
+			System.out.println(RecievableAmount);
+			hm2.put("Add: GST on Debtors", RecievableAmount);
+			LAST_TABLE_DATA.add(hm2);
+			System.out.println("Add: GST on Debtors");
+		} else {
+			// Fetch the text from the web element
+			String text = GST1.getText().replaceAll(",", "").trim();
+
+			// Initialize RecievableAmount
+			double receivableAmount;
+
+			// Check if the text is "-" and set RecievableAmount to 0.0 if true
+			if (text.equals("-")) {
+				receivableAmount = 0.0;
+			} else {
+				try {
+					// Attempt to parse the value if it's not "-"
+					receivableAmount = Double.parseDouble(text);
+				} catch (NumberFormatException e) {
+					// Handle the exception if parsing fails
+					receivableAmount = 0.0;
+					System.err.println("Error parsing number: " + e.getMessage());
+				}
+			}
+
+			// Assign the amount to RecievableAmount
+			RecievableAmount = receivableAmount;
+			System.out.println(RecievableAmount);
+*/
+			// Put the value into the HashMap and add it to the list
+			hm2.put("Add: GST on Debtors", RecievableAmount);
+			LAST_TABLE_DATA.add(hm2);
 	}
 }
-
-/*
-	    try {
-	        // Wait until the GST1 element is visible, or noShowDiv is present
-	    	Thread.sleep(2000);
-	        if (isElementPresent(By.xpath("//div[contains(text(),'Nothing to show here')]"))) {
-	            RecievableAmount = 0.0;
-	            System.out.println(RecievableAmount);
-	        } else {
-	            wait.until(ExpectedConditions.visibilityOf(GST1));
-	            RecievableAmount = Double.parseDouble(GST1.getText().replaceAll(",", ""));
-	        }
-	        System.out.println("RecievableAmount : " +RecievableAmount);
-	        HashMap<String, Double> hm2 = new HashMap<>();
-	        hm2.put("Add: GST on Debtors", RecievableAmount);
-	        LAST_TABLE_DATA.add(hm2);
-	    } catch (NoSuchElementException e) {
-	        System.err.println("Element not found: " + e.getMessage());
-	        RecievableAmount = 0.0;
-	    } catch (NumberFormatException e) {
-	        System.err.println("Error parsing GST amount: " + e.getMessage());
-	        RecievableAmount = 0.0;
-	    }
-	}
- */
-
-/*
-		boolean exists = false;
-		try {
-			exists = noShowDiv.isDisplayed();
-		} catch (NoSuchElementException e) {
-			exists = false; // Element is not present, hence set exists to false
-		}
-
-		double RecievableAmount = 0.0;
-		if (exists) {
-			System.out.println("No data to show: " + RecievableAmount);
-		} else { 
-
-
-			wait.until(ExpectedConditions.visibilityOf(GST1));
-			String gstText2 = GST1.getText().replaceAll(",", "");
-			try {
-				RecievableAmount = Double.parseDouble(gstText2);
-			} catch (NumberFormatException e) {
-				System.err.println("Error parsing GST amount: " + gstText2);
-			}
-		}
-		HashMap<String, Double> hm2 = new HashMap<>();
-		hm2.put("Add: GST on Debtors", RecievableAmount);
-		LAST_TABLE_DATA.add(hm2);
-		System.out.println("Add: GST on Debtors "+LAST_TABLE_DATA.get(0));	
-	}
- */

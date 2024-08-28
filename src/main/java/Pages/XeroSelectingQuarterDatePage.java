@@ -77,7 +77,7 @@ public class XeroSelectingQuarterDatePage extends BaseClass {
                         wait.until(ExpectedConditions.elementToBeClickable(manualStatement));
                         manualStatement.click();
                     } catch (TimeoutException e) {
-                        System.out.println("'Switch to manual Activity Statements' button not found. Skipping this step.");
+//                        System.out.println("'Switch to manual Activity Statements' button not found. Skipping this step.");
                     }
 
                     if (isElementPresent(lodgeStatement)) {
@@ -85,14 +85,14 @@ public class XeroSelectingQuarterDatePage extends BaseClass {
                             wait.until(ExpectedConditions.elementToBeClickable(lodgeReports));
                             lodgeReports.click();
                         } catch (TimeoutException e) {
-                            System.out.println("'Lodge reports to ATO outside of Xero' button not found. Skipping this step.");
+//                            System.out.println("'Lodge reports to ATO outside of Xero' button not found. Skipping this step.");
                         }
 
                         try {
                             wait.until(ExpectedConditions.elementToBeClickable(proceed1));
                             proceed1.click();
                         } catch (TimeoutException e) {
-                            System.out.println("'Proceed' button not found. Skipping this step.");
+//                            System.out.println("'Proceed' button not found. Skipping this step.");
                         }
                     }
                     goToPreviousBAS();
@@ -101,7 +101,7 @@ public class XeroSelectingQuarterDatePage extends BaseClass {
                 }
             }
         } catch (NoSuchElementException e) {
-            System.out.println("No 'Needs attention' section found. Proceeding with date selection.");
+//            System.out.println("No 'Needs attention' section found. Proceeding with date selection.");
         }
         enterFromDate();
         enterToDate();
