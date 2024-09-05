@@ -58,13 +58,12 @@ public class ATOLoginStep extends BaseClass {
 
     private void sendScreenshotEmail(String recipientEmail, byte[] screenshotBytes) {
         String from = "toptechautomation@theoutsourcepro.com.au";
-        String password = "Guf87765";
+        String password = "Duz30077";
 
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.office365.com");
         props.put("mail.smtp.port", "587");
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
 
         Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
