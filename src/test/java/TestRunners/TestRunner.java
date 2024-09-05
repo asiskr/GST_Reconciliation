@@ -9,12 +9,12 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features= 
 	{"src/test/resources/Features/"},
-		
-				/*{
+
+	/*{
 					"src/test/resources/Features/1test_ATOLogin.feature",
 					"src/test/resources/Features/2test_ATOsearchClientName.feature",
 			},
-	
+
 	{
 //				"src/test/resources/Features/1test_ATOLogin.feature",
 //				"src/test/resources/Features/2test_ATOsearchClientName.feature",
@@ -31,11 +31,11 @@ import io.cucumber.junit.CucumberOptions;
 //				"src/test/resources/Features/test5_XeroBalanceSheet.feature", 
 //				 "src/test/resources/Features/test6_GenratingExcel.feature",
 		},
-	*/
-		
-		glue={"StepDefinition","MyHooks"},
-		plugin = {"pretty"}
-//		tags= "@order1 or @order2 or @order5 or @order6"
+	 */
+
+	glue={"StepDefinition","MyHooks"},
+	plugin = {"pretty"}
+		//		tags= "@order1 or @order2 or @order5 or @order6"
 		)
 
 public class TestRunner {
