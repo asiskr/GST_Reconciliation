@@ -20,7 +20,7 @@ import Driver_manager.DriverManager;
 public class ATOClientNameSearchPage extends BaseClass{
 
 	//list of webelements
-	@FindBy(xpath = "//input[@type='search']")
+	@FindBy(xpath = "//input[@id='search-atoo-ahp-search-for-client-by-tfn-abn-wpn-ein-or-name-001']")
 	WebElement clientNameSearch;
 
 	@FindBy(xpath = "//ul[contains(@class, 'error')]/li[contains(text(), 'No matches found')]")
