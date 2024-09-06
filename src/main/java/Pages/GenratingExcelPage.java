@@ -119,7 +119,7 @@ public class GenratingExcelPage extends BaseClass {
 
 		// Then, send the Excel file as an email attachment
 		String from = "toptechautomation@theoutsourcepro.com.au";
-		String password = "Guf87765";
+		String password = "Duz30077";
 		String senderMail = from;
 
 		// Outlook SMTP server configuration

@@ -31,7 +31,7 @@ public class GenerateEmail extends BaseClass {
         Double reportingVar = 0.0; // Assuming these are defined elsewhere
 
 		String from = "toptechautomation@theoutsourcepro.com.au";
-        String password = "Guf87765";
+        String password = "Duz30077";
 
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.office365.com");
@@ -106,7 +106,7 @@ public class GenerateEmail extends BaseClass {
 
     public static void main(String[] args) {
         GenerateEmail obj = new GenerateEmail();
-        obj.sendEmail("asis.kaur@theoutsourcepro.com.au");
+        obj.sendEmail(SENDER_TO);
 
     }
 }
