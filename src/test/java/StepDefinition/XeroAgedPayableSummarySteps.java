@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import java.util.concurrent.TimeoutException;
+
 import Pages.XeroAgedPayableSummaryPage;
 import io.cucumber.java.en.*;
 
@@ -9,7 +11,6 @@ public class XeroAgedPayableSummarySteps {
 
 	@Given("user is on client Aged payable summary page")
 	public void user_is_on_client_aged_payable_summary_page() {
-		System.out.println("XeroAgedPayableSummaryPage title" +xeroPaybaleValues.getPageTitle());
 	}
 	@When("user click on accounting button")
 	public void user_click_on_accounting_button() {
@@ -24,11 +25,11 @@ public class XeroAgedPayableSummarySteps {
 		xeroPaybaleValues.clickColmSelected();
 	}
 	@When("user click on outstanding gst button")
-	public void user_click_on_outstanding_gst_button() {
+	public void user_click_on_outstanding_gst_button() throws InterruptedException {
 		xeroPaybaleValues.clickOutstanding_GST();
 	}
 	@When("user click on end of month button")
-	public void user_click_on_end_of_month_button() {
+	public void user_click_on_end_of_month_button() throws InterruptedException {
 		xeroPaybaleValues.clickEndOfMonth();
 	}
 	@When("user click on last financial year button")
@@ -36,11 +37,11 @@ public class XeroAgedPayableSummarySteps {
 		xeroPaybaleValues.clickLastFinancialYear();
 	}
 	@When("user click on update button")
-	public void user_click_on_update_button() {
+	public void user_click_on_update_button() throws InterruptedException {
 		xeroPaybaleValues.clickUpdate();
 	}
 	@Then("user check if the Aged payable summary exist then the payable value is mentioned on web else Zero")
-	public void user_check_if_the_aged_payable_summary_exist_then_the_payable_value_is_mentioned_on_web_else_zero() {
+	public void user_check_if_the_aged_payable_summary_exist_then_the_payable_value_is_mentioned_on_web_else_zero() throws TimeoutException, InterruptedException {
 		xeroPaybaleValues.getAgedPayableValues();
 	}
 }

@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import java.util.concurrent.TimeoutException;
+
 import Pages.XeroAgedRecievableSummaryPage;
 import io.cucumber.java.en.*;
 
@@ -8,7 +10,6 @@ public class XeroAgedRecievableSummarySteps {
 
 	@Given("user is on client Aged Recievable summary page")
 	public void user_is_on_client_aged_recievable_summary_page() {
-		System.out.println("XeroAgedRecievableSummaryPage title" +xeroRecievableValues.getPageTitle());
 	}
 
 	@When("User click on accounting button")
@@ -27,13 +28,13 @@ public class XeroAgedRecievableSummarySteps {
 	}
 
 	@When("User click on outstanding gst button")
-	public void user_click_on_outstanding_gst_button() {
+	public void user_click_on_outstanding_gst_button() throws InterruptedException {
 		xeroRecievableValues.clickOnOutstanding_GST();
 	}
 
 	@When("User click on end of month button")
-	public void user_click_on_end_of_month_button() {
-		xeroRecievableValues.clickOnEndOfMonth();
+	public void user_click_on_end_of_month_button() throws InterruptedException {
+//		xeroRecievableValues.clickOnEndOfMonth();
 	}
 
 	@When("User click on last financial year button")
@@ -47,7 +48,7 @@ public class XeroAgedRecievableSummarySteps {
 	}
 
 	@Then("User check if the Aged Recievable summary exist then the Recievable value is mentioned on web else Zero")
-	public void user_check_if_the_aged_recievable_summary_exist_then_the_recievable_value_is_mentioned_on_web_else_zero() {
+	public void user_check_if_the_aged_recievable_summary_exist_then_the_recievable_value_is_mentioned_on_web_else_zero() throws TimeoutException, InterruptedException {
 		xeroRecievableValues.getAgedRecievableValues();
 	}
 }

@@ -8,7 +8,6 @@ public class XeroBalanceSheetSteps {
 	
 	@Given("User is on client Aged Recievable summary page")
 	public void user_is_on_client_aged_recievable_summary_page() {
-		System.out.println("XeroBalanceSheetPage title" +xeroBalanceSheetValues.getPageTitle());
 	}
 
 	@When("User click on the accounting button")
@@ -17,7 +16,7 @@ public class XeroBalanceSheetSteps {
 	}
 
 	@When("user click on Balance Sheet button")
-	public void user_click_on_balance_sheet_button() {
+	public void user_click_on_balance_sheet_button() throws InterruptedException {
 		xeroBalanceSheetValues.clickOnBalanceSheetButton();
 	}
 

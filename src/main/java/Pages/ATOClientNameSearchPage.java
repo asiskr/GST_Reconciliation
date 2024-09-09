@@ -23,28 +23,35 @@ public class ATOClientNameSearchPage extends BaseClass{
 	@FindBy(xpath = "//input[@type='search']")
 	WebElement clientNameSearch;
 
+	@FindBy(xpath = "//ul[contains(@class, 'error')]/li[contains(text(), 'No matches found')]")
+	WebElement noMatches;
+
 	//constructor
 	public ATOClientNameSearchPage(){
 		PageFactory.initElements(DriverManager.getDriver(), this);       
 	}
 
 	//list  of all the actions on page
-	public String getPageTitle() {
-		return DriverManager.getDriver().getTitle();
+	public void getPageTitle() {
 	}
 
-	public void enterClientName() {		
-		String client_name = CLIENT_DATA.get("client_name");
+	public void enterClientName() throws InterruptedException {		
+		String client_name = ATO_CLIENT_NAME;
+
+		wait.until(ExpectedConditions.elementToBeClickable(clientNameSearch));
+		Thread.sleep(1000);
 		clientNameSearch.sendKeys(client_name);
-		try {
-			ExcelUtil.closeExcel();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
-	public void doSearchClientName() {
-		clientNameSearch.sendKeys(Keys.ENTER);
+	public void doSearchClientName() throws InterruptedException {
+	    Thread.sleep(3000);
+	    clientNameSearch.sendKeys(Keys.ENTER);
+	    /*
+	    if(noMatches.isDisplayed()) {
+	        DriverManager.getDriver().quit();
+	    } 
+	    */
+	        clientNameSearch.sendKeys(Keys.ENTER);    
 	}
+
 }

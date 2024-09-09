@@ -434,31 +434,6 @@ public class XeroTesting extends BaseClass{
 		}
 	}
 
-	/*
-		//a[contains(text(),'GST Reconciliation')]
-		WebElement accountingButton = driver.findElement(By.xpath("//button[contains(text(),'Accounting')]"));
-		accountingButton.click();
-
-		WebElement GSTreconcil =  driver.findElement( By.xpath("//a[contains(text(),'GST Reconciliation')]"));
-		GSTreconcil.click();
-
-		ArrayList<String> tabs = new ArrayList<String>();
-		List<WebElement> tableTr = driver.findElements(By.xpath("//table[@id='statementTable']/tbody"));
-		for(WebElement tr : tableTr) {
-			if(tr.isDisplayed()) {
-				List<WebElement> tdData =  tr.findElements(By.tagName("tr"));
-				ArrayList<String> tdRowData = new ArrayList<String>();
-				for(WebElement td: tdData) {
-					tdRowData.add(td.getText());
-					System.out.print(td.getText()+" ");
-				}
-				GST_Reconciliation_DATA.add(tdRowData);
-//				System.out.println(tdRowData);
-			}
-//			System.out.println(GST_Reconciliation_DATA);
-	 * 
-	 */
-
 
 	public void getXeroData() {
 		ArrayList<QuaterData> xero_data = new ArrayList<>();

@@ -41,6 +41,9 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 
 	@FindBy(xpath = "//td[text()='4']/parent::tr/td[4]")
 	WebElement _4;
+	
+	@FindBy(xpath = "//div//a[@class='print-link']")
+	WebElement print;
 
 	@FindBy(xpath = "//button[@class='ato-button btn btn-default btnHalf']")
 	WebElement back;
@@ -51,12 +54,12 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 	}
 
 	// list of all the actions on page
-	public static String getPageTitle() {
-		return DriverManager.getDriver().getTitle();
+	public static void getPageTitle() {
+//		return DriverManager.getDriver().getTitle();
 	}
 
 	public void clickOnJulyQuarter() throws InterruptedException {
-		String jul_quater = CLIENT_DATA.get("jul_quater");
+		String jul_quater = ATO_JULY_QUARTER;
 		if (!jul_quater.isBlank()) {
 			getQquaterData(jul_quater);
 			HashMap<String, Double> data = goToStatementDetail();
@@ -87,11 +90,10 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 			qd_sept.set_ATO_Total_Refund((qd_sept.get_GST_Refund() + qd_sept.get_4() + qd_sept.get_5A() - qd_sept.get_7D()), true);
 			sept_quater_data_row.add(qd_sept);
 			ATO_ROW_DATA.add(sept_quater_data_row);
-			System.out.println(sept_quater_data_row);
 		}
 	}
 	public void clickOnOctQuarter() throws InterruptedException {
-		String oct_quarter = CLIENT_DATA.get("oct_quarter");
+		String oct_quarter = ATO_OCT_QUARTER;
 		if(!oct_quarter.isBlank()) {
 			getQquaterData(oct_quarter);
 			HashMap<String,Double> data = goToStatementDetail();
@@ -121,7 +123,7 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 		}
 	}
 	public void clickOnJanQuarter() throws InterruptedException {
-		String jan_quarter = CLIENT_DATA.get("jan_quarter");
+		String jan_quarter = ATO_JAN_QUARTER;
 		if(!jan_quarter.isBlank()) {
 			getQquaterData(jan_quarter);
 			HashMap<String,Double> data = goToStatementDetail();
@@ -151,7 +153,7 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 		}
 	}
 	public void clickOnAprQuarter() throws InterruptedException {
-		String apr_quarter = CLIENT_DATA.get("apr_quarter");
+		String apr_quarter = ATO_APR_QUARTER;
 		if(!apr_quarter.isBlank()) {
 			getQquaterData(apr_quarter);
 			HashMap<String,Double> data = goToStatementDetail();
@@ -186,7 +188,7 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 			
 			
 			HashMap<String, Double> hm1 = new HashMap<>();
-			hm1.put("June BAS", qd_jun.get_ATO_Total_Refund());
+			hm1.put("June BAS", qd_jun.get_GST_Refund());
 			LAST_TABLE_DATA.add(hm1);
 		}
 	}
@@ -215,7 +217,7 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 		}
 	}
 
-	public HashMap<String, Double> goToStatementDetail() {
+	public HashMap<String, Double> goToStatementDetail() throws InterruptedException {
 		HashMap<String, Double> data = new HashMap<>();
 		scrollDownToGetBASStatement();
 		clickOnPrintFriendlyVersion();
@@ -231,8 +233,9 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 		js.executeScript("arguments[0].scrollIntoView(true);", scrollTo);
 	}
 
-	public void clickOnPrintFriendlyVersion() {
+	public void clickOnPrintFriendlyVersion() throws InterruptedException {
 		//printFriendlyVersion.click();
+		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();",printFriendlyVersion);
 	}
 
@@ -265,6 +268,7 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 	}
 
 	public void clickBackButton() {
+		wait.until(ExpectedConditions.elementToBeClickable(back));
 		back.click();
 	}
 }

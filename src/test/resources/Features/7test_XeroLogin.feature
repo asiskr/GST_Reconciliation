@@ -1,4 +1,4 @@
-@order1 @readXEROExcel
+@order1
 Feature: Verify User is able to do login
 
   Scenario: Verify user is on Login Page

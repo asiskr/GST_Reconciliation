@@ -27,20 +27,16 @@ import Driver_manager.DriverManager;
 
 public class BaseClass {
 	public WebDriver driver;
-	// File paths and names
-	/*
-	 * public String ATO_FILE_PATH
-	 * ="C:\\Users\\AsisKaur\\OneDrive - The Outsource Pro\\Desktop"; public String
-	 * ATO_FILE_NAME ="ATO_exel.xlsx"; public String XERO_FILE_PATH ="C:\\Excel";
-	 * public String XERO_FILE_NAME ="XeroSheet.xlsx";
-	 */
-
 	public static String ATO_FILE_PATH="";
 	public static String ATO_FILE_NAME="";
 	public static String XERO_FILE_PATH="";
 	public static String XERO_FILE_NAME="";
 
-	/*
+	
+	public static String TAXATION=" ";
+	public static String BUSINESS=" ";
+
+	
 	public static String XERO_USER_NAME="";
 	public static String XERO_PASSWORD="";
 	public static String XERO_SECURITY_QUEST1="";
@@ -60,7 +56,9 @@ public class BaseClass {
 	public static String ATO_JAN_QUARTER="";
 	public static String ATO_APR_QUARTER="";
 
-*/
+	public static String USERNAME="";
+	public static String SENDER_TO="";
+
 
 	public final String ATO_LOGIN_SHEET_NAME ="Login_detail";
 	public final String ATO_CLIENT_SHEET_NAME ="Client_data";
@@ -101,6 +99,7 @@ public class BaseClass {
 	public QuaterData qd_apr = new QuaterData("Apr");
 	public QuaterData qd_may = new QuaterData("May");
 	public QuaterData qd_jun = new QuaterData("Jun");
+	
 
 	public QuaterData qd_1 = new QuaterData("BAS not yet Paid/(Received)");
 	public QuaterData qd_2 = new QuaterData("June BAS");
@@ -128,19 +127,7 @@ public class BaseClass {
 	 * Method to launch the ATO site
 	 */
 
-	//public static Properties prop;
 	public void setProperties() {
-		ATO_FILE_PATH=System.getProperty("ato_file_location");
-		ATO_FILE_NAME=System.getProperty("ato_file_name");
-		XERO_FILE_PATH=System.getProperty("xero_file_location");
-		XERO_FILE_NAME=System.getProperty("xero_file_name");
-
-		System.out.println("ATO_FILE_PATH "+ATO_FILE_PATH);
-		System.out.println("ATO_FILE_NAME" +ATO_FILE_NAME);
-		System.out.println("XERO_FILE_PATH" +XERO_FILE_PATH);
-		System.out.println("XERO_FILE_NAME" +XERO_FILE_NAME);
-		
-		/*
 		XERO_USER_NAME=System.getProperty("userName");
 		XERO_PASSWORD=System.getProperty("password");
 		XERO_SECURITY_QUEST1=System.getProperty("securityQuest1");
@@ -159,8 +146,11 @@ public class BaseClass {
 		ATO_OCT_QUARTER=System.getProperty("octQuarter");
 		ATO_JAN_QUARTER=System.getProperty("janQuarter");
 		ATO_APR_QUARTER=System.getProperty("aprQuarter");
-		
-		*/
+		USERNAME=System.getProperty("userNameLaptop");
+		SENDER_TO=System.getProperty("senderTo");
+		TAXATION=System.getProperty("taxation");
+		BUSINESS=System.getProperty("business");
+
 	}
 
 	public static void lauchSite(String url) {

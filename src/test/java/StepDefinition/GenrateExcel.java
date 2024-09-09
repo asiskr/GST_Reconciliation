@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import com.asis.util.BaseClass;
+
 import Pages.GenratingExcelPage;
 import io.cucumber.java.en.*;
 
@@ -13,6 +15,7 @@ public class GenrateExcel {
 
 	@Then("Genrating the final excel")
 	public void genrating_the_final_excel() {
-		genratingExcel.generateExcel();
+		String recipientEmail = BaseClass.SENDER_TO ; // Replace with the actual recipient's email address
+		genratingExcel.generateExcelAndSendEmail(recipientEmail);
 	}
 }

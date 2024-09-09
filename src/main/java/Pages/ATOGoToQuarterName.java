@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.asis.util.BaseClass;
 
@@ -15,7 +16,6 @@ public class ATOGoToQuarterName extends BaseClass {
     // List of WebElements
     @FindBy(xpath = "//div[@role='menubar']//span[contains(text(),'Lodgments')]")
     WebElement lodgements;
-
     @FindBy(xpath = "//div[@role='menubar']//span[contains(text(),'Lodgments')]/parent::div/following-sibling::ul/li")
     List<WebElement> options;
 
@@ -24,7 +24,9 @@ public class ATOGoToQuarterName extends BaseClass {
         PageFactory.initElements(DriverManager.getDriver(), this);
     }
 
-    public void clickLodgments() {
+    public void clickLodgments() throws InterruptedException {
+    	Thread.sleep(5000);
+    	wait.until(ExpectedConditions.elementToBeClickable(lodgements));
         lodgements.click();
     }
 

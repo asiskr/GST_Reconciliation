@@ -18,13 +18,11 @@ public class closingATOPage extends BaseClass{
 	List<WebElement> tableTr;
 
 	//constructor
-	public closingATOPage(){
-		PageFactory.initElements(DriverManager.getDriver(), this);       
+	public closingATOPage(){  
 	}
 
 	//list  of all the actions on page
-	public static String getPageTitle() {
-		return DriverManager.getDriver().getTitle();
+	public void getPageTitle() {
 	}
 	public void closingTabs() {
 	}

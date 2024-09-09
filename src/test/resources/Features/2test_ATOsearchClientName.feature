@@ -1,4 +1,4 @@
-@order2 @add30SecondWait
+@order2 
 Feature: Search for specific client name
 
 	Scenario: I am on homepage and I search for specific name
@@ -9,4 +9,3 @@ Feature: Search for specific client name
 		Then I should land on client home screen
 		When I go to Lodgments 
 		And Select Activity statements 
-		

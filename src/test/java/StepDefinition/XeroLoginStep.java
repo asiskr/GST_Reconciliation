@@ -6,14 +6,14 @@ import Pages.XeroLoginPage;
 import io.cucumber.java.en.*;
 
 public class XeroLoginStep {
-	
+
 	XeroLoginPage xerologinPage;
-	
+
 	@Given("User user is on Login Page")
 	public void user_user_is_on_login_page() {
-        BaseClass.setupDriver("Chrome");
-        xerologinPage = new XeroLoginPage();
-        BaseClass.lauchSite("https://login.xero.com");
+		BaseClass.setupDriver("Chrome");
+		xerologinPage = new XeroLoginPage();
+		BaseClass.lauchSite("https://login.xero.com");
 	}
 
 	@When("user enter email")
@@ -27,7 +27,7 @@ public class XeroLoginStep {
 	}
 
 	@Then("click on xero login button")
-	public void click_on_xero_login_button() {
+	public void click_on_xero_login_button() throws InterruptedException {
 		xerologinPage.clickLoginButton();
 	}
 	@When("user click on another authentication method")

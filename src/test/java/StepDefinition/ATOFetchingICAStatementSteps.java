@@ -13,17 +13,16 @@ public class ATOFetchingICAStatementSteps {
 
 	@Given("user is on client home page and want to extract ICA statement")
 	public void user_is_on_client_home_page_and_want_to_extract_ica_statement() {
-		System.out.println("fetchICAStatement title" +fetchICAStatement.getPageTitle());
 
 	}
 
 	@When("User click on Accounts and payments")
-	public void user_click_on_accounts_and_payments() {
+	public void user_click_on_accounts_and_payments() throws InterruptedException {
 		fetchICAStatement.clickAccountsAnsPayments();
 	}
 
 	@Then("User get menu bar")
-	public void user_get_menu_bar() {
+	public void user_get_menu_bar() throws InterruptedException {
 		fetchICAStatement.clickOptions();
 	}
 
@@ -33,7 +32,7 @@ public class ATOFetchingICAStatementSteps {
 	}
 
 	@Then("User click on filter")
-	public void user_click_on_filter() {
+	public void user_click_on_filter() throws InterruptedException {
 		fetchICAStatement.clickFilter();
 	}
 
@@ -43,12 +42,12 @@ public class ATOFetchingICAStatementSteps {
 	}
 
 	@Then("User clear the To box and enter the To date as provided in excel")
-	public void user_clear_the_to_box_and_enter_the_to_date_as_provided_in_excel() throws ParseException {
+	public void user_clear_the_to_box_and_enter_the_to_date_as_provided_in_excel() throws ParseException, InterruptedException {
 		fetchICAStatement.enterToDate();
 	}
 
 	@When("User click the Submit button")
-	public void user_click_the_submit_button() {
+	public void user_click_the_submit_button() throws InterruptedException {
 		fetchICAStatement.clickSubmitButton();
 	}
 

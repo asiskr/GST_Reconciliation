@@ -36,6 +36,22 @@
 			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
 
 		<!--
 		https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
@@ -76,6 +92,17 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.17.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version> <!-- or the latest version available -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.24</version> <!-- Or the latest version available -->
+		</dependency>
+
 
 		<!--<dependency>
 			<groupId>com.asis</groupId>
@@ -113,14 +140,40 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-surefire-plugin</artifactId>
-	                <version>2.22.1</version>
-	                <configuration>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.1</version>
+					<configuration>
 						<systemPropertyVariables>
 							<ato_file_location>${ato_file_location}</ato_file_location>
 							<ato_file_name>${ato_file_name}</ato_file_name>
 							<xero_file_location>${xero_file_location}</xero_file_location>
 							<xero_file_name>${xero_file_name}</xero_file_name>
+
+							<taxation>${taxation}</taxation>
+							<business>${business}</business>
+
+							<userName>${userName}</userName>
+							<password>${password}</password>
+							<securityQuest1>${securityQuest1}</securityQuest1>
+							<securityAns1>${securityAns1}</securityAns1>
+							<securityQuest2>${securityQuest2}</securityQuest2>
+							<securityAns2>${securityAns2}</securityAns2>
+							<securityQuest3>${securityQuest3}</securityQuest3>
+							<securityAns3>${securityAns3}</securityAns3>
+							<fromDate>${fromDate}</fromDate>
+							<toDate>${toDate}</toDate>
+
+							<userName1>${userName1}</userName1>
+							<clientName>${clientName}</clientName>
+							<fromDate>${fromDate}</fromDate>
+							<toDate>${toDate}</toDate>
+							<julyQuarter>${julyQuarter}</julyQuarter>
+							<octQuarter>${octQuarter}</octQuarter>
+							<janQuarter>${janQuarter}</janQuarter>
+							<aprQuarter>${aprQuarter}</aprQuarter>
+
+							<userNameLaptop>${userNameLaptop}</userNameLaptop>
+							<senderTo>${senderTo}</senderTo>
 						</systemPropertyVariables>
 					</configuration>
 				</plugin>

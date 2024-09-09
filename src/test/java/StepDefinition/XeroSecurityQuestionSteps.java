@@ -10,7 +10,6 @@ public class XeroSecurityQuestionSteps {
 
 	@Given("User wants to enter security ans")
 	public void user_wants_to_enter_security_ans() {
-		System.out.println("at securityquestion");
 	}
 
 	@When("user enter security question ans")

@@ -43,7 +43,7 @@ public class TestRunner {
 		obj.fetchICAStatementData();		
 		obj.tearDown();
 
-	    
+	    System.out.println("hi");
 		XeroTesting obj2 = new XeroTesting();
 //		obj2.setupDriver();
 //		obj2.lauchSite("https://login.xero.com");

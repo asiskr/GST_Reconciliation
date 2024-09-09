@@ -24,20 +24,15 @@ public class ATOSelectingQuarterDatePage extends BaseClass{
 	// List of WebElements
 	@FindBy(xpath = "//div[@class='ato-tab']/ul/li[2]")
 	WebElement history;
-
 	@FindBy(xpath = "//h1/span[contains(text(),'Activity statements')]")
 	WebElement scrollTo;
-
 	@FindBy(xpath = "//span[contains(text(),'Filter')]")
 	WebElement filter;
-
 	@FindBy(xpath = "//input[@id='dp-atoo-as-from-date-002']")
 	WebElement From;
-
 	@FindBy(xpath = "//input[@id='dp-atoo-as-to-date-002']")
 	WebElement To;
-
-	@FindBy(xpath = "//button[@id='atoo-as-atobutton-016']")
+	@FindBy(xpath = "//button[contains(text(),'Filter')]")
 	WebElement filter2;
 
 	// Constructor
@@ -45,11 +40,11 @@ public class ATOSelectingQuarterDatePage extends BaseClass{
 		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 
-	public String getPageTitle() {
-		return DriverManager.getDriver().getTitle();
+	public void getPageTitle() {
 	}
 
 	public void clickHistory() {
+		wait.until(ExpectedConditions.elementToBeClickable(history));
 		history.click();
 	}
 
@@ -57,44 +52,31 @@ public class ATOSelectingQuarterDatePage extends BaseClass{
 		js.executeScript("arguments[0].scrollIntoView(true);", scrollTo);
 	}
 
-	public void clickOnFilterButton() {
-		//filter.click();
+	public void clickOnFilterButton() throws InterruptedException {
+		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", filter);
 	}
 
-	public void enterFromoDate() throws ParseException {
-		DateFormat fromDateFormat = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH); 
-		DateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Date from_date = fromDateFormat.parse(CLIENT_DATA.get("from_date"));
-
-		String StringFromDate = outputFormat.format(from_date);
-		From.clear();
+	public void enterFromoDate() throws ParseException, InterruptedException {
+		String StringFromDate = ATO_FROM_DATE;
+		wait.until(ExpectedConditions.elementToBeClickable(From)).clear();
+//		From.clear();
+		Thread.sleep(1000);
 		From.sendKeys(StringFromDate);
-		try {
-			ExcelUtil.closeExcel();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
-	public void enterToDate() throws ParseException {
-		DateFormat fromDateFormat = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH); 
-		DateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Date to_date = fromDateFormat.parse(CLIENT_DATA.get("to_date"));
-		String StringToDate = outputFormat.format(to_date);
-		To.clear();
+	public void enterToDate() throws ParseException, InterruptedException {
+		String StringToDate = ATO_TO_DATE;
+		wait.until(ExpectedConditions.elementToBeClickable(To)).clear();
+//		To.clear();
 		To.sendKeys(StringToDate);
-		try {
-			ExcelUtil.closeExcel();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(2000);
 	}
 
 
-	public void clickOnFilterButtonAfterEnteringDate() {
+	public void clickOnFilterButtonAfterEnteringDate() throws InterruptedException {
 		js.executeScript("arguments[0].click();", filter2);
+		Thread.sleep(3000);
+
 	}
 }

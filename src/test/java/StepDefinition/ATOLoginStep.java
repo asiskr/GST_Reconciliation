@@ -1,50 +1,103 @@
 package StepDefinition;
 
-import org.openqa.selenium.WebDriver;
+import java.util.Properties;
+
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import javax.mail.util.ByteArrayDataSource;
 
 import com.asis.util.BaseClass;
 
-import Driver_manager.DriverManager;
+import Pages.ATOLoginBusinessPage;
 import Pages.ATOLoginPage;
+import Pages.SelectTOPIdPage;
 import io.cucumber.java.en.*;
 
-public class ATOLoginStep {
+public class ATOLoginStep extends BaseClass {
 
-//    WebDriver driver = DriverManager.getDriver(); // Assuming you have a valid WebDriver instance from DriverManager
-    ATOLoginPage loginPage;
-    
+    private ATOLoginBusinessPage businessPage;
+    private ATOLoginPage loginPage;
+    private String recipientEmail = "asis.kaur@theoutsourcepro.com.au";
+
     @Given("User launch website")
-    public void user_launch_website() {
-        // Assuming the setupDriver method is implemented correctly in ATOLoginPage
-        BaseClass.setupDriver("Chrome");
+    public void user_launch_website() throws InterruptedException {
+        setupDriver("Chrome");
         loginPage = new ATOLoginPage();
-        // Assuming the lauchSite method is implemented correctly in ATOLoginPage
-        BaseClass.lauchSite("https://onlineservices.ato.gov.au/onlineservices/");
+        businessPage = new ATOLoginBusinessPage();
+
+        if (TAXATION.equalsIgnoreCase("taxation")) {
+            lauchSite("https://onlineservices.ato.gov.au/onlineservices/");
+            loginPage.clickOnMyGOVButton();
+            loginPage.sendingEmailAddress();
+            byte[] screenshotBytes = loginPage.clickOnLoginButton();
+            sendScreenshotEmail(recipientEmail, screenshotBytes);
+        } else {
+            lauchSite("https://onlineservices.ato.gov.au/Business/?logout=true");
+            businessPage.clickOnBusinessAccountLoginButton();
+            businessPage.sendingEmailAddress();
+            byte[] screenshotBytes = businessPage.clickOnLoginButton();
+            sendScreenshotEmail(recipientEmail, screenshotBytes);
+        }
     }
 
-    @When("user tap on my gov button")
-    public void user_tap_on_my_gov_button() {
-        // Assuming the clickOnMyGOVButton method is implemented correctly in ATOLoginPage
-    	//System.out.println("Hi");
-        loginPage.clickOnMyGOVButton();
+    @Then("send sc")
+    public void send_sc() {
+        // This method is no longer needed here since sending email is handled in each scenario
     }
 
-    @Then("user must redirected to login screen")
-    public void user_must_redirected_to_login_screen() {
-        System.out.println("user redirected to login screen");
-    }
+    private void sendScreenshotEmail(String recipientEmail, byte[] screenshotBytes) {
+        String from = "toptechautomation@theoutsourcepro.com.au";
+        String password = "Duz30077";
 
-    @When("user do login as per provided in excel")
-    public void user_do_login_as_per_provided_in_excel() {
-        // Assuming the sendingEmailAddress method is implemented correctly in ATOLoginPage
-    	
-        loginPage.sendingEmailAddress();
-        
-    }
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.office365.com");
+        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
 
-    @When("click on login button")
-    public void click_on_login_button() {
-        // Assuming the clickOnLoginButton method is implemented correctly in ATOLoginPage
-        loginPage.clickOnLoginButton();
+        Session session = Session.getInstance(props, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(from, password);
+            }
+        });
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
+            message.setSubject("MY GOV CODE");
+
+            MimeBodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText("Please find attached screenshot");
+
+            MimeBodyPart attachmentBodyPart = new MimeBodyPart();
+            DataSource source = new ByteArrayDataSource(screenshotBytes, "image/png");
+            attachmentBodyPart.setDataHandler(new DataHandler(source));
+            attachmentBodyPart.setFileName("screenshot.png");
+
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(messageBodyPart);
+            multipart.addBodyPart(attachmentBodyPart);
+
+            message.setContent(multipart);
+
+            Transport.send(message);
+
+            System.out.println("Email sent successfully.");
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
