@@ -134,14 +134,14 @@ public class XeroSelectingQuarterDatePage extends BaseClass {
     }
 
     public void enterFromDate() throws ParseException {
-        String stringFromDate = XERO_FROM_DATE;
+        String stringFromDate = ATO_FROM_DATE;
         wait.until(ExpectedConditions.elementToBeClickable(from));
         from.clear();
         from.sendKeys(stringFromDate);
     }
 
     public void enterToDate() throws ParseException {
-        String stringToDate = XERO_TO_DATE;
+        String stringToDate = ATO_TO_DATE;
         wait.until(ExpectedConditions.elementToBeClickable(to));
         to.clear();
         to.sendKeys(stringToDate);

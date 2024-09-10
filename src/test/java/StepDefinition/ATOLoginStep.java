@@ -28,7 +28,7 @@ public class ATOLoginStep extends BaseClass {
 
     private ATOLoginBusinessPage businessPage;
     private ATOLoginPage loginPage;
-    private String recipientEmail = "asis.kaur@theoutsourcepro.com.au";
+    private String recipientEmail = SENDER_TO;
 
     @Given("User launch website")
     public void user_launch_website() throws InterruptedException {

@@ -61,7 +61,7 @@ public class XeroBalanceSheetPage extends BaseClass {
 		Thread.sleep(3000); // Increase sleep time if necessary
 		wait.until(ExpectedConditions.elementToBeClickable(date));
 		date.click();
-		date.sendKeys(XERO_TO_DATE);
+		date.sendKeys(ATO_TO_DATE);
 		Thread.sleep(3000); // Increase sleep time if necessary
 		wait.until(ExpectedConditions.elementToBeClickable(update));
 		update.click();

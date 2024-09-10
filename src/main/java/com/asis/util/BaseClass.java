@@ -45,8 +45,6 @@ public class BaseClass {
 	public static String XERO_SECURITY_ANS2="";
 	public static String XERO_SECURITY_QUEST3="";
 	public static String XERO_SECURITY_ANS3="";
-	public static String XERO_FROM_DATE="";
-	public static String XERO_TO_DATE="";
 	public static String ATO_USER_NAME="";
 	public static String ATO_CLIENT_NAME="";
 	public static String ATO_FROM_DATE="";
@@ -128,27 +126,25 @@ public class BaseClass {
 	 */
 
 	public void setProperties() {
-		XERO_USER_NAME=System.getProperty("userName");
-		XERO_PASSWORD=System.getProperty("password");
-		XERO_SECURITY_QUEST1=System.getProperty("securityQuest1");
-		XERO_SECURITY_ANS1=System.getProperty("securityAns1");
-		XERO_SECURITY_QUEST2=System.getProperty("securityQuest2");
-		XERO_SECURITY_ANS2=System.getProperty("securityAns2");
-		XERO_SECURITY_QUEST3=System.getProperty("securityQuest3");
-		XERO_SECURITY_ANS3=System.getProperty("securityAns3");
-		XERO_FROM_DATE=System.getProperty("fromDate");
-		XERO_TO_DATE=System.getProperty("toDate");
-		ATO_USER_NAME=System.getProperty("userName1");
-		ATO_CLIENT_NAME=System.getProperty("clientName");
-		ATO_FROM_DATE=System.getProperty("fromDate");
-		ATO_TO_DATE=System.getProperty("toDate");
-		ATO_JULY_QUARTER=System.getProperty("julyQuarter");
-		ATO_OCT_QUARTER=System.getProperty("octQuarter");
-		ATO_JAN_QUARTER=System.getProperty("janQuarter");
-		ATO_APR_QUARTER=System.getProperty("aprQuarter");
-		USERNAME=System.getProperty("userNameLaptop");
-		SENDER_TO=System.getProperty("senderTo");
-		TAXATION=System.getProperty("taxation");
+		XERO_USER_NAME=System.getProperty("XERO_Id");
+		XERO_PASSWORD=System.getProperty("XERO_Password");
+		XERO_SECURITY_QUEST1=System.getProperty("Security_Question_1");
+		XERO_SECURITY_ANS1=System.getProperty("Security_Answer_1");
+		XERO_SECURITY_QUEST2=System.getProperty("Security_Question_2");
+		XERO_SECURITY_ANS2=System.getProperty("Security_Answer_2");
+		XERO_SECURITY_QUEST3=System.getProperty("Security_Question_3");
+		XERO_SECURITY_ANS3=System.getProperty("Security_Answer_3");
+		ATO_USER_NAME=System.getProperty("ATO_Id");
+		ATO_CLIENT_NAME=System.getProperty("Client_Name");
+		ATO_FROM_DATE=System.getProperty("From");
+		ATO_TO_DATE=System.getProperty("To");
+		ATO_JULY_QUARTER=System.getProperty("July-September_Quarter");
+		ATO_OCT_QUARTER=System.getProperty("October-December_Quarter");
+		ATO_JAN_QUARTER=System.getProperty("January-March_Quarter");
+		ATO_APR_QUARTER=System.getProperty("April-June_Quarter");
+		USERNAME=System.getProperty("User_Name");
+		SENDER_TO=System.getProperty("Email_Id");
+		TAXATION=System.getProperty("Taxation");
 		BUSINESS=System.getProperty("business");
 
 	}

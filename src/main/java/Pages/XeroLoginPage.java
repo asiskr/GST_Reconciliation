@@ -39,7 +39,8 @@ public class XeroLoginPage extends BaseClass{
         wait.until(ExpectedConditions.elementToBeClickable(Password));
         Password.sendKeys(password);
     }
-	public void clickLoginButton() {
+	public void clickLoginButton() throws InterruptedException {
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(loginButton));
 		loginButton.click();
 	}

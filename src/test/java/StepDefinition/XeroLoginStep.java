@@ -31,7 +31,8 @@ public class XeroLoginStep {
 		xerologinPage.clickLoginButton();
 	}
 	@When("user click on another authentication method")
-	public void user_click_on_another_authentication_method() {
+	public void user_click_on_another_authentication_method() throws InterruptedException {
+		Thread.sleep(1000);
 		xerologinPage.clickAnotherAuthMethod();
 	}
 

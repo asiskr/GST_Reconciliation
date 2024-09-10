@@ -75,7 +75,7 @@ public class XeroAgedRecievableSummaryPage extends BaseClass {
 
 	public void clickOnLastFinancialYear() {
 		wait.until(ExpectedConditions.elementToBeClickable(date)).click();
-		date.sendKeys(XERO_TO_DATE);
+		date.sendKeys(ATO_TO_DATE);
 	}
 
 	public void clickOnUpdate() {

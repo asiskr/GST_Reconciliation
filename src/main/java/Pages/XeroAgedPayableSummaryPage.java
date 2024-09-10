@@ -73,7 +73,7 @@ public class XeroAgedPayableSummaryPage extends BaseClass{
 	public void clickLastFinancialYear() {
 		wait.until(ExpectedConditions.elementToBeClickable(date));
 		date.click();
-		date.sendKeys(XERO_TO_DATE);
+		date.sendKeys(ATO_TO_DATE);
 	}
 	public void clickUpdate() throws InterruptedException {
 		Thread.sleep(1000);
