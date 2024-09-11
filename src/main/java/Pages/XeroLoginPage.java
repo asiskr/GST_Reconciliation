@@ -16,8 +16,8 @@ public class XeroLoginPage extends BaseClass{
 	@FindBy(id = "xl-form-password")
 	WebElement Password;
 	@FindBy(id = "xl-form-submit")
-	WebElement loginButton;
-	@FindBy(xpath = "//button[contains(text(),\"Use another authentication method\")]")
+	WebElement loginButton;//button[@id='xl-form-submit']
+	@FindBy(xpath = "//button[contains(text(),'Use another authentication method')]")
 	WebElement anotherAuthMethod;
 	@FindBy(xpath = "//h2[contains(text(),'Security questions')]")
 	WebElement securityQsn;

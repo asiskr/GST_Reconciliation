@@ -37,21 +37,21 @@ public class ATOClientNameSearchPage extends BaseClass{
 
 	public void enterClientName() throws InterruptedException {		
 		String client_name = ATO_CLIENT_NAME;
-
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(clientNameSearch));
 		Thread.sleep(1000);
 		clientNameSearch.sendKeys(client_name);
 	}
 
 	public void doSearchClientName() throws InterruptedException {
-	    Thread.sleep(3000);
-	    clientNameSearch.sendKeys(Keys.ENTER);
-	    /*
+		Thread.sleep(3000);
+		clientNameSearch.sendKeys(Keys.ENTER);
+		/*
 	    if(noMatches.isDisplayed()) {
 	        DriverManager.getDriver().quit();
 	    } 
-	    */
-	        clientNameSearch.sendKeys(Keys.ENTER);    
+		 */
+		clientNameSearch.sendKeys(Keys.ENTER);    
 	}
 
 }
