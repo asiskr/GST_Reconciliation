@@ -34,7 +34,7 @@ public class TestRunner {
 		//obj.setupDriver();
 		//obj.lauchSite("https://onlineservices.ato.gov.au/onlineservices/");
 
-		obj.login_ato();
+//		obj.login_ato();
 		obj.clientName();
 		obj.goToQuarterName();
 		obj.setToDateFromDate();
@@ -47,7 +47,7 @@ public class TestRunner {
 		XeroTesting obj2 = new XeroTesting();
 //		obj2.setupDriver();
 //		obj2.lauchSite("https://login.xero.com");
-		obj2.login_xero();
+//		obj2.login_xero();
 		obj2.twofactorAuth();
 		obj2.gotoAccountsClick();
 		obj2.getAndSetFromAndTodate();

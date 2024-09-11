@@ -58,10 +58,10 @@ public class ATOdata extends BaseClass {
 	 * @throws InterruptedException
 	 * @throws IOException
 	 */
-	public HashMap<String, String> getClientData() throws InterruptedException, IOException {
-		return ExcelUtil.getClientDetail(ATO_CLIENT_SHEET_NAME);
+//	public HashMap<String, String> getClientData() throws InterruptedException, IOException {
+//		return ExcelUtil.getClientDetail(ATO_CLIENT_SHEET_NAME);
 
-	}
+//	}
 
 	public void tempFunc() {
 		tempData.add("Testing1");
@@ -78,8 +78,8 @@ public class ATOdata extends BaseClass {
 	 * @throws IOException
 	 */
 	public void clientName() throws InterruptedException, IOException {
-		ExcelUtil.readExcel(ATO_FILE_PATH,ATO_FILE_NAME);
-		clientData = getClientData();
+//		ExcelUtil.readExcel(ATO_FILE_PATH,ATO_FILE_NAME);
+//		clientData = getClientData();
 		ExcelUtil.closeExcel();
 		WebElement clientNameSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='search']")));
 		Thread.sleep(1000);
@@ -418,11 +418,11 @@ public class ATOdata extends BaseClass {
 
 		WebElement fromDate =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@id,'from-date')]")));
 		fromDate.clear();
-		fromDate.sendKeys(getClientFromDateAsString(clientData));
+//		fromDate.sendKeys(getClientFromDateAsString(clientData));
 
 		WebElement toDate =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@id,'to-date')]")));
 		toDate.clear();
-		toDate.sendKeys(getClientToDateAsString(clientData));
+//		toDate.sendKeys(getClientToDateAsString(clientData));
 		WebElement submit =  driver.findElement(By.xpath("//button[contains(text(),'Filter')]"));
 		js.executeScript("arguments[0].click();", submit);
 
@@ -457,7 +457,6 @@ public class ATOdata extends BaseClass {
 
 		//obj.setupDriver();
 		//obj.lauchSite("https://onlineservices.ato.gov.au/onlineservices/");
-		obj.login_ato();
 		obj.clientName();
 		obj.goToQuarterName();
 		obj.setToDateFromDate();
