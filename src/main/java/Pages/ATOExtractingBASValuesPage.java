@@ -60,6 +60,7 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 
 	public void clickOnJulyQuarter() throws InterruptedException {
 		String jul_quater = ATO_JULY_QUARTER;
+		Thread.sleep(1000);
 		if (!jul_quater.isBlank()) {
 			getQquaterData(jul_quater);
 			HashMap<String, Double> data = goToStatementDetail();
