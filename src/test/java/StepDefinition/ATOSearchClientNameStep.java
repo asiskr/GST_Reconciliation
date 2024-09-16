@@ -16,13 +16,13 @@ public class ATOSearchClientNameStep {
 
 	@When("I enter client name in search box")
 	public void i_enter_client_name_in_search_box() throws InterruptedException {
-		selectTOP.clickOnTOPButton();
+//		selectTOP.clickOnTOPButton();
 //		clientSearchPage.enterClientName();
 	}
 
 	@When("I press enter keyword")
 	public void i_press_enter_keyword() throws InterruptedException {
-		selectTOP.clickOnNextButton();
+//		selectTOP.clickOnNextButton();
 //		clientSearchPage.doSearchClientName();
 	}
 

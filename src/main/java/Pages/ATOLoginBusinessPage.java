@@ -13,9 +13,9 @@ public class ATOLoginBusinessPage extends BaseClass{
 
 	@FindBy(xpath="//span[contains(text(),'Login')]")
 	WebElement Login;
-	@FindBy(xpath= "//input[@placeholder='myGovID email']")
+	@FindBy(xpath= "//input[@id='emailInputText']")
 	WebElement emailAddress;
-	@FindBy(xpath= "//button[@title='Submit']")
+	@FindBy(xpath= "//button[@id='getCodeButton']")
 	WebElement loginButton;
 	
 	public ATOLoginBusinessPage(){	
