@@ -1,3 +1,4 @@
+
 package com.asis.util;
 
 import java.io.FileNotFoundException;
@@ -27,11 +28,9 @@ import Driver_manager.DriverManager;
 
 public class BaseClass {
 	public WebDriver driver;
-	public static String ATO_FILE_PATH="";
-	public static String ATO_FILE_NAME="";
-	public static String XERO_FILE_PATH="";
-	public static String XERO_FILE_NAME="";
-
+	
+	public static String TAXATION=" ";
+	public static String BUSINESS=" ";
 	
 	public static String XERO_USER_NAME="";
 	public static String XERO_PASSWORD="";
@@ -41,8 +40,6 @@ public class BaseClass {
 	public static String XERO_SECURITY_ANS2="";
 	public static String XERO_SECURITY_QUEST3="";
 	public static String XERO_SECURITY_ANS3="";
-	public static String XERO_FROM_DATE="";
-	public static String XERO_TO_DATE="";
 	public static String ATO_USER_NAME="";
 	public static String ATO_CLIENT_NAME="";
 	public static String ATO_FROM_DATE="";
@@ -54,12 +51,6 @@ public class BaseClass {
 
 	public static String USERNAME="";
 	public static String SENDER_TO="";
-
-
-	public final String ATO_LOGIN_SHEET_NAME ="Login_detail";
-	public final String ATO_CLIENT_SHEET_NAME ="Client_data";
-
-	public final String XERO_LOGIN_SHEET_NAME ="Xero";
 
 	public static HashMap<String, String> clientData;
 	public static HashMap<String, String> CLIENT_DATA;
@@ -124,28 +115,27 @@ public class BaseClass {
 	 */
 
 	public void setProperties() {
-		XERO_USER_NAME=System.getProperty("userName");
-		XERO_PASSWORD=System.getProperty("password");
-		XERO_SECURITY_QUEST1=System.getProperty("securityQuest1");
-		XERO_SECURITY_ANS1=System.getProperty("securityAns1");
-		XERO_SECURITY_QUEST2=System.getProperty("securityQuest2");
-		XERO_SECURITY_ANS2=System.getProperty("securityAns2");
-		XERO_SECURITY_QUEST3=System.getProperty("securityQuest3");
-		XERO_SECURITY_ANS3=System.getProperty("securityAns3");
-		XERO_FROM_DATE=System.getProperty("fromDate");
-		XERO_TO_DATE=System.getProperty("toDate");
-		ATO_USER_NAME=System.getProperty("userName1");
-		ATO_CLIENT_NAME=System.getProperty("clientName");
-		ATO_FROM_DATE=System.getProperty("fromDate");
-		ATO_TO_DATE=System.getProperty("toDate");
-		ATO_JULY_QUARTER=System.getProperty("julyQuarter");
-		ATO_OCT_QUARTER=System.getProperty("octQuarter");
-		ATO_JAN_QUARTER=System.getProperty("janQuarter");
-		ATO_APR_QUARTER=System.getProperty("aprQuarter");
-		USERNAME=System.getProperty("userNameLaptop");
-		SENDER_TO=System.getProperty("senderTo");
-		
-		
+		XERO_USER_NAME=System.getProperty("XERO_Id");
+		XERO_PASSWORD=System.getProperty("XERO_Password");
+		XERO_SECURITY_QUEST1=System.getProperty("Security_Question_1");
+		XERO_SECURITY_ANS1=System.getProperty("Security_Answer_1");
+		XERO_SECURITY_QUEST2=System.getProperty("Security_Question_2");
+		XERO_SECURITY_ANS2=System.getProperty("Security_Answer_2");
+		XERO_SECURITY_QUEST3=System.getProperty("Security_Question_3");
+		XERO_SECURITY_ANS3=System.getProperty("Security_Answer_3");
+		ATO_USER_NAME=System.getProperty("ATO_Id");
+		ATO_CLIENT_NAME=System.getProperty("Client_Name");
+		ATO_FROM_DATE=System.getProperty("From");
+		ATO_TO_DATE=System.getProperty("To");
+		ATO_JULY_QUARTER=System.getProperty("July_September_Quarter");
+		ATO_OCT_QUARTER=System.getProperty("October_December_Quarter");
+		ATO_JAN_QUARTER=System.getProperty("January_March_Quarter");
+		ATO_APR_QUARTER=System.getProperty("April_June_Quarter");
+		USERNAME=System.getProperty("User_Name");
+		SENDER_TO=System.getProperty("Email_Id");
+		TAXATION=System.getProperty("Taxation");
+		BUSINESS=System.getProperty("business");
+
 	}
 
 	public static void lauchSite(String url) {
@@ -156,82 +146,9 @@ public class BaseClass {
 		js = (JavascriptExecutor) DriverManager.getDriver();
 	}
 	/**
-	 * Method to perform login
-	 * @throws IOException
-	 * @throws InterruptedException
-	 */
-	public void getQuestAnsw() throws InterruptedException, IOException {
-		CLIENT_XERO_DATA= xeroexcel.getQuestAnsw(XERO_LOGIN_SHEET_NAME);
-
-	}
-	public void getClientDetail() throws InterruptedException, IOException {
-		CLIENT_DATA = ExcelUtil.getClientDetail(ATO_CLIENT_SHEET_NAME);
-
-	}
-	public void login_ato() throws IOException, InterruptedException {// Filling login details
-		ExcelUtil.readExcel(ATO_FILE_PATH,ATO_FILE_NAME);
-		String user_id= ExcelUtil.getUserLoginDetail(ATO_LOGIN_SHEET_NAME);
-		WebElement myGOV = DriverManager.getDriver().findElement(By.xpath("//a[@id='btn-myGovID']"));
-		myGOV.click();
-
-		WebElement emailAddress = DriverManager.getDriver().findElement(By.xpath("//input[@placeholder='myGovID email']"));
-		emailAddress.sendKeys(user_id);
-
-		WebElement loginButton = DriverManager.getDriver().findElement(By.xpath("//button[@title='Submit']"));
-		loginButton.click();
-		ExcelUtil.closeExcel();
-	}
-
-	public void login_xero() {
-		xeroexcel.readExcel(XERO_FILE_PATH,XERO_FILE_NAME);
-		String[] loginDetails = xeroexcel.getUserLoginDetail(XERO_LOGIN_SHEET_NAME);
-		String userId = loginDetails[0];
-		String password = loginDetails[1];
-
-		WebElement Emailaddress = DriverManager.getDriver().findElement(By.id("xl-form-email"));
-		WebElement Password = DriverManager.getDriver().findElement(By.id("xl-form-password"));
-		WebElement loginButton = DriverManager.getDriver().findElement(By.id("xl-form-submit"));
-		Emailaddress.sendKeys(userId);		
-		Password.sendKeys(password);			
-		loginButton.click();
-	}
-
-	/**
 	 * Method to quit WebDriver
 	 */
 	public void tearDown() {
 		DriverManager.getDriver().quit();
 	}
-
-	public String getClientFromDateAsString(HashMap<String, String> clientData) {
-		DateFormat fromDateFormat = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH); 
-		DateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
-		try {
-			Date from_date = fromDateFormat.parse(clientData.get("from_date"));
-
-			String StringFromDate = outputFormat.format(from_date);
-
-			return StringFromDate;
-
-		} catch (ParseException e) {
-			e.printStackTrace();
-			return "";
-		}
-	}
-
-	public String getClientToDateAsString(HashMap<String, String> clientData) {
-		DateFormat fromDateFormat = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH); 
-		DateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
-		try {	   
-
-			Date to_date = fromDateFormat.parse(clientData.get("to_date"));
-			String StringToDate = outputFormat.format(to_date);	
-			return StringToDate;
-
-		} catch (ParseException e) {
-			e.printStackTrace();
-			return "";
-		}
-	}
-
 }

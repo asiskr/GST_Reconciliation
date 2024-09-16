@@ -36,6 +36,22 @@
 			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
 
 		<!--
 		https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
@@ -133,29 +149,28 @@
 							<xero_file_location>${xero_file_location}</xero_file_location>
 							<xero_file_name>${xero_file_name}</xero_file_name>
 
-                            <taxation>business</taxation>
-							<userName>Vijitha.p@fortunaadvisors.com.au</userName>
-							<password>${password}</password>
-							<securityQuest1>${securityQuest1}</securityQuest1>
-							<securityAns1>${securityAns1}</securityAns1>
-							<securityQuest2>${securityQuest2}</securityQuest2>
-							<securityAns2>${securityAns2}</securityAns2>
-							<securityQuest3>${securityQuest3}</securityQuest3>
-							<securityAns3>${securityAns3}</securityAns3>
-							<fromDate>${fromDate}</fromDate>
-							<toDate>${toDate}</toDate>
+							<taxation>${Taxation}</taxation>
+							<business>${business}</business>
 
-							<userName1>${userName1}</userName1>
-							<clientName>${clientName}</clientName>
-							<fromDate>${fromDate}</fromDate>
-							<toDate>${toDate}</toDate>
-							<julyQuarter>${julyQuarter}</julyQuarter>
-							<octQuarter>${octQuarter}</octQuarter>
-							<janQuarter>${janQuarter}</janQuarter>
-							<aprQuarter>${aprQuarter}</aprQuarter>
+							<userName>${XERO Id}</userName>
+							<password>${XERO Password}</password>
+							<securityQuest1>${Security Question 1}</securityQuest1>
+							<securityAns1>${Security Answer 1}</securityAns1>
+							<securityQuest2>${Security Question 2}</securityQuest2>
+							<securityAns2>${Security Answer 2}</securityAns2>
+							<securityQuest3>${Security Question 3</securityQuest3>
+							<securityAns3>${Security Answer 3}</securityAns3>
+							<userName1>${ATO Id}</userName1>
+							<clientName>${Client Name}</clientName>
+							<fromDate>${From}</fromDate>
+							<toDate>${To}</toDate>
+							<julyQuarter>${July-September Quarter}</julyQuarter>
+							<octQuarter>${October-December Quarter}</octQuarter>
+							<janQuarter>${January-March Quarter}</janQuarter>
+							<aprQuarter>${April-June Quarter}</aprQuarter>
 
-							<userNameLaptop>${userNameLaptop}</userNameLaptop>
-							<senderTo>${senderTo}</senderTo>
+							<userNameLaptop>${User Name}</userNameLaptop>
+							<senderTo>${Email Id}</senderTo>
 						</systemPropertyVariables>
 					</configuration>
 				</plugin>

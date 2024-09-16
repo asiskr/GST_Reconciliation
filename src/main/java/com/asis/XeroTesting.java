@@ -60,8 +60,8 @@ public class XeroTesting extends BaseClass{
 	 * @throws IOException
 	 */
 	public void getQuestAnsw() throws InterruptedException, IOException {
-		questAns= xeroexcel.getQuestAnsw(XERO_LOGIN_SHEET_NAME);
-		CLIENT_XERO_DATA= xeroexcel.getQuestAnsw(XERO_LOGIN_SHEET_NAME);
+//		questAns= xeroexcel.getQuestAnsw(XERO_LOGIN_SHEET_NAME);
+//		CLIENT_XERO_DATA= xeroexcel.getQuestAnsw(XERO_LOGIN_SHEET_NAME);
 		
 
 	}
@@ -500,7 +500,7 @@ public class XeroTesting extends BaseClass{
 		XeroTesting obj = new XeroTesting();
 		//obj.setupDriver("Chrome");
 		obj.lauchSite("https://login.xero.com");
-		obj.login_xero();
+//		obj.login_xero();
 		obj.twofactorAuth();
 		obj.GSTReconciliation();
 		//		obj.gotoAccountsClick();

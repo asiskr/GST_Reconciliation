@@ -48,13 +48,13 @@ public class XeroGSTReconciliationPage extends BaseClass {
 		GSTreconcil.click();
 	}
 	public void clickExport() {
-		String StringFromDate = XERO_FROM_DATE;
+		String StringFromDate = ATO_FROM_DATE;
 		wait.until(ExpectedConditions.elementToBeClickable(From));
 		From.clear();
 		From.sendKeys(StringFromDate);
 	}
 	public void clickOnExportToExcel() throws InterruptedException {
-		String StringToDate = XERO_TO_DATE;
+		String StringToDate = ATO_TO_DATE;
 		wait.until(ExpectedConditions.elementToBeClickable(To));
 		To.clear();
 		To.sendKeys(StringToDate);
