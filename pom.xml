@@ -132,8 +132,9 @@
 							<ato_file_name>${ato_file_name}</ato_file_name>
 							<xero_file_location>${xero_file_location}</xero_file_location>
 							<xero_file_name>${xero_file_name}</xero_file_name>
+							<taxation>${Taxation}</taxation>
+							<business>${business}</business>
 
-                            <taxation>business</taxation>
 							<userName>Vijitha.p@fortunaadvisors.com.au</userName>
 							<password>${password}</password>
 							<securityQuest1>${securityQuest1}</securityQuest1>

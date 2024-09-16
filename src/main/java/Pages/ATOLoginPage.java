@@ -3,6 +3,8 @@ package Pages;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +18,7 @@ import Driver_manager.DriverManager;
 
 public class ATOLoginPage extends BaseClass{	
 	
+	private byte[] screenshotBytes;
 	@FindBy(xpath="//a[@id='btn-myGovID']")
 	WebElement myGOV;
 	@FindBy(xpath= "//input[@type='email']")
@@ -37,8 +40,11 @@ public class ATOLoginPage extends BaseClass{
 		emailAddress.sendKeys(user_id);
 	}
 
-	public void clickOnLoginButton() {
+	public byte[] clickOnLoginButton() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(loginButton));
 		loginButton.click();
+		Thread.sleep(3000);
+		screenshotBytes = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
+		return screenshotBytes;
 	}
 }
