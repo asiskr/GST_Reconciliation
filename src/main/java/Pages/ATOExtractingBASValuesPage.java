@@ -201,9 +201,10 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 	 * @param quater_statement_name
 	 * @throws InterruptedException
 	 */
-	public void getQquaterData(String quater_statement_name) {
+	public void getQquaterData(String quater_statement_name) throws InterruptedException {
 		WebDriver driver = DriverManager.getDriver();
 		List<WebElement> statements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//span[contains(text(),'" + quater_statement_name + "')]")));
+		Thread.sleep(1000);
 		if (statements.size() > 1) {
 			for (WebElement ele : statements) {
 				WebElement revision = ele.findElement(By.xpath(".//ancestor::div[@class='table-data-text']//span[contains(text(),'Revision')]"));
