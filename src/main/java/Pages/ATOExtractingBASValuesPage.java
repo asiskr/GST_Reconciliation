@@ -60,7 +60,6 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 
 	public void clickOnJulyQuarter() throws InterruptedException {
 		String jul_quater = ATO_JULY_QUARTER;
-		Thread.sleep(30000);
 		if (!jul_quater.isBlank()) {
 			getQquaterData(jul_quater);
 			HashMap<String, Double> data = goToStatementDetail();
@@ -204,7 +203,6 @@ public class ATOExtractingBASValuesPage extends BaseClass {
 	public void getQquaterData(String quater_statement_name) throws InterruptedException {
 		WebDriver driver = DriverManager.getDriver();
 		List<WebElement> statements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//span[contains(text(),'" + quater_statement_name + "')]")));
-		Thread.sleep(30000);
 		if (statements.size() > 1) {
 			for (WebElement ele : statements) {
 				WebElement revision = ele.findElement(By.xpath(".//ancestor::div[@class='table-data-text']//span[contains(text(),'Revision')]"));
