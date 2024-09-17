@@ -35,12 +35,10 @@ public class ATOClientNameSearchPage extends BaseClass{
 	public void getPageTitle() {
 	}
 
-	public void enterClientName() throws InterruptedException {		
-		String client_name = ATO_CLIENT_NAME;
-
+	public void enterClientName() throws InterruptedException {	
 		wait.until(ExpectedConditions.elementToBeClickable(clientNameSearch));
 		Thread.sleep(1000);
-		clientNameSearch.sendKeys(client_name);
+		clientNameSearch.sendKeys(ATO_CLIENT_NAME);
 	}
 
 	public void doSearchClientName() throws InterruptedException {
