@@ -31,7 +31,7 @@ public class GenerateEmail extends BaseClass {
         Double reportingVar = 0.0; // Assuming these are defined elsewhere
 
 		String from = "toptechautomation@theoutsourcepro.com.au";
-        String password = "Duz30077";
+        String password = "J7OJb*ZwQD25HpC2KO8*n";
 
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.office365.com");
