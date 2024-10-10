@@ -23,7 +23,7 @@ public class MYOBAgedReceivableSteps {
 	}
 
 	@Then("user extract aged receivable value")
-	public void user_extract_aged_receivable_value() {
+	public void user_extract_aged_receivable_value() throws InterruptedException {
 		agedReceivable.receivableAmount();
 	}
 

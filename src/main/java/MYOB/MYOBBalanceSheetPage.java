@@ -22,6 +22,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -81,7 +82,7 @@ public class MYOBBalanceSheetPage extends BaseClass {
 
 	public void passToDate() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(toDate));
-		String StringToDate = XERO_TO_DATE;
+		String StringToDate = ATO_TO_DATE;
 		toDate.sendKeys(Keys.CONTROL + "a");
 		toDate.sendKeys(Keys.DELETE);
 
@@ -90,18 +91,23 @@ public class MYOBBalanceSheetPage extends BaseClass {
 	}
 
 	public void getTextGst() {
+		JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", gstCollected); // Scroll to the 'total' element
 	    wait.until(ExpectedConditions.visibilityOf(gstCollected));
 	    String gstCollStr = gstCollected.getText().replaceAll(",", "").replaceAll("[()]", "");
 	    gstColl = gstCollStr.startsWith("(") ? -Double.parseDouble(gstCollStr) : Double.parseDouble(gstCollStr);
 
+        js.executeScript("arguments[0].scrollIntoView(true);", gstPaid); // Scroll to the 'total' element
 	    wait.until(ExpectedConditions.visibilityOf(gstPaid));
 	    String gstPaiStr = gstPaid.getText().replaceAll(",", "").replaceAll("[()]", "");
 	    gstPai = gstPaiStr.startsWith("(") ? -Double.parseDouble(gstPaiStr) : Double.parseDouble(gstPaiStr);
 
+        js.executeScript("arguments[0].scrollIntoView(true);", gstAdjustmentActual); // Scroll to the 'total' element
 	    wait.until(ExpectedConditions.visibilityOf(gstAdjustmentActual));
 	    String gstAdjustmentAactuStr = gstAdjustmentActual.getText().replaceAll(",", "").replaceAll("[()]", "");
 	    gstAdjustmentAactu = gstAdjustmentAactuStr.startsWith("(") ? -Double.parseDouble(gstAdjustmentAactuStr) : Double.parseDouble(gstAdjustmentAactuStr);
 
+        js.executeScript("arguments[0].scrollIntoView(true);", gstAdjustmentLastYear); // Scroll to the 'total' element
 	    wait.until(ExpectedConditions.visibilityOf(gstAdjustmentLastYear));
 	    String gstAdjustmentlastStr = gstAdjustmentLastYear.getText().replaceAll(",", "").replaceAll("[()]", "");
 	    gstAdjustmentlast = gstAdjustmentlastStr.startsWith("(") ? -Double.parseDouble(gstAdjustmentlastStr) : Double.parseDouble(gstAdjustmentlastStr);
@@ -113,12 +119,10 @@ public class MYOBBalanceSheetPage extends BaseClass {
 	    }
 	    GST_asperBalanceSheet = finalGst;
 
-	    // Ensure LAST_TABLE_DATA has at least 6 elements before accessing index 1 and 4
 	    while (LAST_TABLE_DATA.size() < 6) {
 	        LAST_TABLE_DATA.add(new HashMap<>());
 	    }
 
-	    // Add GST as per Balance sheet
 	    HashMap<String, Double> hm5 = new HashMap<>();
 		hm5.put("GST as per Balance sheet", GST_asperBalanceSheet);
 		LAST_TABLE_DATA.set(4,hm5);

@@ -2,6 +2,7 @@ package MYOB;
 
 import javax.swing.JOptionPane;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -58,7 +59,9 @@ public class MYOBLoginPage extends BaseClass{
 		wait.until(ExpectedConditions.elementToBeClickable(authenti));
 		String code =MYOBCODE;
 		authenti.sendKeys(code);
-		continueButton.click();
+		authenti.sendKeys(Keys.ENTER);    
+//		authenti.sendKeys(ENTER);
+//		continueButton.click();
 	}
 	/*
 	  public void enterAuthenticationCode() {

@@ -47,7 +47,7 @@ public class MYOBGSTReportPage extends BaseClass {
 
     public void passFromDate() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(from));
-        String StringFromDate =XERO_FROM_DATE;
+        String StringFromDate =ATO_FROM_DATE;
         from.sendKeys(Keys.CONTROL + "a");
         from.sendKeys(Keys.DELETE);
         
@@ -57,7 +57,7 @@ public class MYOBGSTReportPage extends BaseClass {
 
     public void passToDate() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(to));
-        String StringToDate =XERO_TO_DATE;
+        String StringToDate =ATO_TO_DATE;
         to.sendKeys(Keys.CONTROL + "a");
         to.sendKeys(Keys.DELETE);
         

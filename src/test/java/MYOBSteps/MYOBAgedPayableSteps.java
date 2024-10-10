@@ -18,11 +18,11 @@ public class MYOBAgedPayableSteps {
 
     @Then("User enter the to date")
     public void user_enter_the_to_date() throws InterruptedException {
-        agedPayable.toDate();
+        agedPayable.passToDate();
     }
 
     @Then("user extract aged Payable value")
-    public void user_extract_aged_payable_value() {
+    public void user_extract_aged_payable_value() throws InterruptedException {
         agedPayable.getPayableTotal();
     }
 

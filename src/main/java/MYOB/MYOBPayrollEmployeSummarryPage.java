@@ -54,7 +54,7 @@ public class MYOBPayrollEmployeSummarryPage extends BaseClass {
 
 	public void passToDate() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(toDate));
-		String StringToDate =XERO_TO_DATE;
+		String StringToDate =ATO_TO_DATE;
 		toDate.sendKeys(Keys.CONTROL + "a");
 		toDate.sendKeys(Keys.DELETE);
 
