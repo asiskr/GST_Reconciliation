@@ -360,13 +360,11 @@ public class Excel {
 				col_start =col_start+1; 				
 			}
 		}
-		/*=======================END of EXRO DATA + Variance section ================================*/
+		/*=======================END of XERO DATA + Variance section ================================*/
 
 		/*====================Start of last section===================================*/
 		start_row +=2;
 		Row headRow = sheetName.createRow(start_row);
-
-		// Create a cell style with bold font
 		CellStyle boldGreenStyle = sheetName.getWorkbook().createCellStyle();
 		Font boldFont = sheetName.getWorkbook().createFont();
 		boldFont.setBold(true);
