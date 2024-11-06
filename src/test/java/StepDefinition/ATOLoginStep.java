@@ -24,9 +24,9 @@ import Pages.ATOLoginPage;
 import Pages.SelectTOPIdPage;
 import io.cucumber.java.en.*;
 
-public class ATOLoginStep<Multipart> {
+public class ATOLoginStep<Multipart> extends BaseClass {
 
-	private String recipientEmail = "asis.kaur@theoutsourcepro.com.au";
+	private String recipientEmail = SENDER_TO;
 
 //    WebDriver driver = DriverManager.getDriver(); // Assuming you have a valid WebDriver instance from DriverManager
 	ATOLoginBusinessPage businessPage;
